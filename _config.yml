@@ -17,13 +17,13 @@ sidebar-avatar: /img/1.png   # use absolute URL, seeing it's used in both `/` an
 
 
 # SNS settings
-RSS: true
+RSS: false
 # weibo_username:     qiubaiying
 # zhihu_username:     qiubaiying
- github_username:    kaws-y
- facebook_username:  kaws
+# github_username:    kaws-y
+# facebook_username:  kaws
 # jianshu_username:   e71990ada2fd
- twitter_username:   kaws
+ #twitter_username:   kaws
 
 
 
