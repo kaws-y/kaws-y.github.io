@@ -37,9 +37,11 @@ anchorjs: true                          # if you want to customize anchor. check
 
 
 
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+# Plugins
+# NOTE: since Jekyll 3.5 the key is `plugins`, not `gems`.
+# Jekyll 4.x ignores `gems` entirely, which stops jekyll-paginate from loading
+# and makes `paginator.posts` empty (blank homepage).
+plugins: [jekyll-paginate]
 
 
 
