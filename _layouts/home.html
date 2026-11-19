@@ -1,0 +1,231 @@
+---
+layout: default
+---
+{%- assign kg = site.data.kg -%}
+{%- assign all_posts = site.posts | where: "layout", "post" -%}
+{%- assign all_docs = site.pages | where: "layout", "doc" -%}
+{%- assign chapters = site.pages | where: "track", "chapters" -%}
+{%- assign cases = site.pages | where: "track", "cases" -%}
+
+{%- if paginator and paginator.page > 1 -%}
+{%- comment -%} /pageN/ 保持兼容：作为文章归档分页 {%- endcomment -%}
+<section class="kg-pagehead kg-container">
+    <nav class="kg-crumbs" aria-label="面包屑"><a href="{{ '/' | relative_url }}">首页</a><span aria-current="page">文章归档</span></nav>
+    <p class="kg-kicker">Archive</p>
+    <h1 class="kg-h1">文章归档 · 第 {{ paginator.page }} 页</h1>
+    <p class="kg-lead">按发布时间排列的全部文章。想按模块或标签筛选，可以前往<a class="kg-link" href="{{ '/library/' | relative_url }}">文库</a>。</p>
+</section>
+<div class="kg-container kg-page kg-page--wide">
+    <ol class="kg-entries">
+        {%- for post in paginator.posts %}{% if post.layout == "post" %}
+        {%- include kg/entry.html doc=post -%}
+        {%- endif %}{% endfor %}
+    </ol>
+    <nav class="kg-pager kg-pager--plain" aria-label="分页">
+        {%- if paginator.previous_page %}<a class="kg-btn kg-btn--ghost" href="{{ paginator.previous_page_path | relative_url }}">← 较新的文章</a>{% else %}<span></span>{% endif %}
+        {%- if paginator.next_page %}<a class="kg-btn kg-btn--ghost" href="{{ paginator.next_page_path | relative_url }}">更早的文章 →</a>{% endif %}
+    </nav>
+</div>
+{%- else -%}
+
+{%- comment -%} 知识统计 {%- endcomment -%}
+{%- assign stat_chars = 0 -%}
+{%- for p in all_posts -%}{%- assign _n = p.content | strip_html | size -%}{%- assign stat_chars = stat_chars | plus: _n -%}{%- endfor -%}
+{%- for p in all_docs -%}{%- assign _n = p.content | size -%}{%- assign stat_chars = stat_chars | plus: _n -%}{%- endfor -%}
+{%- assign stat_wan = stat_chars | divided_by: 10000 -%}
+{%- assign stat_books = 0 -%}
+{%- for g in kg.books -%}{%- assign stat_books = stat_books | plus: g.items.size -%}{%- endfor -%}
+{%- assign stat_total = all_posts.size | plus: chapters.size | plus: cases.size -%}
+
+<!-- ============================== Hero ============================== -->
+<section class="kg-hero" aria-labelledby="kg-hero-title">
+    <div class="kg-hero__space" data-kg-space aria-hidden="true">
+        <div class="kg-hero__fallback"><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="kg-container kg-hero__inner">
+        <div class="kg-hero__copy">
+            <p class="kg-kicker" data-kg-reveal>{{ kg.brand.tagline }} · {{ site.SEOTitle }}</p>
+            <h1 class="kg-hero__title" id="kg-hero-title" data-kg-reveal style="--i:1">把学过的东西，<br>安放在一座<em>浅色空间</em>里。</h1>
+            <p class="kg-hero__lead" data-kg-reveal style="--i:2">{{ kg.brand.intro }}</p>
+
+            <button class="kg-hero__search kg-glass kg-glass--strong" type="button" data-kg-search-open data-kg-reveal style="--i:3" aria-label="打开全站搜索">
+                {% include kg/icon.html name="search" %}
+                <span>搜索 {{ stat_total }} 篇文章与知识库…</span>
+                <kbd data-kg-kbd>Ctrl K</kbd>
+            </button>
+            <div class="kg-hero__hot" data-kg-reveal style="--i:4">
+                <span>试试</span>
+                <button type="button" data-kg-search-open data-q="架构风格">架构风格</button>
+                <button type="button" data-kg-search-open data-q="垃圾收集">垃圾收集</button>
+                <button type="button" data-kg-search-open data-q="微服务">微服务</button>
+                <button type="button" data-kg-search-open data-q="共识">共识</button>
+                <button type="button" data-kg-search-open data-q="RAG">RAG</button>
+            </div>
+            <div class="kg-hero__cta" data-kg-reveal style="--i:5">
+                <a class="kg-btn kg-btn--primary" href="#modules">开始探索{% include kg/icon.html name="arrow" %}</a>
+                <a class="kg-btn kg-btn--ghost" href="{{ '/map/' | relative_url }}">{% include kg/icon.html name="map" %}知识地图</a>
+            </div>
+        </div>
+
+        <div class="kg-hero__stage" aria-hidden="true">
+            <div class="kg-hero__card kg-hero__card--a kg-glass">
+                <small>System Architect</small>
+                <strong>{{ chapters.size }} <span>章知识库</span></strong>
+                <i style="--w:72%"></i><i style="--w:48%"></i><i style="--w:60%"></i>
+            </div>
+            <div class="kg-hero__card kg-hero__card--b kg-glass">
+                <small>Handbook</small>
+                <strong>前端 · 后端 · 区块链</strong>
+            </div>
+            <div class="kg-hero__card kg-hero__card--c kg-glass">
+                <small>Case Studies</small>
+                <strong>{{ cases.size }} <span>个案例专题</span></strong>
+            </div>
+        </div>
+    </div>
+    <a class="kg-hero__scroll" href="#modules" aria-label="向下滚动到知识模块"><span></span></a>
+</section>
+
+<!-- ========================= Knowledge modules ========================= -->
+<section class="kg-section kg-container" id="modules" aria-labelledby="kg-modules-title">
+    <header class="kg-sechead" data-kg-reveal>
+        <div>
+            <p class="kg-kicker">Five Spaces</p>
+            <h2 class="kg-h2" id="kg-modules-title">五个知识空间</h2>
+            <p>每个空间是一条独立生长的主线，可以从任何一处走进去。</p>
+        </div>
+        <a class="kg-more" href="{{ '/library/' | relative_url }}">浏览全部文档{% include kg/icon.html name="arrow" %}</a>
+    </header>
+
+    <div class="kg-bento">
+        {%- for m in kg.modules %}
+        {%- assign m_count = 0 -%}
+        {%- for t in m.tracks -%}{%- include kg/track-docs.html module=m track=t -%}{%- assign m_count = m_count | plus: kg_docs.size -%}{%- endfor -%}
+        <article class="kg-mod kg-mod--{{ m.id }} kg-glass kg-float" style="--hue:{{ m.hue }};--i:{{ forloop.index0 }}" data-kg-reveal>
+            <div class="kg-mod__art" aria-hidden="true"><i></i><i></i><i></i></div>
+            <header class="kg-mod__head">
+                <span class="kg-mod__glyph">{% include kg/icon.html name=m.glyph %}</span>
+                <span class="kg-mod__en">{{ m.en }}</span>
+            </header>
+            <h3 class="kg-mod__title"><a href="{{ m.url | relative_url }}">{{ m.title }}</a></h3>
+            <p class="kg-mod__desc">{{ m.desc }}</p>
+
+            {%- if m.id == "handbook" %}
+            <ul class="kg-mod__tracks">
+                {%- for t in m.tracks %}
+                {%- include kg/track-docs.html module=m track=t -%}
+                <li><a href="{{ m.url | relative_url }}#{{ t.id }}"><span>{{ t.title }}</span><small class="kg-num">{{ kg_docs.size }} 篇</small>{% include kg/icon.html name="chevron" %}</a></li>
+                {%- endfor %}
+            </ul>
+            {%- elsif m.id == "ruankao" %}
+            <div class="kg-mod__figures">
+                <a href="{{ m.url | relative_url }}#chapters"><strong class="kg-num">{{ chapters.size }}</strong><span>章知识库</span></a>
+                <a href="{{ m.url | relative_url }}#cases"><strong class="kg-num">{{ cases.size }}</strong><span>案例专题</span></a>
+            </div>
+            {%- endif %}
+
+            <footer class="kg-mod__foot">
+                <span class="kg-num">{% if m.id == "reading" %}{{ stat_books }} 本藏书{% elsif m_count > 0 %}{{ m_count }} 篇文档{% else %}即将开放{% endif %}</span>
+                <span class="kg-mod__go">进入{% include kg/icon.html name="arrow" %}</span>
+            </footer>
+            <a class="kg-mod__cover" href="{{ m.url | relative_url }}" tabindex="-1" aria-hidden="true"></a>
+        </article>
+        {%- endfor %}
+    </div>
+</section>
+
+<!-- ============================= Featured ============================= -->
+<section class="kg-section kg-section--tight kg-container" aria-labelledby="kg-featured-title">
+    <header class="kg-sechead" data-kg-reveal>
+        <div>
+            <p class="kg-kicker">Editor's Picks</p>
+            <h2 class="kg-h2" id="kg-featured-title">精选内容</h2>
+            <p>值得从头读到尾的几篇。</p>
+        </div>
+    </header>
+
+    <div class="kg-featured">
+        {%- for f in kg.featured %}
+        {%- assign fd = nil -%}
+        {%- if f.post -%}{%- assign fd = site.posts | where: "slug", f.post | first -%}
+        {%- elsif f.path -%}{%- assign fd = site.pages | where: "path", f.path | first -%}{%- endif -%}
+        {%- if fd %}
+        {%- include kg/resolve.html doc=fd -%}
+        {%- assign f_url = fd.url | relative_url -%}
+        <article class="kg-feat kg-feat--{{ f.size }}{% unless f.size == 'sm' %} kg-glass kg-float{% endunless %}" style="--hue:{{ kg_mod.hue | default: 218 }};--i:{{ forloop.index0 }}" data-kg-doc="{{ f_url }}" data-kg-reveal>
+            {%- unless f.size == "sm" %}
+            <div class="kg-feat__art" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            {%- endunless %}
+            <div class="kg-feat__body">
+                <p class="kg-feat__meta"><span class="kg-dot-label">{{ kg_trk.title | default: kg_mod.title }}</span>{% if fd.layout == "post" %}<time datetime="{{ fd.date | date: '%Y-%m-%d' }}">{{ fd.date | date: "%Y.%m" }}</time>{% endif %}<span data-kg-progress hidden></span></p>
+                <h3 class="kg-feat__title"><a href="{{ f_url }}">{{ fd.title }}</a></h3>
+                {%- if f.blurb %}
+                <p class="kg-feat__blurb">{{ f.blurb }}</p>
+                {%- elsif fd.description %}
+                <p class="kg-feat__blurb">{{ fd.description }}</p>
+                {%- elsif fd.subtitle and fd.subtitle != "" %}
+                <p class="kg-feat__blurb">{{ fd.subtitle }}</p>
+                {%- endif %}
+                {%- if f.size == "lg" %}
+                <span class="kg-feat__go">开始阅读{% include kg/icon.html name="arrow" %}</span>
+                {%- endif %}
+            </div>
+            <a class="kg-feat__cover" href="{{ f_url }}" tabindex="-1" aria-hidden="true"></a>
+        </article>
+        {%- endif %}
+        {%- endfor %}
+    </div>
+</section>
+
+<!-- ========================== Recent + local ========================== -->
+<section class="kg-section kg-section--tight kg-container" aria-labelledby="kg-recent-title">
+    <div class="kg-split">
+        <div>
+            <header class="kg-sechead" data-kg-reveal>
+                <div>
+                    <p class="kg-kicker">Latest</p>
+                    <h2 class="kg-h2" id="kg-recent-title">最近更新</h2>
+                </div>
+                <a class="kg-more" href="{{ '/library/' | relative_url }}">全部文章{% include kg/icon.html name="arrow" %}</a>
+            </header>
+            <ol class="kg-entries" data-kg-reveal>
+                {%- for post in all_posts limit: 7 %}
+                {%- include kg/entry.html doc=post -%}
+                {%- endfor %}
+            </ol>
+        </div>
+
+        <aside class="kg-mine kg-glass" data-kg-reveal aria-labelledby="kg-mine-title">
+            <header>
+                <h2 class="kg-h3" id="kg-mine-title">我的阅读</h2>
+                <a class="kg-more" href="{{ '/shelf/' | relative_url }}">我的空间{% include kg/icon.html name="arrow" %}</a>
+            </header>
+            <div data-kg-list-wrap>
+                <p class="kg-mine__label">{% include kg/icon.html name="clock" %}最近阅读</p>
+                <ul class="kg-local" data-kg-list="recent" data-limit="4"></ul>
+                <p class="kg-mine__empty" data-kg-list-empty>还没有阅读记录。打开任意一篇文章，这里会记住你读到哪儿。</p>
+            </div>
+            <div data-kg-list-wrap>
+                <p class="kg-mine__label">{% include kg/icon.html name="bookmark" %}收藏</p>
+                <ul class="kg-local" data-kg-list="favs" data-limit="3"></ul>
+                <p class="kg-mine__empty" data-kg-list-empty>点击文章旁的书签图标即可收藏，数据仅保存在本机浏览器。</p>
+            </div>
+        </aside>
+    </div>
+</section>
+
+<!-- ============================== Stats ============================== -->
+<section class="kg-section kg-section--tight kg-container" aria-labelledby="kg-stats-title">
+    <h2 class="kg-sr" id="kg-stats-title">知识统计</h2>
+    <dl class="kg-stats" data-kg-reveal>
+        <div><dd class="kg-num" data-kg-count="{{ all_posts.size }}">{{ all_posts.size }}</dd><dt>篇文章</dt></div>
+        <div><dd class="kg-num" data-kg-count="{{ chapters.size }}">{{ chapters.size }}</dd><dt>章知识库</dt></div>
+        <div><dd class="kg-num" data-kg-count="{{ cases.size }}">{{ cases.size }}</dd><dt>个案例专题</dt></div>
+        <div><dd class="kg-num" data-kg-count="{{ stat_books }}">{{ stat_books }}</dd><dt>本藏书</dt></div>
+        <div><dd class="kg-num"><span data-kg-count="{{ stat_wan }}">{{ stat_wan }}</span><small>万</small></dd><dt>字符的笔记</dt></div>
+        <div><dd class="kg-num" data-kg-count="{{ site.tags.size }}">{{ site.tags.size }}</dd><dt>个标签</dt></div>
+    </dl>
+</section>
+
+<script defer src="{{ '/assets/kg/js/home.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}"></script>
+{%- endif -%}

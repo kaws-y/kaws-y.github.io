@@ -1,0 +1,20 @@
+{%- comment -%}
+  Resolve the module / track a document belongs to.
+  In : include.doc (post or page)
+  Out: kg_mod, kg_trk (nil when unassigned)
+{%- endcomment -%}
+{%- assign kg_mod = nil -%}
+{%- assign kg_trk = nil -%}
+{%- assign _doc = include.doc -%}
+{%- for _m in site.data.kg.modules -%}
+  {%- if _doc.module -%}
+    {%- if _m.id == _doc.module -%}
+      {%- assign kg_mod = _m -%}
+      {%- for _t in _m.tracks -%}{%- if _t.id == _doc.track -%}{%- assign kg_trk = _t -%}{%- endif -%}{%- endfor -%}
+    {%- endif -%}
+  {%- else -%}
+    {%- for _t in _m.tracks -%}
+      {%- if _t.posts contains _doc.slug -%}{%- assign kg_mod = _m -%}{%- assign kg_trk = _t -%}{%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}

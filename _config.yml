@@ -32,7 +32,9 @@ RSS: false
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+# 注意：docs/架构师知识库 下的 .md 需要原样发布（由 1-resources.html 直链），
+# 因此不能排除整个 docs 目录，仅排除体积大且无需发布的原始资料与提取文本。
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","docs/架构师知识库/wiki"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 

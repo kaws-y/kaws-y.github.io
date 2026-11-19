@@ -1,0 +1,22 @@
+{%- comment -%} Numbered glass tile for knowledge-base chapters and case studies. In: include.doc {%- endcomment -%}
+{%- assign _e = include.doc -%}
+{%- assign _url = _e.url | relative_url -%}
+{%- assign _no = _e.order | prepend: '0' | slice: -2, 2 -%}
+{%- assign _title = _e.title | split: " 章 " | last | remove_first: _no | strip -%}
+<li class="kg-tile kg-glass kg-float" data-kg-doc="{{ _url }}">
+    <div class="kg-tile__top">
+        <span class="kg-tile__no kg-num">{{ _no }}</span>
+        {%- if _e.priority %}<span class="kg-pill">优先级 {{ _e.priority }}</span>{% endif %}
+    </div>
+    <h3 class="kg-tile__title"><a href="{{ _url }}">{{ _title }}</a></h3>
+    {%- if _e.description %}<p class="kg-tile__desc">{{ _e.description }}</p>{% endif %}
+    <div class="kg-tile__foot">
+        <span data-kg-progress hidden></span>
+        {%- if _e.note %}
+        {%- assign _note = site.posts | where: "slug", _e.note | first -%}
+        {%- if _note %}<a class="kg-tile__note" href="{{ _note.url | relative_url }}">精讲笔记 →</a>{% endif %}
+        {%- endif %}
+        <button class="kg-fav" type="button" data-kg-fav="{{ _url }}" data-title="{{ _e.title | escape }}" data-module="软考架构" aria-pressed="false" aria-label="收藏《{{ _e.title | escape }}》">{% include kg/icon.html name="bookmark" %}</button>
+    </div>
+    <a class="kg-tile__cover" href="{{ _url }}" tabindex="-1" aria-hidden="true"></a>
+</li>

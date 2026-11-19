@@ -1,0 +1,159 @@
+# Knowledge Garden 信息架构（唯一数据源）
+# - 文章归属：把文章 slug（文件名去掉日期与扩展名）写进对应 track 的 posts 列表；
+#   或者直接在文章 front matter 里写 `module: <id>` + `track: <id>`，无需改这里。
+# - docs/ 下的知识库页面通过 front matter 的 module / track / order 归属。
+
+brand:
+  name: Wonderland
+  tagline: Knowledge Garden
+  intro: 一座持续生长的个人数字知识空间——把学过的东西，整理成可以再次走进去的地方。
+
+modules:
+  - id: handbook
+    title: 技术手册
+    en: Handbook
+    url: /handbook/
+    hue: 218
+    glyph: layers
+    desc: 前端、后端与区块链三条技术主线，从指引篇出发逐层深入。
+    tracks:
+      - id: frontend
+        title: 前端技术手册
+        en: Frontend
+        desc: 从通用能力到 Node.js 运行时：文件系统、域名解析与网络服务。
+        posts: [回溯前端之路, Node学习, node文件系统操作, 域名解析, 网络服务]
+      - id: backend
+        title: 后端技术手册
+        en: Backend
+        desc: Java 基础与虚拟机、微服务、Go 与大数据生态。
+        posts: [Java重生, Java基础, Java虚拟机, 微服务, Go语言笔记, BigData大跃进]
+      - id: blockchain
+        title: 区块链技术手册
+        en: Blockchain
+        desc: 从概念、共识到技术栈的区块链入门路径。
+        posts: [区块链概述, 区块链]
+
+  - id: ruankao
+    title: 软考架构
+    en: System Architect
+    url: /ruankao/
+    hue: 252
+    glyph: compass
+    desc: 软考高级「系统架构设计师」备考体系：14 章知识库与 7 个案例专题。
+    tracks:
+      - id: chapters
+        title: 14 章知识库
+        en: Knowledge Base
+        view: tiles
+        desc: 按统一结构整理的分章知识库：知识地图、核心知识、易错点与真题方向。
+      - id: cases
+        title: 7 个案例专题
+        en: Case Studies
+        view: tiles
+        desc: 案例分析高频技术栈：云原生、微服务、大数据、DDD、缓存、大模型与消息队列。
+      - id: notes
+        title: 精讲笔记
+        en: Notes
+        desc: 与知识库同步的博客精讲版，按建议的备考顺序排列。
+        posts: [系统架构设计, 软件工程, 需求工程, 系统分析与设计, 数据库设计, 软件可靠性, 软件测试, 项目管理, 计算机系统, 操作系统, 计算机网络, 信息安全技术, 法律法规, 系统运行与维护]
+
+  - id: agi
+    title: AGI
+    en: Intelligence
+    url: /agi/
+    hue: 190
+    glyph: spark
+    desc: 人工智能与大模型：从联邦学习到 RAG、Agent 的工程化落地。
+    tracks:
+      - id: foundations
+        title: 智能基础
+        en: Foundations
+        desc: 机器学习与隐私计算的基础概念。
+        posts: [联邦学习]
+    related:
+      - title: 大模型应用（RAG / MCP / Agent / ReAct）
+        note: 软考案例专题 06
+        path: docs/架构师知识库/案例专题/06-大模型应用.md
+
+  - id: life
+    title: 代码人生
+    en: Code & Life
+    url: /life/
+    hue: 28
+    glyph: feather
+    desc: 调研、随笔与工程之外的记录。
+    tracks:
+      - id: journal
+        title: 随笔与调研
+        en: Journal
+        desc: 站点故事与零散的调研梳理。
+        posts: [renamed, 地址标准化]
+
+  - id: reading
+    title: 精品阅读
+    en: Reading Room
+    url: /reading/
+    hue: 152
+    glyph: book
+    desc: 值得反复翻阅的书籍、报告与站点。
+    tracks: []
+
+# 首页精选：size 取 lg / md / sm；post 为文章 slug，path 为 docs 页面源路径
+featured:
+  - size: lg
+    post: 系统架构设计
+    blurb: 架构风格、质量属性与 ATAM 评估、ABSD 与 DSSA——案例与论文的共同主线，也是整个备考体系的地基。
+  - size: md
+    post: Java虚拟机
+    blurb: 运行时数据区、垃圾收集与类加载机制的完整梳理。
+  - size: md
+    post: 区块链概述
+    blurb: 从账本、共识到智能合约，建立对区块链的整体认知。
+  - size: sm
+    post: 回溯前端之路
+  - size: sm
+    post: 微服务
+  - size: sm
+    path: docs/架构师知识库/案例专题/06-大模型应用.md
+  - size: sm
+    post: 网络服务
+
+# 精品阅读：本站书架（files/ 下的 PDF）与外部资料
+books:
+  - group: 后端与工程
+    items:
+      - { title: 深入理解 Java 虚拟机（第二版）, file: 深入理解Java虚拟机（第二版-带目录）.pdf }
+      - { title: Java 并发编程的艺术, file: Java并发编程的艺术.pdf }
+      - { title: Java 数据结构和算法（第二版）, file: Java数据结构和算法.（第二版）.pdf }
+      - { title: Java 从小白到大牛（精简版）, file: 【高清电子版】Java从小白到大牛精简版.pdf }
+      - { title: Java 基础概念, file: 【高清电子版】Java基础概念.pdf }
+      - { title: 代码整洁之道, file: 代码整洁之道.pdf }
+  - group: 大数据
+    items:
+      - { title: Hadoop 权威指南, file: Hadoop权威指南.pdf }
+      - { title: Hadoop 高级编程：构建与实现大数据解决方案, file: Hadoop高级编程-构建与实现大数据解决方案.pdf }
+  - group: 人工智能
+    items:
+      - { title: 图解人工智能, file: 图解人工智能.pdf }
+      - { title: 白话机器学习的数学, file: 白话机器学习的数学.pdf }
+      - { title: 白话机器学习算法, file: 白话机器学习算法.pdf }
+      - { title: 机器学习开发者指南, file: 机器学习开发者指南.pdf }
+      - { title: 深入浅出神经网络与深度学习, file: 深入浅出神经网络与深度学习.pdf }
+      - { title: 人工智能算法（卷 3）：深度学习和神经网络, file: 人工智能算法（卷3）：深度学习和神经网络.pdf }
+  - group: 前端
+    items:
+      - { title: 图解 CSS3：核心技术与案例实战, file: 图解css3：核心技术与案例实战.pdf }
+  - group: 软考备考
+    items:
+      - { title: 系统架构设计师 · 红宝书一本全, file: 红宝书一本全.pdf }
+
+links:
+  - group: 报告
+    items:
+      - { title: 信通院区块链白皮书 2020, url: "http://www.caict.ac.cn/english/research/whitepapers/202101/P020210127494158921362.pdf" }
+      - { title: 隐私计算与区块链技术融合研究报告 2021, url: "https://www.ccvalue.cn/article/1212991.html" }
+  - group: 站点
+    items:
+      - { title: 比特币：一种点对点电子货币系统（白皮书中文版）, url: "https://bitcoin.org/files/bitcoin-paper/bitcoin_zh_cn.pdf" }
+      - { title: 精通以太坊 Ethereum Book, url: "https://github.com/inoutcode/ethereum_book" }
+      - { title: 区块链核心技术演进之路 · 算法篇, url: "https://www.8btc.com/article/107395" }

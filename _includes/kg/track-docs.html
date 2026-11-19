@@ -1,0 +1,14 @@
+{%- comment -%}
+  Collect the documents of one track, in reading order.
+  In : include.module, include.track
+  Out: kg_docs (array of posts / pages)
+{%- endcomment -%}
+{%- assign kg_docs = "" | split: "" -%}
+{%- for _s in include.track.posts -%}
+  {%- assign _p = site.posts | where: "slug", _s | first -%}
+  {%- if _p and _p.layout == "post" -%}{%- assign kg_docs = kg_docs | push: _p -%}{%- endif -%}
+{%- endfor -%}
+{%- assign _fm = site.posts | where: "module", include.module.id | where: "track", include.track.id -%}
+{%- for _p in _fm -%}{%- assign kg_docs = kg_docs | push: _p -%}{%- endfor -%}
+{%- assign _pg = site.pages | where: "module", include.module.id | where: "track", include.track.id | sort: "order" -%}
+{%- for _p in _pg -%}{%- assign kg_docs = kg_docs | push: _p -%}{%- endfor -%}

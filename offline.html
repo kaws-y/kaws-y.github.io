@@ -1,25 +1,17 @@
 ---
 layout: default
+title: Offline
 description: "网络似乎出现了问题 😥"
-header-img: "img/404-bg.jpg"
 permalink: /offline.html
 ---
-
-
-<!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				<div class="site-heading" id="tag-heading">
-					<h1>Offline</h1>
-					<span class="subheading">{{ page.description }}</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
-
-<script>
-	document.body.classList.add('page-fullscreen');
-</script>
+<section class="kg-container kg-void">
+    <div class="kg-glass">
+        <p class="kg-void__code">Offline</p>
+        <h1 class="kg-h3">{{ page.description }}</h1>
+        <p class="kg-muted">当前处于离线状态。已经访问过的页面仍然可以从缓存中打开。</p>
+        <div class="kg-chips" style="justify-content:center">
+            <button class="kg-btn kg-btn--primary" type="button" onclick="location.reload()">重新连接</button>
+            <a class="kg-btn kg-btn--ghost" href="{{ '/' | relative_url }}">回到首页</a>
+        </div>
+    </div>
+</section>

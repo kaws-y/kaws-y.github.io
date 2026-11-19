@@ -1,0 +1,45 @@
+---
+layout: default
+title: 我的空间
+nav: shelf
+permalink: /shelf/
+description: 收藏、最近阅读与阅读进度。全部数据只保存在当前浏览器的 localStorage 中。
+---
+<section class="kg-pagehead kg-container">
+    <nav class="kg-crumbs" aria-label="面包屑"><a href="{{ '/' | relative_url }}">首页</a><span aria-current="page">我的空间</span></nav>
+    <p class="kg-kicker">My Space</p>
+    <h1 class="kg-h1">我的空间</h1>
+    <p class="kg-lead">你的收藏、最近阅读与阅读进度。这些数据只保存在当前浏览器里，不会上传到任何地方。</p>
+</section>
+
+<div class="kg-container kg-page kg-page--wide">
+    <div class="kg-shelf">
+        <section class="kg-shelf__panel kg-shelf__panel--wide kg-glass" data-kg-list-wrap>
+            <header>
+                <h2 class="kg-h3">{% include kg/icon.html name="clock" %}继续阅读 <small><span data-kg-list-count>0</span> 篇未读完</small></h2>
+                <button class="kg-textbtn" type="button" data-kg-clear="progress">重置进度</button>
+            </header>
+            <ul class="kg-local" data-kg-list="continue" data-limit="12"></ul>
+            <div class="kg-empty" data-kg-list-empty>{% include kg/icon.html name="clock" %}<strong>没有读到一半的文章</strong><span>阅读进度会在你滚动文章时自动记录。</span></div>
+        </section>
+
+        <section class="kg-shelf__panel kg-glass" data-kg-list-wrap>
+            <header>
+                <h2 class="kg-h3">{% include kg/icon.html name="bookmark" %}收藏 <small><span data-kg-list-count>0</span> 篇</small></h2>
+                <button class="kg-textbtn" type="button" data-kg-clear="favs">清空</button>
+            </header>
+            <ul class="kg-local" data-kg-list="favs" data-limit="200"></ul>
+            <div class="kg-empty" data-kg-list-empty>{% include kg/icon.html name="bookmark" %}<strong>还没有收藏</strong><span>在任意列表或文章页点击书签图标即可收藏。</span><a class="kg-btn kg-btn--ghost kg-btn--sm" href="{{ '/library/' | relative_url }}">去文库看看</a></div>
+        </section>
+
+        <section class="kg-shelf__panel kg-glass" data-kg-list-wrap>
+            <header>
+                <h2 class="kg-h3">{% include kg/icon.html name="list" %}最近阅读 <small><span data-kg-list-count>0</span> 篇</small></h2>
+                <button class="kg-textbtn" type="button" data-kg-clear="recent">清空</button>
+            </header>
+            <ul class="kg-local" data-kg-list="recent" data-limit="40"></ul>
+            <div class="kg-empty" data-kg-list-empty>{% include kg/icon.html name="list" %}<strong>还没有阅读记录</strong><span>打开过的文章会按时间出现在这里。</span></div>
+        </section>
+    </div>
+    <p class="kg-note">提示：清除浏览器数据或更换设备后，这些记录不会保留。</p>
+</div>

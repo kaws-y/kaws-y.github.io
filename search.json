@@ -1,0 +1,21 @@
+---
+layout: null
+permalink: /search.json
+sitemap: false
+---
+{%- comment -%} 全站静态搜索索引：文章（layout: post）+ 知识库文档（layout: doc） {%- endcomment -%}
+[
+{%- assign _first = true -%}
+{%- for post in site.posts -%}
+  {%- if post.layout != "post" -%}{%- continue -%}{%- endif -%}
+  {%- include kg/resolve.html doc=post -%}
+  {%- unless _first -%},{%- endunless -%}{%- assign _first = false %}
+{"t":{{ post.title | strip_html | jsonify }},"s":{{ post.subtitle | default: "" | jsonify }},"u":{{ post.url | relative_url | jsonify }},"m":{{ kg_mod.id | default: "misc" | jsonify }},"n":{{ kg_mod.title | default: "笔记" | jsonify }},"k":{{ kg_trk.title | default: "" | jsonify }},"h":{{ kg_mod.hue | default: 218 }},"g":{{ post.tags | jsonify }},"d":{{ post.date | date: "%Y-%m-%d" | jsonify }},"c":{{ post.content | strip_html | normalize_whitespace | jsonify }}}
+{%- endfor -%}
+{%- assign _docs = site.pages | where: "layout", "doc" | sort: "path" -%}
+{%- for p in _docs -%}
+  {%- include kg/resolve.html doc=p -%}
+  {%- unless _first -%},{%- endunless -%}{%- assign _first = false %}
+{"t":{{ p.title | strip_html | jsonify }},"s":{{ p.description | default: "" | jsonify }},"u":{{ p.url | relative_url | jsonify }},"m":{{ kg_mod.id | default: "misc" | jsonify }},"n":{{ kg_mod.title | default: "知识库" | jsonify }},"k":{{ kg_trk.title | default: "索引" | jsonify }},"h":{{ kg_mod.hue | default: 218 }},"g":[],"d":"","c":{{ p.content | markdownify | strip_html | normalize_whitespace | jsonify }}}
+{%- endfor %}
+]

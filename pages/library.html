@@ -1,0 +1,74 @@
+---
+layout: default
+title: 文库
+nav: library
+permalink: /library/
+description: 全部文章与知识库文档，支持按模块、标签筛选与全文检索。
+---
+{%- assign all_posts = site.posts | where: "layout", "post" -%}
+{%- assign chapters = site.pages | where: "track", "chapters" | sort: "order" -%}
+{%- assign cases = site.pages | where: "track", "cases" | sort: "order" -%}
+{%- assign total = all_posts.size | plus: chapters.size | plus: cases.size -%}
+
+<section class="kg-pagehead kg-container">
+    <nav class="kg-crumbs" aria-label="面包屑"><a href="{{ '/' | relative_url }}">首页</a><span aria-current="page">文库</span></nav>
+    <p class="kg-kicker">Library</p>
+    <h1 class="kg-h1">文库</h1>
+    <p class="kg-lead">{{ total }} 篇文章与知识库文档都在这里。输入关键词会同时检索标题与正文，也可以按模块和标签缩小范围。</p>
+</section>
+
+<div class="kg-container kg-page kg-page--wide" data-kg-library>
+    <form class="kg-toolbar kg-glass kg-glass--strong" role="search" onsubmit="return false">
+        <div class="kg-toolbar__row">
+            <label class="kg-field">
+                {% include kg/icon.html name="search" %}
+                <span class="kg-sr">筛选关键词</span>
+                <input type="search" data-lib-q placeholder="筛选标题或正文…" autocomplete="off">
+            </label>
+            <label><span class="kg-sr">排序</span>
+                <select class="kg-select" data-lib-sort>
+                    <option value="">默认顺序</option>
+                    <option value="new">最新发布</option>
+                    <option value="old">最早发布</option>
+                    <option value="title">按标题</option>
+                </select>
+            </label>
+            <button class="kg-chip" type="button" data-lib-flag="fav" aria-pressed="false">{% include kg/icon.html name="bookmark" %}仅收藏</button>
+            <button class="kg-chip" type="button" data-lib-flag="unread" aria-pressed="false">未读完</button>
+        </div>
+        <div class="kg-toolbar__row" role="group" aria-label="按模块筛选">
+            <span class="kg-toolbar__label">模块</span>
+            <button class="kg-chip" type="button" data-lib-module="" aria-pressed="true">全部</button>
+            {%- for m in site.data.kg.modules %}{% if m.tracks.size > 0 %}
+            <button class="kg-chip" type="button" data-lib-module="{{ m.id }}" aria-pressed="false" style="--hue:{{ m.hue }}">{{ m.title }}<small data-lib-count="{{ m.id }}"></small></button>
+            {%- endif %}{% endfor %}
+        </div>
+        <div class="kg-toolbar__row" role="group" aria-label="按标签筛选">
+            <span class="kg-toolbar__label">标签</span>
+            <button class="kg-chip" type="button" data-lib-tag="" aria-pressed="true">全部</button>
+            {%- for tag in site.tags %}
+            <button class="kg-chip" type="button" data-lib-tag="{{ tag[0] }}" aria-pressed="false">{{ tag[0] }}</button>
+            {%- endfor %}
+            <button class="kg-chip" type="button" data-lib-tag="14 章知识库" aria-pressed="false">14 章知识库</button>
+            <button class="kg-chip" type="button" data-lib-tag="7 个案例专题" aria-pressed="false">7 个案例专题</button>
+        </div>
+    </form>
+
+    <div class="kg-result-meta">
+        <span aria-live="polite">显示 <strong class="kg-num" data-lib-shown>{{ total }}</strong> / {{ total }} 篇</span>
+        <button class="kg-textbtn" type="button" data-lib-reset hidden>清除筛选</button>
+    </div>
+
+    <ol class="kg-entries" data-lib-list>
+        {%- for post in all_posts %}{% include kg/entry.html doc=post %}{% endfor %}
+        {%- for d in chapters %}{% include kg/entry.html doc=d %}{% endfor %}
+        {%- for d in cases %}{% include kg/entry.html doc=d %}{% endfor %}
+    </ol>
+    <div class="kg-empty" data-lib-empty hidden>
+        {% include kg/icon.html name="search" %}
+        <strong>没有符合条件的文档</strong>
+        <span>试试减少筛选条件，或换一个关键词。</span>
+    </div>
+</div>
+
+<script defer src="{{ '/assets/kg/js/library.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}"></script>

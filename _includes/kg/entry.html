@@ -1,0 +1,27 @@
+{%- comment -%}
+  One document row. Used by module pages, the library, tags and archive lists.
+  In: include.doc, include.index (optional ordinal), include.hide_module (optional)
+{%- endcomment -%}
+{%- assign _e = include.doc -%}
+{%- include kg/resolve.html doc=_e -%}
+{%- assign _url = _e.url | relative_url -%}
+<li class="kg-entry" data-kg-doc="{{ _url }}" data-module="{{ kg_mod.id | default: 'misc' }}" data-track="{{ kg_trk.id }}" data-tags="{% if _e.tags.size > 0 %}{{ _e.tags | join: '|' }}{% else %}{{ kg_trk.title }}{% endif %}" data-date="{% if _e.layout == 'post' %}{{ _e.date | date: '%Y%m%d' }}{% endif %}" data-title="{{ _e.title | escape }}" style="--hue:{{ kg_mod.hue | default: 218 }}">
+  <a class="kg-entry__link" href="{{ _url }}">
+    {%- if include.index -%}<span class="kg-entry__no">{{ include.index | prepend: '0' | slice: -2, 2 }}</span>{%- endif -%}
+    <span class="kg-entry__body">
+      <span class="kg-entry__title">{{ _e.title }}</span>
+      {%- if _e.description -%}
+      <span class="kg-entry__sub">{{ _e.description }}</span>
+      {%- elsif _e.subtitle and _e.subtitle != "" -%}
+      <span class="kg-entry__sub">{{ _e.subtitle }}</span>
+      {%- endif -%}
+    </span>
+    <span class="kg-entry__meta">
+      {%- unless include.hide_module -%}{%- if kg_mod -%}<span class="kg-dot-label">{{ kg_trk.title | default: kg_mod.title }}</span>{%- endif -%}{%- endunless -%}
+      {%- if _e.priority -%}<span class="kg-pill kg-pill--soft">优先级 {{ _e.priority }}</span>{%- endif -%}
+      {%- if _e.layout == "post" -%}<time datetime="{{ _e.date | date: '%Y-%m-%d' }}">{{ _e.date | date: "%Y.%m.%d" }}</time>{%- endif -%}
+      <span class="kg-entry__progress" data-kg-progress hidden></span>
+    </span>
+  </a>
+  <button class="kg-fav" type="button" data-kg-fav="{{ _url }}" data-title="{{ _e.title | escape }}" data-module="{{ kg_mod.title | default: '笔记' }}" aria-pressed="false" aria-label="收藏《{{ _e.title | escape }}》">{% include kg/icon.html name="bookmark" %}</button>
+</li>

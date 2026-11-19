@@ -1,0 +1,73 @@
+---
+layout: default
+title: 知识地图
+nav: map
+permalink: /map/
+description: 以空间关系呈现全站知识结构：模块、专题与每一篇文档。
+---
+<section class="kg-pagehead kg-container">
+    <nav class="kg-crumbs" aria-label="面包屑"><a href="{{ '/' | relative_url }}">首页</a><span aria-current="page">知识地图</span></nav>
+    <p class="kg-kicker">Knowledge Map</p>
+    <h1 class="kg-h1">知识地图</h1>
+    <p class="kg-lead">从中心向外：五个知识空间、各自的专题，以及每一篇文档。拖拽平移、滚轮缩放，点击模块聚焦，点击文档直接打开。</p>
+</section>
+
+<div class="kg-container kg-container--wide">
+    <div class="kg-map kg-glass" data-kg-map>
+        <div class="kg-map__tools">
+            <button type="button" data-map-zoom="1.25" aria-label="放大">+</button>
+            <button type="button" data-map-zoom="0.8" aria-label="缩小">−</button>
+            <button type="button" data-map-reset aria-label="重置视图">⟲</button>
+        </div>
+        <div class="kg-map__legend"><span><i></i>未读</span><span><i class="is-read"></i>已读完</span><span><i class="is-fav"></i>已收藏</span></div>
+        <noscript><p style="padding:24px">知识地图需要启用 JavaScript，下方的大纲列表包含同样的内容。</p></noscript>
+    </div>
+
+    <script type="application/json" id="kg-map-data">
+    {"name":{{ site.data.kg.brand.name | jsonify }},"modules":[
+    {%- for m in site.data.kg.modules -%}
+    {"id":{{ m.id | jsonify }},"title":{{ m.title | jsonify }},"hue":{{ m.hue }},"url":{{ m.url | relative_url | jsonify }},"tracks":[
+      {%- if m.id == "reading" -%}
+        {%- for g in site.data.kg.books -%}
+        {"title":{{ g.group | jsonify }},"url":"{{ m.url | relative_url }}#shelf-{{ forloop.index }}","docs":[{% for b in g.items %}{"t":{{ b.title | jsonify }},"u":{{ '/files/' | append: b.file | relative_url | jsonify }},"x":1}{% unless forloop.last %},{% endunless %}{% endfor %}]}{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      {%- else -%}
+        {%- for t in m.tracks -%}
+        {%- include kg/track-docs.html module=m track=t -%}
+        {"title":{{ t.title | jsonify }},"url":"{{ m.url | relative_url }}#{{ t.id }}","docs":[{% for d in kg_docs %}{"t":{{ d.title | jsonify }},"u":{{ d.url | relative_url | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]}{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      {%- endif -%}
+    ]}{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+    ]}
+    </script>
+
+    <section class="kg-container" aria-labelledby="kg-outline-title" style="padding-inline:0">
+        <h2 class="kg-h2" id="kg-outline-title" style="margin-top:clamp(40px,6vw,72px)">大纲</h2>
+        <div class="kg-outline">
+            {%- for m in site.data.kg.modules %}
+            <div style="--hue:{{ m.hue }}">
+                <h3><span class="kg-dot-label"></span><a href="{{ m.url | relative_url }}">{{ m.title }}</a></h3>
+                {%- if m.id == "reading" %}
+                <ul>
+                    {%- for g in site.data.kg.books %}
+                    <li><a href="{{ m.url | relative_url }}#shelf-{{ forloop.index }}">{{ g.group }} · {{ g.items.size }} 本</a></li>
+                    {%- endfor %}
+                </ul>
+                {%- endif %}
+                {%- for t in m.tracks %}
+                {%- include kg/track-docs.html module=m track=t -%}
+                <h4>{{ t.title }}</h4>
+                <ul>
+                    {%- for d in kg_docs %}
+                    <li><a href="{{ d.url | relative_url }}" data-kg-doc="{{ d.url | relative_url }}">{{ d.title }}</a></li>
+                    {%- endfor %}
+                </ul>
+                {%- endfor %}
+            </div>
+            {%- endfor %}
+        </div>
+    </section>
+</div>
+
+<script defer src="{{ '/assets/kg/js/map.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}"></script>

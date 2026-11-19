@@ -1,85 +1,35 @@
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+{%- include kg/resolve.html doc=page -%}
+{%- assign kg_active = kg_mod.id | default: page.nav -%}
+<header class="kg-nav" data-kg-nav>
+    <div class="kg-nav__bar kg-glass">
+        <a class="kg-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title | escape }} 首页">
+            <span class="kg-brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="kg-brand__text">{{ site.data.kg.brand.name }}<small>{{ site.data.kg.brand.tagline }}</small></span>
+        </a>
+
+        <nav class="kg-nav__links" aria-label="主导航" data-kg-menu>
+            {%- for m in site.data.kg.modules %}
+            <a href="{{ m.url | relative_url }}"{% if kg_active == m.id %} aria-current="page"{% endif %}>{{ m.title }}</a>
+            {%- endfor %}
+            <span class="kg-nav__sep" aria-hidden="true"></span>
+            <a href="{{ '/library/' | relative_url }}"{% if kg_active == 'library' %} aria-current="page"{% endif %}>文库</a>
+            <a href="{{ '/map/' | relative_url }}"{% if kg_active == 'map' %} aria-current="page"{% endif %}>知识地图</a>
+            <a class="kg-nav__more" href="{{ '/1-resources/' | relative_url }}">资料索引</a>
+            <a class="kg-nav__more" href="{{ '/2-tags/' | relative_url }}">标签</a>
+            <a class="kg-nav__more" href="{{ '/3-about/' | relative_url }}">关于</a>
+        </nav>
+
+        <div class="kg-nav__tools">
+            <button class="kg-search-trigger" type="button" data-kg-search-open aria-label="搜索（快捷键 Ctrl K 或 /）">
+                {% include kg/icon.html name="search" %}<span>搜索</span><kbd>Ctrl K</kbd>
             </button>
-            <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+            <a class="kg-iconbtn" href="{{ '/shelf/' | relative_url }}" aria-label="我的空间：收藏与最近阅读"{% if kg_active == 'shelf' %} aria-current="page"{% endif %}>{% include kg/icon.html name="bookmark" %}<span class="kg-badge" data-kg-fav-count hidden></span></a>
+            <button class="kg-iconbtn" type="button" data-kg-theme-toggle aria-label="切换深色 / 浅色主题" aria-pressed="false">
+                {% include kg/icon.html name="moon" class="kg-only-light" %}{% include kg/icon.html name="sun" class="kg-only-dark" %}
+            </button>
+            <button class="kg-iconbtn kg-nav__toggle" type="button" data-kg-menu-toggle aria-label="展开导航" aria-expanded="false">
+                {% include kg/icon.html name="menu" %}
+            </button>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="{{ site.baseurl }}/">Home</a>
-                    </li>
-                    {% for page in site.pages %}{% if page.title %}
-                    <li>
-                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                    </li>
-                    {% endif %}{% endfor %}
-                </ul>
-            </div>
-        </div>
-        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    var __HuxNav__ = {
-        close: function(){
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        },
-        open: function(){
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-
-    // Bind Event
-    $toggle.addEventListener('click', function(e){
-        if ($navbar.className.indexOf('in') > 0) {
-            __HuxNav__.close()
-        }else{
-            __HuxNav__.open()
-        }
-    })
-
-    /**
-     * Since Fastclick is used to delegate 'touchstart' globally
-     * to hack 300ms delay in iOS by performing a fake 'click',
-     * Using 'e.stopPropagation' to stop 'touchstart' event from 
-     * $toggle/$collapse will break global delegation.
-     * 
-     * Instead, we use a 'e.target' filter to prevent handler
-     * added to document close HuxNav.  
-     *
-     * Also, we use 'click' instead of 'touchstart' as compromise
-     */
-    document.addEventListener('click', function(e){
-        if(e.target == $toggle) return;
-        if(e.target.className == 'icon-bar') return;
-        __HuxNav__.close();
-    })
-</script>
+</header>

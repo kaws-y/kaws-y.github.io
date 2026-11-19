@@ -1,0 +1,47 @@
+---
+layout: module
+title: 精品阅读
+nav: reading
+permalink: /reading/
+auto_tracks: false
+description: 值得反复翻阅的书籍、报告与站点。书架上的 PDF 存放在本站，点击即可在浏览器中打开。
+---
+{%- assign hues = "218,190,252,28,152" | split: "," -%}
+{%- for g in site.data.kg.books %}
+{%- assign _hi = forloop.index0 | modulo: 5 -%}
+<section class="kg-track" id="shelf-{{ forloop.index }}" style="--hue:{{ hues[_hi] }}" data-kg-reveal>
+    <header class="kg-track__head">
+        <p class="kg-kicker">Bookshelf</p>
+        <h2 class="kg-h2">{{ g.group }}</h2>
+        <p class="kg-track__count"><span class="kg-num">{{ g.items.size }}</span> 本</p>
+    </header>
+    <ul class="kg-books">
+        {%- for b in g.items %}
+        <li><a class="kg-book" href="{{ '/files/' | append: b.file | relative_url }}" target="_blank" rel="noopener">
+            <span class="kg-book__spine" aria-hidden="true"></span>
+            <span><strong>{{ b.title }}</strong><small>PDF</small></span>
+            {% include kg/icon.html name="arrow-up-right" %}
+        </a></li>
+        {%- endfor %}
+    </ul>
+</section>
+{%- endfor %}
+
+{%- for g in site.data.kg.links %}
+<section class="kg-track" id="links-{{ forloop.index }}" data-kg-reveal>
+    <header class="kg-track__head">
+        <p class="kg-kicker">External</p>
+        <h2 class="kg-h2">{{ g.group }}</h2>
+        <p class="kg-track__count"><span class="kg-num">{{ g.items.size }}</span> 条</p>
+    </header>
+    <ul class="kg-books">
+        {%- for b in g.items %}
+        <li><a class="kg-book" href="{{ b.url }}" target="_blank" rel="noopener">
+            <span class="kg-book__spine" aria-hidden="true" style="height:34px;border-radius:50%"></span>
+            <span><strong>{{ b.title }}</strong><small>{{ b.url | split: '/' | slice: 2 | first }}</small></span>
+            {% include kg/icon.html name="arrow-up-right" %}
+        </a></li>
+        {%- endfor %}
+    </ul>
+</section>
+{%- endfor %}

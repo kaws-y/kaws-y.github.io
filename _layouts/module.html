@@ -1,0 +1,89 @@
+---
+layout: default
+---
+{%- comment -%} 模块详情页：页头 + 自定义内容 + 按 track 自动生成的文档列表 {%- endcomment -%}
+{%- assign m = site.data.kg.modules | where: "id", page.nav | first -%}
+{%- assign m_total = 0 -%}
+{%- for t in m.tracks -%}
+  {%- include kg/track-docs.html module=m track=t -%}
+  {%- assign m_total = m_total | plus: kg_docs.size -%}
+{%- endfor -%}
+
+<section class="kg-pagehead kg-pagehead--module kg-container" style="--hue:{{ m.hue }}">
+    <div class="kg-pagehead__art" aria-hidden="true"><i></i><i></i><i></i></div>
+    <nav class="kg-crumbs" aria-label="面包屑">
+        <a href="{{ '/' | relative_url }}">首页</a>
+        <span aria-current="page">{{ m.title }}</span>
+    </nav>
+    <p class="kg-kicker">{{ m.en }}</p>
+    <h1 class="kg-h1">{{ page.heading | default: m.title }}</h1>
+    <p class="kg-lead">{{ page.description | default: m.desc }}</p>
+    <div class="kg-pagehead__meta">
+        {%- if m_total > 0 %}
+        <span><strong class="kg-num">{{ m_total }}</strong> 篇文档</span>
+        <span><strong class="kg-num">{{ m.tracks.size }}</strong> 个专题</span>
+        {%- endif %}
+        {%- if page.meta_extra %}<span>{{ page.meta_extra }}</span>{% endif %}
+        {%- if m.tracks.size > 1 %}
+        <nav class="kg-chips" aria-label="专题跳转">
+            {%- for t in m.tracks %}
+            <a class="kg-chip" href="#{{ t.id }}">{{ t.title }}</a>
+            {%- endfor %}
+        </nav>
+        {%- endif %}
+    </div>
+</section>
+
+<div class="kg-container" style="--hue:{{ m.hue }}">
+    <section class="kg-continue kg-glass" data-kg-list-wrap data-kg-hide-empty hidden>
+        <h2>{% include kg/icon.html name="clock" %}继续阅读</h2>
+        <ul class="kg-local" data-kg-list="continue" data-module="{{ m.title }}" data-limit="3"></ul>
+    </section>
+
+    {{ content }}
+
+    {%- unless page.auto_tracks == false %}
+    {%- for t in m.tracks %}
+    {%- include kg/track-docs.html module=m track=t -%}
+    <section class="kg-track{% if t.view == 'tiles' %} kg-track--full{% endif %}" id="{{ t.id }}" data-kg-reveal>
+        <header class="kg-track__head">
+            <p class="kg-kicker">{{ t.en }}</p>
+            <h2 class="kg-h2">{{ t.title }}</h2>
+            <p>{{ t.desc }}</p>
+            <p class="kg-track__count"><span class="kg-num">{{ kg_docs.size }}</span> 篇</p>
+        </header>
+        {%- if kg_docs.size > 0 and t.view == "tiles" %}
+        <ol class="kg-tiles">
+            {%- for d in kg_docs %}
+            {%- include kg/tile.html doc=d -%}
+            {%- endfor %}
+        </ol>
+        {%- elsif kg_docs.size > 0 %}
+        <ol class="kg-entries">
+            {%- for d in kg_docs %}
+            {%- include kg/entry.html doc=d index=forloop.index hide_module=true -%}
+            {%- endfor %}
+        </ol>
+        {%- else %}
+        <div class="kg-empty">{% include kg/icon.html name=m.glyph %}<strong>正在生长</strong><span>这个专题的内容还在整理中。</span></div>
+        {%- endif %}
+    </section>
+    {%- endfor %}
+
+    {%- if m.related %}
+    <section class="kg-track" data-kg-reveal>
+        <header class="kg-track__head">
+            <p class="kg-kicker">Related</p>
+            <h2 class="kg-h2">延伸阅读</h2>
+            <p>其他模块中与「{{ m.title }}」相关的内容。</p>
+        </header>
+        <ol class="kg-entries">
+            {%- for r in m.related %}
+            {%- assign _rp = site.pages | where: "path", r.path | first -%}
+            {%- if _rp %}{%- include kg/entry.html doc=_rp -%}{% endif %}
+            {%- endfor %}
+        </ol>
+    </section>
+    {%- endif %}
+    {%- endunless %}
+</div>
