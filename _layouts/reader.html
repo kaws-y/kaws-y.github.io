@@ -149,10 +149,7 @@ layout: default
                 <strong>本页目录</strong>
                 <button class="kg-iconbtn" type="button" data-kg-drawer-close aria-label="关闭">{% include kg/icon.html name="close" %}</button>
             </div>
-            <div class="kg-readstat">
-                <svg class="kg-ring" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true"><circle cx="18" cy="18" r="15" /><circle cx="18" cy="18" r="15" data-kg-ring /></svg>
-                <span><strong class="kg-num" data-kg-percent>0%</strong><small>阅读进度</small></span>
-            </div>
+            {%- comment -%} 阅读进度由移动端底部 dock（kg-dock__pct）统一展示，抽屉内不再重复 {%- endcomment -%}
             <p class="kg-toc__label">On this page</p>
             <nav class="kg-toc" data-kg-toc aria-label="目录"></nav>
         </div>

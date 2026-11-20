@@ -211,7 +211,9 @@
   .kg-reader { grid-template-columns: minmax(0, 1fr); padding-bottom: 72px; }
   .kg-reader__side {
     display: block; position: fixed; z-index: var(--kg-z-drawer); left: 10px; right: 10px; top: auto; bottom: 10px;
-    max-height: min(72vh, 620px); padding: 6px 16px 16px; overflow: hidden;
+    max-height: 72vh;
+    max-height: min(72vh, 620px); /* min()/max()/inset()/flex-gap below need Chrome 79+/84+/87+; the plain fallbacks above keep Chromium 75 working */
+    padding: 6px 16px 16px; overflow: hidden;
     border-radius: var(--kg-r-lg); border: 1px solid var(--kg-glass-border); background: var(--kg-glass-bg-strong);
     -webkit-backdrop-filter: blur(24px) saturate(160%); backdrop-filter: blur(24px) saturate(160%);
     box-shadow: var(--kg-shadow-3);
@@ -219,16 +221,24 @@
     transition: transform var(--kg-t) var(--kg-ease-out), visibility 0s linear var(--kg-t);
   }
   .kg-reader__side.is-open { transform: none; visibility: visible; transition-delay: 0s; }
-  .kg-reader__sticky { max-height: min(72vh, 620px); padding-bottom: 24px; }
+  .kg-reader__sticky { max-height: 72vh; max-height: min(72vh, 620px); padding-bottom: 24px; }
   .kg-drawer__head { display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 2; padding: 6px 0; margin-bottom: 6px; background: inherit; }
-  .kg-drawer-scrim { display: block; position: fixed; inset: 0; z-index: calc(var(--kg-z-drawer) - 1); background: rgba(20, 28, 40, 0.28); }
+  .kg-drawer-scrim { display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: calc(var(--kg-z-drawer) - 1); background: rgba(20, 28, 40, 0.28); }
   .kg-dock {
-    display: flex; align-items: center; gap: 2px; position: fixed; z-index: 45; left: 50%; bottom: max(14px, env(safe-area-inset-bottom));
+    display: flex; flex-wrap: nowrap; align-items: center; width: max-content;
+    position: fixed; z-index: 45; left: 50%;
+    bottom: 14px;
+    bottom: max(14px, env(safe-area-inset-bottom));
     transform: translateX(-50%); padding: 5px; border-radius: var(--kg-r-pill);
   }
-  .kg-dock button { display: inline-flex; align-items: center; gap: 6px; height: 38px; padding: 0 13px; border-radius: var(--kg-r-pill); font-size: var(--kg-fs-sm); font-weight: 560; color: var(--kg-text-2); }
+  .kg-dock button {
+    display: inline-flex; align-items: center; flex: none; white-space: nowrap;
+    height: 38px; padding: 0 13px; border-radius: var(--kg-r-pill);
+    font-size: var(--kg-fs-sm); font-weight: 560; color: var(--kg-text-2);
+    margin: 0 1px; /* gap fallback for engines without flex gap */
+  }
   .kg-dock button:active { background: var(--kg-border-soft); }
-  .kg-dock button .kg-icon { width: 17px; height: 17px; }
+  .kg-dock button .kg-icon { width: 17px; height: 17px; margin-right: 6px; }
   .kg-dock button[aria-pressed="true"] { color: var(--kg-accent-strong); }
   .kg-dock button[aria-pressed="true"] .kg-icon { fill: currentColor; }
   .kg-dock__pct { padding: 0 12px 0 8px; font-size: var(--kg-fs-xs); color: var(--kg-muted); border-left: 1px solid var(--kg-border); margin-left: 4px; }
