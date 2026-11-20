@@ -65,6 +65,55 @@ layout: default
                 <a class="kg-btn kg-btn--primary" href="#modules">开始探索{% include kg/icon.html name="arrow" %}</a>
                 <a class="kg-btn kg-btn--ghost" href="{{ '/map/' | relative_url }}">{% include kg/icon.html name="map" %}知识地图</a>
             </div>
+
+            <div class="kg-hero__books" data-kg-books data-kg-reveal style="--i:6" role="region" aria-label="知识书架">
+                {%- comment -%} 无缝自动轮播：内容在构建期输出两份，纯 CSS 匀速平移 -50% 实现循环，
+                不依赖任何 JS。第二份由 JS 标记 aria-hidden（仅无障碍优化，缺 JS 也不影响滚动）。{%- endcomment -%}
+                {%- assign ruankao_mod = kg.modules | where: "id", "ruankao" | first -%}
+                {%- assign notes_track = ruankao_mod.tracks | where: "id", "notes" | first -%}
+                {%- assign covers_a = "post-bg-universe.jpg,post-bg-keybord.jpg,post-bg-hacker.jpg,home-bg-art.jpg,home-bg-geek.jpg,post-bg-swift.jpg,home-bg-o.jpg" | split: "," -%}
+                {%- assign hues_a = "252,218,190,252,152,218,252" | split: "," -%}
+                {%- capture kg_row_a -%}
+                    {%- for slug in notes_track.posts %}
+                    {%- assign doc = site.posts | where: "slug", slug | first -%}
+                    {%- if doc %}
+                    {%- assign c = forloop.index0 | modulo: 7 -%}
+                    <li class="kg-book" style="--hue:{{ hues_a[c] }}">
+                        <a href="{{ doc.url | relative_url }}">
+                            <img src="{{ covers_a[c] | prepend: '/img/' | relative_url }}" alt="{{ doc.title | escape }}">
+                            <span class="kg-book__veil" aria-hidden="true"></span>
+                            <b>{{ doc.title }}</b><small>Chapter {{ forloop.index }}</small>
+                        </a>
+                    </li>
+                    {%- endif %}
+                    {%- endfor %}
+                {%- endcapture -%}
+                <div class="kg-hero__shelf kg-hero__shelf--a">
+                    <ul class="kg-hero__row" data-kg-row>{{ kg_row_a }}{{ kg_row_a }}</ul>
+                </div>
+
+                {%- assign covers_b = "post-bg-coffee.jpg,post-bg-desk.jpg,post-bg-boy.jpg,post-bg-cook.jpg,post-bg-github-cup.jpg,post-bg-android.jpg,post-bg-js-version.jpg,post-bg-unix-linux.jpg" | split: "," -%}
+                {%- assign hues_b = "152,218,28,18,190,330,252,90" | split: "," -%}
+                {%- capture kg_row_b -%}
+                    {%- assign bi = 0 -%}
+                    {%- for g in kg.books %}
+                    {%- for b in g.items %}
+                    {%- assign c = bi | modulo: 8 -%}
+                    <li class="kg-book" style="--hue:{{ hues_b[c] }}">
+                        <a href="{{ b.file | prepend: '/files/' | relative_url }}" target="_blank" rel="noopener">
+                            <img src="{{ covers_b[c] | prepend: '/img/' | relative_url }}" alt="{{ b.title | escape }}">
+                            <span class="kg-book__veil" aria-hidden="true"></span>
+                            <b>{{ b.title }}</b><small>{{ g.group }}</small>
+                        </a>
+                    </li>
+                    {%- assign bi = bi | plus: 1 -%}
+                    {%- endfor %}
+                    {%- endfor %}
+                {%- endcapture -%}
+                <div class="kg-hero__shelf kg-hero__shelf--b">
+                    <ul class="kg-hero__row" data-kg-row>{{ kg_row_b }}{{ kg_row_b }}</ul>
+                </div>
+            </div>
         </div>
 
         <div class="kg-hero__stage" aria-hidden="true">

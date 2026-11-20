@@ -75,6 +75,23 @@
       }, { threshold: 0.4 });
       counters.forEach(function (el) { io.observe(el); });
     }
+
+    /* ------------------------------------------------ hero book shelves */
+    /* The rows are rendered twice at build time and scroll via pure CSS
+       (translateX(-50%) === one set). JS only marks the duplicate half
+       aria-hidden / untabbable so keyboard and screen-reader users meet
+       each book once. If this fails the marquee still works fine. */
+    $$('[data-kg-row]').forEach(function (row) {
+      try {
+        var items = Array.prototype.slice.call(row.children);
+        var half = Math.floor(items.length / 2);
+        for (var i = half; i < items.length; i++) {
+          items[i].setAttribute('aria-hidden', 'true');
+          var a = items[i].querySelector('a');
+          if (a) a.setAttribute('tabindex', '-1');
+        }
+      } catch (e) { /* purely cosmetic a11y pass */ }
+    });
   }
 
   if (window.KG && window.KG.ready) start();

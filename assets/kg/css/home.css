@@ -129,6 +129,102 @@
   .kg-hero__scroll { display: none; }
 }
 
+/* ---------- Hero book shelves (dual-row marquee) ---------- */
+.kg-hero__books { display: grid; gap: 16px; width: 100%; margin-top: 14px; }
+.kg-hero__shelf {
+  position: relative; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+.kg-hero__row {
+  display: flex; width: max-content; padding: 10px 0 14px;
+  animation: kg-books-a 46s linear infinite;
+  will-change: transform;
+}
+/* Row B runs the other way. Content is duplicated at build time, so
+   translateX(±50%) === exactly one set and the loop is seamless. */
+.kg-hero__shelf--b .kg-hero__row { animation: kg-books-b 58s linear infinite; }
+@keyframes kg-books-a { to { transform: translate3d(-50%, 0, 0); } }
+@keyframes kg-books-b { from { transform: translate3d(-50%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
+.kg-hero__shelf:hover .kg-hero__row { animation-play-state: paused; }
+
+/* Book cover card: portrait cover with spine, page edge and caption.
+   NOTE: fixed px sizes (not clamp()/aspect-ratio) and li margin (not flex
+   gap) keep this working on legacy engines like Chrome 75, where clamp()
+   would collapse the row to zero width and the marquee would move 0px. */
+.kg-book {
+  list-style: none; flex: none; width: 108px; height: 151px;
+  margin-right: 14px;
+}
+.kg-book a {
+  position: relative; display: block; width: 108px; height: 151px;
+  border-radius: 3px 7px 7px 3px; overflow: hidden; text-decoration: none;
+  background: #d6dcec; /* fallback for engines without var() inside hsl() */
+  background: hsl(var(--hue, 218) 35% 88%);
+  box-shadow: 0 14px 26px -12px rgba(18, 26, 48, 0.55), 0 2px 6px -2px rgba(18, 26, 48, 0.35);
+  transform: perspective(900px) rotateY(-14deg);
+  transition: transform 500ms var(--kg-ease-out), box-shadow 500ms var(--kg-ease-out);
+}
+.kg-hero__shelf--b .kg-book a { transform: perspective(900px) rotateY(14deg); }
+/* Fixed px (not % chains) so a collapsed parent can never zero the covers. */
+.kg-book img {
+  position: absolute; top: 0; left: 0; width: 108px; height: 151px;
+  object-fit: cover; display: block; z-index: 0;
+}
+/* Spine groove (left) + bottom veil for the caption */
+.kg-book__veil { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
+.kg-book__veil::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 15%;
+  background: linear-gradient(90deg, rgba(10, 14, 28, 0.42), rgba(255, 255, 255, 0.3) 58%, rgba(255, 255, 255, 0.1) 74%, transparent);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+.kg-book__veil::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, transparent 46%, rgba(12, 16, 30, 0.45) 78%, rgba(12, 16, 30, 0.8));
+}
+.kg-book b {
+  position: absolute; left: 9%; right: 9%; bottom: 25px; z-index: 2; color: #fff;
+  font-family: var(--kg-font-display); font-size: 10.5px; font-weight: 640; line-height: 1.32;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  text-shadow: 0 1px 3px rgba(10, 14, 28, 0.55);
+}
+.kg-book small {
+  position: absolute; left: 9%; right: 9%; bottom: 10px; z-index: 2;
+  font-family: var(--kg-font-serif); font-style: italic; font-size: 8.5px; letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.75); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+/* Hover: the book stands upright, lifts, and its own hue lights the shadow */
+.kg-book:hover a {
+  transform: perspective(900px) rotateY(0deg) translateY(-8px) scale(1.05);
+  box-shadow: 0 26px 44px -18px hsl(var(--hue, 218) 52% 42% / 0.7), 0 6px 14px -6px rgba(18, 26, 48, 0.4);
+}
+.kg-book:hover { position: relative; z-index: 2; }
+[data-theme="dark"] .kg-book a { box-shadow: 0 14px 26px -12px rgba(4, 8, 18, 0.75), 0 2px 6px -2px rgba(4, 8, 18, 0.6); }
+
+@media (max-width: 980px) {
+  .kg-hero__books { gap: 12px; }
+  .kg-book { width: 78px; height: 109px; margin-right: 11px; }
+  .kg-book a, .kg-book img { width: 78px; height: 109px; }
+}
+@media (max-width: 600px) {
+  .kg-book { width: 70px; height: 98px; }
+  .kg-book a, .kg-book img { width: 70px; height: 98px; }
+  .kg-book b { font-size: 9px; bottom: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* The dual book marquee is a constant-speed ambient translation — no
+     flashing, no scale jumps — and hover pauses it. Per the site owner's
+     explicit request it keeps running under reduced-motion, so we
+     deliberately opt out of the global clamp (base.css). The class-level
+     !important here wins over the *-selector clamp both on specificity and
+     on load order (home.css loads after base.css). */
+  .kg-hero__row {
+    animation-duration: 46s !important;
+    animation-iteration-count: infinite !important;
+  }
+  .kg-hero__shelf--b .kg-hero__row { animation-duration: 58s !important; }
+}
+
 /* ---------- Module bento ---------- */
 .kg-bento { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 22px); }
 .kg-mod {
