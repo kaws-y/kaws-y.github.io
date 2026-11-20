@@ -1,0 +1,4012 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kaws-y‘s Wonderland</title>
+    <description>未来已经来临，只是尚未流行</description>
+    <link>https://kaws-y.github.io/</link>
+    <atom:link href="https://kaws-y.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Fri, 20 Nov 2026 10:59:44 +0800</pubDate>
+    <lastBuildDate>Fri, 20 Nov 2026 10:59:44 +0800</lastBuildDate>
+    <generator>Jekyll v4.4.1</generator>
+    
+      <item>
+        <title>项目管理</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;考点定位：综合知识选择题（尤其计算题：关键路径、挣值、估算），案例题常考风险与进度管理，论文素材来源。
+优先级：中高。芝士架构公开课程大纲中「项目管理」子模块：范围管理、进度管理、成本管理。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-知识地图&quot;&gt;1. 知识地图&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;子模块&lt;/th&gt;
+      &lt;th&gt;核心考点&lt;/th&gt;
+      &lt;th&gt;考查形式&lt;/th&gt;
+      &lt;th&gt;优先级&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;项目管理框架&lt;/td&gt;
+      &lt;td&gt;五大过程组、十大知识领域、项目章程&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;范围管理&lt;/td&gt;
+      &lt;td&gt;WBS、范围基线、范围蔓延&lt;/td&gt;
+      &lt;td&gt;选择题 + 案例&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;进度管理&lt;/td&gt;
+      &lt;td&gt;网络图、关键路径、PERT、甘特图&lt;/td&gt;
+      &lt;td&gt;计算题高频&lt;/td&gt;
+      &lt;td&gt;★★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;成本管理&lt;/td&gt;
+      &lt;td&gt;挣值管理 EVM、成本估算与预算&lt;/td&gt;
+      &lt;td&gt;计算题高频&lt;/td&gt;
+      &lt;td&gt;★★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;质量管理&lt;/td&gt;
+      &lt;td&gt;质量规划/保证/控制、七种基本质量工具&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;风险管理&lt;/td&gt;
+      &lt;td&gt;风险识别、定性/定量分析、应对策略&lt;/td&gt;
+      &lt;td&gt;案例高频&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;项目估算&lt;/td&gt;
+      &lt;td&gt;功能点、COCOMO、德尔菲、类比估算&lt;/td&gt;
+      &lt;td&gt;选择题 + 计算&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;2-核心知识&quot;&gt;2. 核心知识&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-框架&quot;&gt;2.1 框架&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;五大过程组&lt;/strong&gt;：启动 → 规划 → 执行 → 监控 → 收尾。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;十大知识领域&lt;/strong&gt;（PMBOK）：整合、范围、进度、成本、质量、资源、沟通、风险、采购、相关方。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;项目章程&lt;/strong&gt;：由项目发起人签发，正式授权项目存在并赋予项目经理权力。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;22-范围管理&quot;&gt;2.2 范围管理&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;WBS（工作分解结构）&lt;/strong&gt;：面向可交付成果的层次分解，是范围基线核心（范围基线 = 项目范围说明书 + WBS + WBS 词典）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;范围蔓延&lt;/strong&gt;：未经变更控制的范围扩大；需通过变更请求与 CCB 控制。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;23-进度管理计算必考&quot;&gt;2.3 进度管理（计算必考）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;网络图（AOA/AON）&lt;/strong&gt;：活动-on-箭线 / 活动-on-节点；虚活动表示依赖关系（不消耗时间与资源）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;关键路径法（CPM）&lt;/strong&gt;：网络中&lt;strong&gt;最长路径&lt;/strong&gt;决定项目最短工期；关键路径上活动总时差为 0。
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;总时差 TF&lt;/strong&gt; = 最迟开始 LS - 最早开始 ES（不影响总工期的可延迟量）。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;自由时差 FF&lt;/strong&gt; = 紧后活动最早开始 - 本活动最早完成（不影响紧后活动的最早开始）。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;PERT（计划评审技术）&lt;/strong&gt;：三点估算 \(t_e = (t_o + 4t_m + t_p)/6\)，标准差 \(\sigma = (t_p - t_o)/6\)，方差可加。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;甘特图&lt;/strong&gt;：横道图，直观展示时间安排但不显示逻辑关系。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;进度压缩&lt;/strong&gt;：赶工（加资源，增成本）vs 快速跟进（并行活动，增风险）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;24-成本管理挣值管理-evm必考公式&quot;&gt;2.4 成本管理：挣值管理 EVM（必考公式）&lt;/h3&gt;
+
+&lt;p&gt;三个基本参数：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;PV（计划价值）&lt;/strong&gt;：计划完成工作的预算成本（BCWS）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;EV（挣值）&lt;/strong&gt;：实际完成工作的预算成本（BCWP）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;AC（实际成本）&lt;/strong&gt;：实际完成工作的实际成本（ACWP）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;四个评价指标：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;指标&lt;/th&gt;
+      &lt;th&gt;公式&lt;/th&gt;
+      &lt;th&gt;判读&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;进度偏差 SV&lt;/td&gt;
+      &lt;td&gt;\(SV = EV - PV\)&lt;/td&gt;
+      &lt;td&gt;SV&amp;gt;0 进度提前&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;成本偏差 CV&lt;/td&gt;
+      &lt;td&gt;\(CV = EV - AC\)&lt;/td&gt;
+      &lt;td&gt;CV&amp;gt;0 成本节约&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;进度绩效指数 SPI&lt;/td&gt;
+      &lt;td&gt;\(SPI = EV / PV\)&lt;/td&gt;
+      &lt;td&gt;&amp;gt;1 提前&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;成本绩效指数 CPI&lt;/td&gt;
+      &lt;td&gt;\(CPI = EV / AC\)&lt;/td&gt;
+      &lt;td&gt;&amp;gt;1 节约&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;完工估算&lt;/strong&gt;：典型偏差（按当前绩效）\(EAC = BAC / CPI\)；非典型偏差 \(EAC = AC + (BAC - EV)\)。其中 BAC 为完工预算。&lt;/p&gt;
+
+&lt;h3 id=&quot;25-项目估算&quot;&gt;2.5 项目估算&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;功能点法&lt;/strong&gt;：按外部输入、外部输出、查询、内部逻辑文件、外部接口文件五类计数，乘以复杂度权重得未调整功能点，再乘调整因子。与语言无关。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;COCOMO&lt;/strong&gt;：构造性成本模型，基本型/中间型/详细型；工作量 \(E = a \times (KLOC)^b \times EAF\)。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;其他&lt;/strong&gt;：类比估算、参数估算、自下而上估算、德尔菲技术（匿名多轮专家意见）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;26-风险管理&quot;&gt;2.6 风险管理&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;流程：风险识别 → 定性分析（概率×影响矩阵、排序）→ 定量分析（蒙特卡洛、决策树、EMV 预期货币价值）→ 风险应对 → 风险监控。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;消极风险（威胁）应对&lt;/strong&gt;：规避、转移、减轻、接受。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;积极风险（机会）应对&lt;/strong&gt;：开拓、提高、分享、接受。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;风险登记册&lt;/strong&gt;是核心输出，持续更新。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-易混淆概念对比&quot;&gt;3. 易混淆概念对比&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;对比项&lt;/th&gt;
+      &lt;th&gt;关键区别&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;总时差 vs 自由时差&lt;/td&gt;
+      &lt;td&gt;总时差相对项目总工期；自由时差相对紧后活动最早开始&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;赶工 vs 快速跟进&lt;/td&gt;
+      &lt;td&gt;赶工加资源增成本；快速跟进并行活动增风险与返工&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SV/CV 与 SPI/CPI&lt;/td&gt;
+      &lt;td&gt;偏差是绝对量（EV-PV/EV-AC）；指数是相对量（除法）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;功能点 vs 代码行&lt;/td&gt;
+      &lt;td&gt;功能点按用户可见功能计量、与语言无关；LOC 依赖具体实现语言&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;风险转移 vs 风险减轻&lt;/td&gt;
+      &lt;td&gt;转移把影响与责任交给第三方（保险/外包）；减轻降低发生概率或影响&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;项目章程 vs 项目范围说明书&lt;/td&gt;
+      &lt;td&gt;章程授权项目（发起人签发）；范围说明书定义工作边界&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;4-考试重点&quot;&gt;4. 考试重点&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;网络图求关键路径、工期、总时差（先正推最早、再逆推最迟）。&lt;/li&gt;
+  &lt;li&gt;挣值计算：给 PV/EV/AC 求 SV/CV/SPI/CPI/EAC。&lt;/li&gt;
+  &lt;li&gt;PERT 三点估算与标准差。&lt;/li&gt;
+  &lt;li&gt;风险应对策略归类（买保险 = 转移；增加测试 = 减轻；改变方案绕开风险 = 规避）。&lt;/li&gt;
+  &lt;li&gt;WBS 的编制原则（100% 规则、面向可交付成果）。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;5-典型例题原创模拟题&quot;&gt;5. 典型例题（原创模拟题）&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 1&lt;/strong&gt;：某项目 BAC=100 万元，检查时 PV=40 万，EV=30 万，AC=35 万。下列判断正确的是（　）。
+A. 进度提前、成本节约　B. 进度落后、成本超支
+C. 进度提前、成本超支　D. 进度落后、成本节约&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：B。&lt;strong&gt;解析&lt;/strong&gt;：\(SV = EV-PV = 30-40 = -10 &amp;lt; 0\)，进度落后；\(CV = EV-AC = 30-35 = -5 &amp;lt; 0\)，成本超支。若按当前绩效，\(EAC = BAC/CPI = 100/(30/35) \approx 116.7\) 万元。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 2&lt;/strong&gt;：某活动乐观时间 4 天、最可能 7 天、悲观时间 16 天，其 PERT 期望工期为（　）。
+A. 7 天　B. 8 天　C. 9 天　D. 10 天&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：B。&lt;strong&gt;解析&lt;/strong&gt;：\(t_e = (4 + 4\times7 + 16)/6 = 48/6 = 8\) 天。&lt;/p&gt;
+
+&lt;h2 id=&quot;6-记忆技巧&quot;&gt;6. 记忆技巧&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;挣值口诀：&lt;strong&gt;PV 计划、EV 干完、AC 花钱；SV=EV-PV，CV=EV-AC；大于零是好事&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;关键路径：&lt;strong&gt;最长路决定最短工期，路上时差为零&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;风险应对：&lt;strong&gt;威胁——避转减受；机会——开提分享受&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;十大领域口诀（节选）：&lt;strong&gt;整范进成质，资沟风险采相关方&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-随堂测试&quot;&gt;7. 随堂测试&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;SPI=0.8 表示什么？&lt;/li&gt;
+  &lt;li&gt;关键路径上的活动总时差通常是多少？&lt;/li&gt;
+  &lt;li&gt;购买保险属于哪种风险应对策略？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;details&gt;
+&lt;summary&gt;参考答案&lt;/summary&gt;
+
+1. 进度绩效指数 0.8 &amp;lt; 1，表示实际进度落后于计划（仅完成计划工作量的 80%）。
+2. 0（在不考虑外部约束的情况下）。
+3. 风险转移。
+&lt;/details&gt;
+
+&lt;h2 id=&quot;8-芝士架构资料补充&quot;&gt;8. 芝士架构资料补充&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;来源：《公共知识红宝书》第 8 章。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;81-本章考点分布&quot;&gt;8.1 本章考点分布（★★★☆☆）&lt;/h3&gt;
+&lt;p&gt;红宝书将项目管理整体列为次重点，其中&lt;strong&gt;进度管理为重点★★★★★&lt;/strong&gt;，范围、成本、配置、风险管理为次重点。配置管理在红宝书中归入本章（本知识库第 1 章亦有涉及，两处呼应）。&lt;/p&gt;
+
+&lt;h3 id=&quot;82-配置管理补充&quot;&gt;8.2 配置管理补充（★★★☆☆）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;配置管理核心活动：制定配置管理计划、配置项识别、工作空间管理、版本管理、变更控制、配置状态报告、配置审计、发布管理。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;配置项&lt;/strong&gt;：需求文档、设计文档、源代码、测试用例、工具、数据等纳入管理的实体。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;基线&lt;/strong&gt;：经正式评审后冻结的配置项集合；基线变更须经 CCB（变更控制委员会）审批。&lt;/li&gt;
+  &lt;li&gt;配置审计验证配置项的完整性与一致性；配置状态报告记录配置项状态与变更历史。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;83-风险管理补充&quot;&gt;8.3 风险管理补充（★★★☆☆）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;风险 = 不确定的事件或条件，一旦发生会对项目目标产生正面或负面影响。&lt;/li&gt;
+  &lt;li&gt;流程：风险识别 → 风险定性分析（概率 × 影响矩阵）→ 风险定量分析 → 风险应对计划 → 风险监控。&lt;/li&gt;
+  &lt;li&gt;应对：威胁（规避、转移、减轻、接受）；机会（开拓、提高、分享、接受）。&lt;/li&gt;
+  &lt;li&gt;风险登记册是贯穿全程的核心文档。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
+        <link>https://kaws-y.github.io/2026/07/20/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</link>
+        <guid isPermaLink="true">https://kaws-y.github.io/2026/07/20/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</guid>
+        
+        <category>学习资料</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>需求工程</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;考点定位：综合知识高频；案例分析常考「需求获取方法选择与理由」「需求变更管理」；论文热点（论需求分析方法、论需求管理）。
+优先级：高。芝士架构公开课程大纲将「需求工程」列为公共课重点，子模块为：需求获取、结构化分析、面向对象分析、需求定义和验证、需求管理。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-知识地图&quot;&gt;1. 知识地图&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;子模块&lt;/th&gt;
+      &lt;th&gt;核心考点&lt;/th&gt;
+      &lt;th&gt;考查形式&lt;/th&gt;
+      &lt;th&gt;优先级&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;需求获取&lt;/td&gt;
+      &lt;td&gt;访谈、JRP、问卷、观察、原型、头脑风暴、文档分析&lt;/td&gt;
+      &lt;td&gt;案例：方法选择及优势分析&lt;/td&gt;
+      &lt;td&gt;★★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;需求分析&lt;/td&gt;
+      &lt;td&gt;结构化分析（DFD/数据字典）、面向对象分析（UML）&lt;/td&gt;
+      &lt;td&gt;案例 + 选择&lt;/td&gt;
+      &lt;td&gt;★★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;需求定义与规格说明&lt;/td&gt;
+      &lt;td&gt;SRS 内容、需求分类（功能/非功能/设计约束）&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;需求验证&lt;/td&gt;
+      &lt;td&gt;评审、原型验证、测试用例导出&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;需求管理&lt;/td&gt;
+      &lt;td&gt;变更控制、需求跟踪矩阵、需求基线、版本管理&lt;/td&gt;
+      &lt;td&gt;案例高频&lt;/td&gt;
+      &lt;td&gt;★★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;2-核心知识&quot;&gt;2. 核心知识&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-需求分类&quot;&gt;2.1 需求分类&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;功能需求&lt;/strong&gt;：系统必须完成的功能（做什么）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;非功能需求&lt;/strong&gt;：性能、安全性、可靠性、可用性、可维护性等质量属性（做得怎样）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;设计约束&lt;/strong&gt;：技术平台、标准规范、法规、预算、工期等限制条件。&lt;/li&gt;
+  &lt;li&gt;补充：业务需求（组织目标）、用户需求（用户视角）、系统需求（技术视角）自顶向下逐层细化。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;22-需求获取方法案例必考&quot;&gt;2.2 需求获取方法（案例必考）&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;方法&lt;/th&gt;
+      &lt;th&gt;适用情形&lt;/th&gt;
+      &lt;th&gt;优势&lt;/th&gt;
+      &lt;th&gt;局限&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;用户访谈&lt;/td&gt;
+      &lt;td&gt;少数关键干系人、需深挖&lt;/td&gt;
+      &lt;td&gt;深入、可追问&lt;/td&gt;
+      &lt;td&gt;覆盖面小、耗时&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;JRP 联合需求计划&lt;/td&gt;
+      &lt;td&gt;多方干系人需快速达成一致&lt;/td&gt;
+      &lt;td&gt;高度组织的群体会议，冲突当场解决，达成共识快&lt;/td&gt;
+      &lt;td&gt;组织成本高、需主持人控场&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;问卷调查&lt;/td&gt;
+      &lt;td&gt;用户量大、分布广&lt;/td&gt;
+      &lt;td&gt;覆盖面广、成本低、便于统计&lt;/td&gt;
+      &lt;td&gt;问题固定、无法追问、回收率风险&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;实地观察&lt;/td&gt;
+      &lt;td&gt;用户说不清实际操作&lt;/td&gt;
+      &lt;td&gt;发现隐性需求、贴近真实流程&lt;/td&gt;
+      &lt;td&gt;耗时、霍桑效应&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;原型法&lt;/td&gt;
+      &lt;td&gt;需求模糊、界面密集&lt;/td&gt;
+      &lt;td&gt;可视可交互、反馈具体&lt;/td&gt;
+      &lt;td&gt;易误解为最终产品&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;文档分析&lt;/td&gt;
+      &lt;td&gt;已有系统或制度文档&lt;/td&gt;
+      &lt;td&gt;快速建立业务背景&lt;/td&gt;
+      &lt;td&gt;文档可能过时、与实际不符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;头脑风暴&lt;/td&gt;
+      &lt;td&gt;需求初期发散创意&lt;/td&gt;
+      &lt;td&gt;激发新思路&lt;/td&gt;
+      &lt;td&gt;结果需后续收敛验证&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;案例答题要点&lt;/strong&gt;：先说明项目处于什么阶段、需求来源有什么特点，再按「覆盖来源广度 + 消除冲突 + 用户参与」三条线索选方法并逐条说明理由。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;23-需求分析方法&quot;&gt;2.3 需求分析方法&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;结构化分析（SA）&lt;/strong&gt;：面向数据流，核心产物是 &lt;strong&gt;DFD 数据流图 + 数据字典 + 加工说明&lt;/strong&gt;。DFD 从顶层（上下文图）逐层分解到子图，元素只有四种：外部实体、加工、数据存储、数据流。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;面向对象分析（OOA）&lt;/strong&gt;：以对象/类为核心，用 UML 用例图捕获功能需求，类图描述领域模型，顺序图/活动图描述交互与流程。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;面向问题域分析&lt;/strong&gt;：强调对问题域的直接建模，减少分析与实现的语义鸿沟。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;24-需求规格说明书srs&quot;&gt;2.4 需求规格说明书（SRS）&lt;/h3&gt;
+
+&lt;p&gt;SRS 是需求定义阶段的核心交付物，应做到：&lt;strong&gt;正确、完整、一致、可验证、可追踪、无二义性&lt;/strong&gt;。典型结构：引言（目的/范围/术语）、总体描述（功能/用户/约束）、具体需求（功能需求、非功能需求、接口需求）、附录。&lt;/p&gt;
+
+&lt;h3 id=&quot;25-需求验证&quot;&gt;2.5 需求验证&lt;/h3&gt;
+
+&lt;p&gt;主要手段：&lt;strong&gt;需求评审&lt;/strong&gt;（正式技术评审，最常用）、&lt;strong&gt;原型验证&lt;/strong&gt;、&lt;strong&gt;模型一致性检查&lt;/strong&gt;、&lt;strong&gt;基于需求的测试用例设计&lt;/strong&gt;（测试前置，可提前发现不可测需求）。&lt;/p&gt;
+
+&lt;h3 id=&quot;26-需求管理&quot;&gt;2.6 需求管理&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;需求基线&lt;/strong&gt;：经评审确认的需求版本，作为后续开发与变更的基准。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;需求变更控制&lt;/strong&gt;：提交变更申请 → 影响分析（范围/进度/成本/质量）→ CCB 审批 → 实施与验证 → 更新基线与跟踪矩阵。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;需求跟踪矩阵（RTM）&lt;/strong&gt;：双向追踪「用户需求 → 系统需求 → 设计 → 代码 → 测试用例」，用于评估变更影响范围。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-易混淆概念对比&quot;&gt;3. 易混淆概念对比&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;对比项&lt;/th&gt;
+      &lt;th&gt;关键区别&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;需求获取 vs 需求分析&lt;/td&gt;
+      &lt;td&gt;获取是「收集原始诉求」，分析是「建模、分类、发现冲突与遗漏」&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;用户需求 vs 系统需求&lt;/td&gt;
+      &lt;td&gt;用户需求是用户视角的期望表述；系统需求是其技术化、可验证的精确描述&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;需求验证 vs 需求确认&lt;/td&gt;
+      &lt;td&gt;验证检查「需求文档是否正确完整」；确认由用户确认「是否是其真正想要的」&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;JRP vs 头脑风暴&lt;/td&gt;
+      &lt;td&gt;JRP 结构化、有主持人与议程、产出决策；头脑风暴发散、不即时评判&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;DFD vs 流程图&lt;/td&gt;
+      &lt;td&gt;DFD 描述「数据在哪里被加工、流向哪里」，不强调控制顺序；流程图强调处理步骤与控制流&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;4-考试重点&quot;&gt;4. 考试重点&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;案例题：给出多来源需求冲突的场景，要求说明选用哪些获取方法、各自优势，以及如何消除冲突。&lt;/li&gt;
+  &lt;li&gt;选择题：JRP 的优势（关键时刻：高度组织的群体会议、多方参与、当场解决冲突）。&lt;/li&gt;
+  &lt;li&gt;需求变更流程顺序：影响分析 → CCB 决策 → 更新基线/矩阵。&lt;/li&gt;
+  &lt;li&gt;需求跟踪矩阵的作用：双向追踪、变更影响分析、覆盖率检查。&lt;/li&gt;
+  &lt;li&gt;SRS 质量属性中「可验证性」常被偷换为「可修改性」，需注意辨析。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;5-典型例题原创模拟题&quot;&gt;5. 典型例题（原创模拟题）&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 1&lt;/strong&gt;：某企业销售平台改造涉及管理层、销售、仓储、财务等多方，需求来源分散且存在术语冲突。项目组希望在短时间内让各方对需求达成一致。最适合的需求获取方法是（　）。
+A. 问卷调查　B. 用户访谈　C. 联合需求计划（JRP）　D. 文档分析&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：C。&lt;strong&gt;解析&lt;/strong&gt;：题干三个线索——多方干系人、需求冲突、快速达成一致，正对应 JRP 的优势。问卷适合面广但无法当场消除冲突；访谈深度够但覆盖窄；文档分析无法解决冲突。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 2&lt;/strong&gt;（简答，原创模拟）：需求基线已确定后，客户提出新增报表导出功能。请简述正确的处理流程。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;参考答案要点&lt;/strong&gt;：① 提交书面变更申请；② 进行影响分析（对范围、进度、成本、质量、已有架构的影响）；③ 提交 CCB 评审决策（批准/拒绝/推迟）；④ 批准后更新 SRS、需求基线与需求跟踪矩阵，并同步设计与测试；⑤ 验证变更实现并关闭变更记录。&lt;/p&gt;
+
+&lt;h2 id=&quot;6-记忆技巧&quot;&gt;6. 记忆技巧&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;获取方法五字诀：&lt;strong&gt;访（谈）问（卷）观（察）原（型）会（JRP）&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;需求工程五步：&lt;strong&gt;获 → 分 → 定 → 验 → 管&lt;/strong&gt;（获取、分析、定义、验证、管理）。&lt;/li&gt;
+  &lt;li&gt;变更处理链：&lt;strong&gt;申请 → 影响分析 → 审批 → 实施 → 回写矩阵&lt;/strong&gt;（「影审实回」）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-随堂测试&quot;&gt;7. 随堂测试&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;某需求表述为「系统应在 3 秒内返回查询结果」，它属于哪类需求？&lt;/li&gt;
+  &lt;li&gt;DFD 的四种基本元素是什么？&lt;/li&gt;
+  &lt;li&gt;需求跟踪矩阵能否反向追踪「测试用例 → 系统需求」？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;details&gt;
+&lt;summary&gt;参考答案&lt;/summary&gt;
+
+1. 非功能需求（性能需求）。
+2. 外部实体、加工（过程）、数据存储、数据流。
+3. 可以。RTM 支持正向与反向双向追踪。
+&lt;/details&gt;
+
+&lt;h2 id=&quot;8-芝士架构资料补充&quot;&gt;8. 芝士架构资料补充&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;来源：《公共知识红宝书》第 2 章、《案例冲刺宝典》第 1 章。★越多越重要。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;81-结构化分析模型总览超级重点&quot;&gt;8.1 结构化分析模型总览（超级重点★★★★★）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;基本思想：&lt;strong&gt;自顶向下、逐层分解&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;数据字典是分析模型核心&lt;/strong&gt;，围绕它有三个模型：数据模型（ER 图）、功能模型（&lt;strong&gt;DFD&lt;/strong&gt;）、行为模型（&lt;strong&gt;状态转换图 STD&lt;/strong&gt;）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;82-dfd-完整规则&quot;&gt;8.2 DFD 完整规则（★★★★★）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;四种基本符号：数据流（带名箭头）、加工（圆圈）、数据存储（两条平行线）、外部实体（方框）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;关键规则&lt;/strong&gt;：数据存储要被外部实体使用，必须经过加工（不可直连）。&lt;/li&gt;
+  &lt;li&gt;两套记号集：Gane &amp;amp; Sarson 方法、Yourdon &amp;amp; Coad 方法——图”对不上”多因记号集不同。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;扩充符号&lt;/strong&gt;（软考考过）：与 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;、或 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt;、异或 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;⊕&lt;/code&gt;。
+    &lt;ul&gt;
+      &lt;li&gt;与：所有输入都到达才加工 / 结束时同时产生所有输出。&lt;/li&gt;
+      &lt;li&gt;或：任一输入到达即可加工 / 至少产生其中一个输出。&lt;/li&gt;
+      &lt;li&gt;异或：仅当其中一个到达才加工 / 仅产生其中一个输出。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;层次&lt;/strong&gt;：顶层图把整个系统表示为唯一加工，画出所有外部实体与进出数据流；再逐层分解加工。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;83-dfd-平衡原则案例高频找茬&quot;&gt;8.3 DFD 平衡原则（★★★★★，案例高频”找茬”）&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;父子图平衡&lt;/strong&gt;：两层 DFD 中数据流&lt;strong&gt;个数一致、方向一致&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;子图内部平衡&lt;/strong&gt;（四种典型错误）：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;错误&lt;/th&gt;
+      &lt;th&gt;特征&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;黑洞&lt;/td&gt;
+      &lt;td&gt;加工只有输入没有输出&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;奇迹&lt;/td&gt;
+      &lt;td&gt;加工只有输出没有输入&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;灰洞&lt;/td&gt;
+      &lt;td&gt;输入不足以产生输出（挂羊头卖狗肉）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;数据存储异常&lt;/td&gt;
+      &lt;td&gt;正常应既有读流又有写流&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;答题模板：先写父子图平衡（个数/方向一致），再写每张图内部平衡（每个加工都有输入与输出，避免黑洞/奇迹/灰洞）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;84-状态转换图-std&quot;&gt;8.4 状态转换图 STD（★★★☆☆）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;本质即 UML 状态图，属行为图；三大概念：状态（初态/终态）、事件（转移/动作）、并发状态机。&lt;/li&gt;
+  &lt;li&gt;符号：初态=黑圆点，终态=黑圆点外加圆（双圈），中间状态=圆角四边形，状态转换=带箭头线。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;85-uml-25-的-14-种图&quot;&gt;8.5 UML 2.5 的 14 种图（★★★★★）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;结构图（7 种）&lt;/strong&gt;：类图、对象图、包图、组合结构图、构件图、部署图、剖面图。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;行为图（7 种）&lt;/strong&gt;：用例图、活动图、状态机图、顺序图、通信图、定时图、交互概览图。&lt;/li&gt;
+  &lt;li&gt;易错点：&lt;strong&gt;用例图在 UML 2.x 属于行为图&lt;/strong&gt;；记住结构图 7 种，其余都是行为图。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;86-用例图关系辨析&quot;&gt;8.6 用例图关系辨析（★★★★★）&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;关系&lt;/th&gt;
+      &lt;th&gt;含义&lt;/th&gt;
+      &lt;th&gt;箭头方向&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;包含 include&lt;/td&gt;
+      &lt;td&gt;基础用例必然调用另一用例（必选复用）&lt;/td&gt;
+      &lt;td&gt;由基础用例指向被包含用例&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;扩展 extend&lt;/td&gt;
+      &lt;td&gt;在特定条件下扩展基础用例（可选）&lt;/td&gt;
+      &lt;td&gt;由扩展用例指向基础用例&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;泛化 generalization&lt;/td&gt;
+      &lt;td&gt;父子用例/参与者之间的一般-特殊关系&lt;/td&gt;
+      &lt;td&gt;由特殊指向一般&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;87-案例真题套路&quot;&gt;8.7 案例真题套路（★★★★★）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;DFD 选词填空&lt;/strong&gt;：从外部实体与数据流方向反推加工（如”安全员提供指标数据→项目指标填报”）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;状态图事件填空&lt;/strong&gt;：沿状态迁移链按题干动作语义逐一匹配（按下启动→增加动力，按运行→开始程序等）。&lt;/li&gt;
+  &lt;li&gt;需求定义与需求验证原书标注为非重点，但需求管理（变更控制、需求跟踪）为重点。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
+        <link>https://kaws-y.github.io/2026/07/20/%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/</link>
+        <guid isPermaLink="true">https://kaws-y.github.io/2026/07/20/%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/</guid>
+        
+        <category>学习资料</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>软件测试</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;考点定位：综合知识选择题（测试方法、覆盖准则），案例题常考测试策略，论文方向（论系统测试、论软件可靠性测试、论自动化测试）。
+优先级：中高。芝士架构公开大纲中架构论文知识包含「系统测试」「软件可靠性测试」主题。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-知识地图&quot;&gt;1. 知识地图&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;子模块&lt;/th&gt;
+      &lt;th&gt;核心考点&lt;/th&gt;
+      &lt;th&gt;考查形式&lt;/th&gt;
+      &lt;th&gt;优先级&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;测试基础&lt;/td&gt;
+      &lt;td&gt;测试目的、原则、V 模型对应关系&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;黑盒测试&lt;/td&gt;
+      &lt;td&gt;等价类、边界值、判定表、因果图、错误推测&lt;/td&gt;
+      &lt;td&gt;选择题 + 案例&lt;/td&gt;
+      &lt;td&gt;★★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;白盒测试&lt;/td&gt;
+      &lt;td&gt;逻辑覆盖（语句/判定/条件/路径）强度排序&lt;/td&gt;
+      &lt;td&gt;选择题高频&lt;/td&gt;
+      &lt;td&gt;★★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;测试层次&lt;/td&gt;
+      &lt;td&gt;单元、集成、系统、验收；回归测试&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;测试管理&lt;/td&gt;
+      &lt;td&gt;缺陷管理、测试用例、测试计划与报告&lt;/td&gt;
+      &lt;td&gt;案例&lt;/td&gt;
+      &lt;td&gt;★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;专项测试&lt;/td&gt;
+      &lt;td&gt;性能、安全、兼容、可靠性测试；自动化测试&lt;/td&gt;
+      &lt;td&gt;案例 + 论文&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;2-核心知识&quot;&gt;2. 核心知识&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-测试基础与-v-模型&quot;&gt;2.1 测试基础与 V 模型&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;测试目的&lt;/strong&gt;：发现缺陷（不是证明程序无错）；成功的测试是发现了至今未发现错误的测试。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;V 模型对应&lt;/strong&gt;：需求分析 ↔ 验收测试；概要设计 ↔ 系统测试；详细设计 ↔ 集成测试；编码 ↔ 单元测试。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;测试原则&lt;/strong&gt;：尽早测试、穷尽测试不可能、缺陷集群（80% 缺陷在 20% 模块）、杀虫剂悖论（需定期更新用例）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;22-黑盒测试方法&quot;&gt;2.2 黑盒测试方法&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;方法&lt;/th&gt;
+      &lt;th&gt;核心思想&lt;/th&gt;
+      &lt;th&gt;典型应用&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;等价类划分&lt;/td&gt;
+      &lt;td&gt;将输入域划分为有效/无效等价类，每类取代表值&lt;/td&gt;
+      &lt;td&gt;输入范围校验&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;边界值分析&lt;/td&gt;
+      &lt;td&gt;重点测边界及边界附近（略小于、等于、略大于）&lt;/td&gt;
+      &lt;td&gt;数值范围、数组下标&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;判定表驱动&lt;/td&gt;
+      &lt;td&gt;多条件组合 → 动作，用表格穷举规则&lt;/td&gt;
+      &lt;td&gt;复杂业务规则&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;因果图&lt;/td&gt;
+      &lt;td&gt;由原因-结果关系导出判定表&lt;/td&gt;
+      &lt;td&gt;输入条件相互制约&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;错误推测&lt;/td&gt;
+      &lt;td&gt;基于经验猜测易错场景&lt;/td&gt;
+      &lt;td&gt;补充用例&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;正交试验&lt;/td&gt;
+      &lt;td&gt;用正交表减少组合爆炸&lt;/td&gt;
+      &lt;td&gt;多参数组合配置&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;23-白盒测试逻辑覆盖强度必考排序&quot;&gt;2.3 白盒测试：逻辑覆盖强度（必考排序）&lt;/h3&gt;
+
+&lt;p&gt;由弱到强：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;语句覆盖&lt;/strong&gt;：每条语句至少执行一次（最弱）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;判定覆盖（分支覆盖）&lt;/strong&gt;：每个判定的真/假分支都至少执行一次。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;条件覆盖&lt;/strong&gt;：每个判定中每个条件的真/假值都至少取到一次。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;判定-条件覆盖&lt;/strong&gt;：同时满足判定覆盖与条件覆盖。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;条件组合覆盖&lt;/strong&gt;：每个判定中所有条件取值组合都至少出现一次。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;路径覆盖&lt;/strong&gt;：每条可能路径都至少执行一次（最强，但路径爆炸）。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;注意：判定覆盖与条件覆盖互不包含（覆盖条件取值 ≠ 覆盖分支），这是常见陷阱。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;24-测试层次&quot;&gt;2.4 测试层次&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;层次&lt;/th&gt;
+      &lt;th&gt;测试对象&lt;/th&gt;
+      &lt;th&gt;依据&lt;/th&gt;
+      &lt;th&gt;主要方法&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;单元测试&lt;/td&gt;
+      &lt;td&gt;模块/函数&lt;/td&gt;
+      &lt;td&gt;详细设计&lt;/td&gt;
+      &lt;td&gt;白盒为主（桩模块、驱动模块）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;集成测试&lt;/td&gt;
+      &lt;td&gt;模块间接口与组装&lt;/td&gt;
+      &lt;td&gt;概要设计&lt;/td&gt;
+      &lt;td&gt;灰盒；自顶向下/自底向上/三明治&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;系统测试&lt;/td&gt;
+      &lt;td&gt;完整系统（含软硬件）&lt;/td&gt;
+      &lt;td&gt;需求规格说明&lt;/td&gt;
+      &lt;td&gt;黑盒为主；功能与非功能&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;验收测试&lt;/td&gt;
+      &lt;td&gt;用户业务场景&lt;/td&gt;
+      &lt;td&gt;用户需求/合同&lt;/td&gt;
+      &lt;td&gt;用户参与；α 测试（开发方场地）、β 测试（用户场地）&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;回归测试&lt;/strong&gt;：修改后重新执行部分或全部用例，确保未引入新缺陷；常借助自动化测试。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;冒烟测试&lt;/strong&gt;：版本构建后先做基本功能快速验证，决定能否进入正式测试。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;25-缺陷管理与专项测试&quot;&gt;2.5 缺陷管理与专项测试&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;缺陷生命周期&lt;/strong&gt;：新建 → 分配 → 修复 → 验证 → 关闭（可能重开）；严重性（崩溃/严重/一般/轻微）vs 优先级（修复顺序）是两个不同维度。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;性能测试&lt;/strong&gt;：负载测试（不同负载下表现）、压力测试（极限负载）、稳定性/疲劳测试（长时间）、并发测试。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;可靠性测试&lt;/strong&gt;：通过统计失效数据评估 MTBF 等指标，验证可靠性目标（与第 14 章联动）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;自动化测试&lt;/strong&gt;：适合回归、冒烟、数据驱动、大批量重复场景；成本在于脚本维护，不适合一次性或探索性测试。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-易混淆概念对比&quot;&gt;3. 易混淆概念对比&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;对比项&lt;/th&gt;
+      &lt;th&gt;关键区别&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;黑盒 vs 白盒&lt;/td&gt;
+      &lt;td&gt;黑盒不看内部代码（依据需求）；白盒分析程序内部逻辑（依据代码）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;判定覆盖 vs 条件覆盖&lt;/td&gt;
+      &lt;td&gt;判定覆盖看分支真假都走到；条件覆盖看每个条件的取值都取到，互不包含&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;α 测试 vs β 测试&lt;/td&gt;
+      &lt;td&gt;α 在开发方环境由用户参与；β 在用户真实环境由用户执行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;单元测试 vs 集成测试&lt;/td&gt;
+      &lt;td&gt;单元测模块内部逻辑（需桩/驱动）；集成测模块间接接口与协作&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;错误 vs 故障 vs 失效&lt;/td&gt;
+      &lt;td&gt;错误（人）→ 故障/缺陷（代码）→ 失效（运行时可观察的偏离）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;负载测试 vs 压力测试&lt;/td&gt;
+      &lt;td&gt;负载测试逐级加压观察表现；压力测试加到极限甚至超限找崩溃点&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;4-考试重点&quot;&gt;4. 考试重点&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;给出程序流程图，判断某组测试用例达到哪种覆盖（最常见的综合题）。&lt;/li&gt;
+  &lt;li&gt;黑盒方法选择：输入范围 → 等价类 + 边界值；多条件组合 → 判定表/因果图。&lt;/li&gt;
+  &lt;li&gt;测试层次与 V 模型对应关系。&lt;/li&gt;
+  &lt;li&gt;缺陷严重性与优先级的区别。&lt;/li&gt;
+  &lt;li&gt;回归测试与自动化测试的适用边界。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;5-典型例题原创模拟题&quot;&gt;5. 典型例题（原创模拟题）&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 1&lt;/strong&gt;：逻辑覆盖准则中，最强的是（　）。
+A. 语句覆盖　B. 判定覆盖　C. 条件组合覆盖　D. 路径覆盖&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：D。&lt;strong&gt;解析&lt;/strong&gt;：路径覆盖要求每条可能路径都执行，通常强于条件组合覆盖（但程序中若存在不可达路径则无法实现）。强度排序：语句 &amp;lt; 判定/条件 &amp;lt; 判定-条件 &amp;lt; 条件组合 &amp;lt; 路径。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 2&lt;/strong&gt;：某输入要求「年龄 18～60」，采用边界值分析时最合理的测试数据是（　）。
+A. 18, 60　B. 17, 18, 19, 59, 60, 61　C. 0, 100　D. 30, 45&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：B。&lt;strong&gt;解析&lt;/strong&gt;：边界值分析取边界及边界两侧的值，B 覆盖了略小于、等于、略大于边界，最完整。&lt;/p&gt;
+
+&lt;h2 id=&quot;6-记忆技巧&quot;&gt;6. 记忆技巧&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;逻辑覆盖强度：&lt;strong&gt;语 → 判 → 条 → 判条 → 组 → 路&lt;/strong&gt;（「语判条，判组路」）。&lt;/li&gt;
+  &lt;li&gt;V 模型对应：&lt;strong&gt;需求验收、概设系统、详设集成、编码单元&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;黑盒方法：&lt;strong&gt;等价边界打头阵，判定因果管组合，错误推测补经验&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-随堂测试&quot;&gt;7. 随堂测试&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;为什么说「测试能证明程序没有错误」是错误的？&lt;/li&gt;
+  &lt;li&gt;桩模块（Stub）与驱动模块（Driver）分别用于哪种测试方式？&lt;/li&gt;
+  &lt;li&gt;α 测试与 β 测试的主要环境区别是什么？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;details&gt;
+&lt;summary&gt;参考答案&lt;/summary&gt;
+
+1. 测试只能发现已发现的错误，不能证明错误不存在（穷尽测试不可能）。
+2. 自顶向下集成需要桩模块模拟下层；自底向上集成需要驱动模块模拟上层调用。
+3. α 测试在开发方场所进行，β 测试在用户实际场所由用户执行。
+&lt;/details&gt;
+
+&lt;h2 id=&quot;8-芝士架构资料补充&quot;&gt;8. 芝士架构资料补充&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;来源：《公共知识红宝书》第 5 章。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;81-w--h--x-测试模型2023-年已考&quot;&gt;8.1 W / H / X 测试模型（★★★☆☆，2023 年已考）&lt;/h3&gt;
+&lt;p&gt;三种模型讨论”测试如何做”，图不重要，重点记特点：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;模型&lt;/th&gt;
+      &lt;th&gt;定义&lt;/th&gt;
+      &lt;th&gt;测试与开发关系&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;W 模型&lt;/td&gt;
+      &lt;td&gt;在 V 模型基础上发展，测试与开发&lt;strong&gt;同步&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;同步&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;H 模型&lt;/td&gt;
+      &lt;td&gt;测试活动&lt;strong&gt;独立&lt;/strong&gt;，贯穿整个软件生命周期&lt;/td&gt;
+      &lt;td&gt;独立&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;X 模型&lt;/td&gt;
+      &lt;td&gt;针对单独程序片段编码和测试，&lt;strong&gt;频繁交接集成&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;交错&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;82-专项测试要点&quot;&gt;8.2 专项测试要点（★★★☆☆）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;安全测试&lt;/strong&gt;：安全漏洞测试（扫描 XSS、SQL 注入、命令注入，工具如 BurpSuite）；TCP 端口测试（关闭非必要端口，仅保留业务必需端口如 80/443）；服务器端脚本漏洞检查（未授权脚本上传/修改、目录遍历、文件包含）；防火墙测试（验证规则拦截非法请求、限制流量、防御 DDoS 的有效性）。&lt;/li&gt;
+  &lt;li&gt;功能测试、性能测试见前文；测试分类方法（黑盒/白盒各种具体方法）为本章重点★★★★★。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
+        <link>https://kaws-y.github.io/2026/07/20/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/</link>
+        <guid isPermaLink="true">https://kaws-y.github.io/2026/07/20/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/</guid>
+        
+        <category>学习资料</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>软件架构的演化和维护</title>
+        <description>
+</description>
+        <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
+        <link>https://kaws-y.github.io/2026/07/20/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E7%9A%84%E6%BC%94%E5%8C%96%E5%92%8C%E7%BB%B4%E6%8A%A4/</link>
+        <guid isPermaLink="true">https://kaws-y.github.io/2026/07/20/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E7%9A%84%E6%BC%94%E5%8C%96%E5%92%8C%E7%BB%B4%E6%8A%A4/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>软件工程</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;本文整理自《芝士架构公共知识红宝书》系统架构设计师公共基础知识，涵盖软件工程概述、需求工程、系统设计、软件测试、系统运行与维护、项目管理六大核心领域。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;一软件工程概述&quot;&gt;一、软件工程概述&lt;/h2&gt;
+
+&lt;h3 id=&quot;11-软件工程相关定义&quot;&gt;1.1 软件工程相关定义&lt;/h3&gt;
+
+&lt;p&gt;软件工程由&lt;strong&gt;方法、工具和过程&lt;/strong&gt;三个部分组成，包含以下 4 个方面（PDCA 循环）：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;阶段&lt;/th&gt;
+      &lt;th&gt;含义&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P&lt;/strong&gt; (Plan)&lt;/td&gt;
+      &lt;td&gt;软件规格说明——规定软件的功能及其运行时的限制&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;D&lt;/strong&gt; (Do)&lt;/td&gt;
+      &lt;td&gt;软件开发——开发出满足规格说明的软件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;C&lt;/strong&gt; (Check)&lt;/td&gt;
+      &lt;td&gt;软件确认——确认开发的软件能够满足用户的需求&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;A&lt;/strong&gt; (Action)&lt;/td&gt;
+      &lt;td&gt;软件演进——软件在运行过程中不断改进以满足客户新的需求&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;12-软件开发方法&quot;&gt;1.2 软件开发方法&lt;/h3&gt;
+
+&lt;h4 id=&quot;121-方法分类&quot;&gt;1.2.1 方法分类&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;分类方法&lt;/th&gt;
+      &lt;th&gt;具体方法&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td rowspan=&quot;2&quot;&gt;开发风格&lt;/td&gt;
+      &lt;td&gt;自顶向下&lt;/td&gt;
+      &lt;td&gt;系统整体结构首先被定义，然后逐步细化为更具体的模块&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;自底向上&lt;/td&gt;
+      &lt;td&gt;从具体模块开始逐步构建整个系统&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td rowspan=&quot;2&quot;&gt;性质&lt;/td&gt;
+      &lt;td&gt;形式化方法&lt;/td&gt;
+      &lt;td&gt;具有坚实数学基础的开发方法&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;非形式化方法&lt;/td&gt;
+      &lt;td&gt;不把严格性作为主要着眼点&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td rowspan=&quot;2&quot;&gt;适应范围&lt;/td&gt;
+      &lt;td&gt;整体性方法&lt;/td&gt;
+      &lt;td&gt;适用于软件开发全过程&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;局部性方法&lt;/td&gt;
+      &lt;td&gt;适用于开发过程某个具体阶段&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;122-形式化方法&quot;&gt;1.2.2 形式化方法&lt;/h4&gt;
+
+&lt;p&gt;使用严格的数学模型和形式化语言来描述系统的需求、设计和行为，通过逻辑推理或模型检测等手段证明软件正确性。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;特点：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;正确性验证难且耗时，数学模型和证明困难&lt;/li&gt;
+  &lt;li&gt;仍需要和传统测试相结合（形式化方法提供理论保证，测试负责发现运行时错误）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;123-净室软件工程cse&quot;&gt;1.2.3 净室软件工程（CSE）&lt;/h4&gt;
+
+&lt;p&gt;净室软件工程是一种&lt;strong&gt;形式化方法&lt;/strong&gt;，强调用数学与统计理论在设计和规约阶段消除错误。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;理论基础&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;函数理论&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;将程序定义为从输入集合到输出集合的严格映射，关注完备性、一致性、正确性&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;抽样理论&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;基于软件输入空间的无限性，通过科学抽样选取代表性测试用例推断系统可靠性&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;开发步骤：&lt;/strong&gt; 统计过程控制下的增量式开发 → 基于函数的规约+盒子结构方法 → 正确性验证 → 统计测试与软件认证&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;局限性：&lt;/strong&gt; 正确性验证依赖严格数学基础，对工程师要求极高；不依赖传统单元测试但仍需模块测试；未突破传统软件工程体系边界。&lt;/p&gt;
+
+&lt;h4 id=&quot;124-逆向工程-次重点&quot;&gt;1.2.4 逆向工程 （次重点⭐⭐⭐）&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;概念&lt;/th&gt;
+      &lt;th&gt;通俗解释&lt;/th&gt;
+      &lt;th&gt;定义&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;逆向工程&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;从低层（代码）推回高层设计&lt;/td&gt;
+      &lt;td&gt;分析程序，在比源代码更高抽象层次上建立程序表示&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;重构&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;同一抽象层改结构&lt;/td&gt;
+      &lt;td&gt;在同一抽象级别上转换系统描述形式&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;设计恢复&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;借助工具抽取设计信息&lt;/td&gt;
+      &lt;td&gt;从已有程序中抽象出数据设计、总体结构设计和过程设计&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;再工程&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;逆向工程+新需求+正向工程&lt;/td&gt;
+      &lt;td&gt;在逆向工程信息基础上，修改或重构已有系统产生新版本&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;正向工程&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;从设计到代码&lt;/td&gt;
+      &lt;td&gt;从现有系统恢复设计信息，用此信息改变或重构系统&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;关键区分：&lt;/strong&gt; 看到”分析程序、恢复设计”选&lt;strong&gt;逆向工程&lt;/strong&gt;；看到”修改、重构、升级、产生新版本”选&lt;strong&gt;再工程&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;逆向工程抽象层次（从低到高）：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;层次&lt;/th&gt;
+      &lt;th&gt;包含信息&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;实现级&lt;/td&gt;
+      &lt;td&gt;程序的抽象语法树、符号表等信息，实现级是最贴近源代码的底层信息层级，涵盖抽象语法树、语句序列、变量及数据结构等内容，是剖析代码实现细节的核心依据。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;结构级&lt;/td&gt;
+      &lt;td&gt;反映程序分量相互依赖关系信息（调用图、结构图等）。结构级聚焦程序内部各组件的关联关系，包含模块依赖图、调用关系图等，能清晰呈现程序的整体架构结构。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;功能级&lt;/td&gt;
+      &lt;td&gt;反映程序段功能及程序段之间关系的信息，功能级围绕程序的功能模块及功能间的交互逻辑展开，帮助梳理系统的业务实现脉络。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;领域级&lt;/td&gt;
+      &lt;td&gt;反映程序分量或实体与应用领域概念对应关系的信息。领域级则实现程序实体与应用领域概念的映射，从业务领域视角完成对系统的深层理解，为系统的迭代适配业务需求提供支撑。&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;世仇结分&lt;/strong&gt;工龄（实现→结构→功能→领域）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;125-基于构件的软件工程cbse&quot;&gt;1.2.5 基于构件的软件工程（CBSE）&lt;/h4&gt;
+
+&lt;p&gt;CBSE 旨在通过复用可重用的软件构件来构造高质量、高效率的应用软件系统。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;构件特性：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;特性&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;可组装性&lt;/td&gt;
+      &lt;td&gt;所有外部交互必须通过公开定义的接口进行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;可部署性&lt;/td&gt;
+      &lt;td&gt;构件必须是自包含的，能作为独立实体运行（二进制形式）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;文档化&lt;/td&gt;
+      &lt;td&gt;构件必须完全文档化，所有接口语法和语义应被定义&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;独立性&lt;/td&gt;
+      &lt;td&gt;可以在无其他特殊构件的情况下进行组装和部署&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;标准化&lt;/td&gt;
+      &lt;td&gt;构件必须符合某种标准化的构件模型&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;可见性&lt;/td&gt;
+      &lt;td&gt;没有（外部的）可见状态&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;竹鼠挡毒标&lt;/strong&gt;（组装→部署→文档→独立→标准）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;构件分类：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;名称&lt;/th&gt;
+      &lt;th&gt;特点&lt;/th&gt;
+      &lt;th&gt;例子&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;独立而成熟的构件&lt;/td&gt;
+      &lt;td&gt;完全隐藏接口，通过命令使用&lt;/td&gt;
+      &lt;td&gt;数据库管理系统、操作系统&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;有限制的构件&lt;/td&gt;
+      &lt;td&gt;提供接口并指出使用条件&lt;/td&gt;
+      &lt;td&gt;面向对象基础类库&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;适应性构件&lt;/td&gt;
+      &lt;td&gt;处理了不兼容性，可直接使用&lt;/td&gt;
+      &lt;td&gt;ActiveX 组件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;装配的构件&lt;/td&gt;
+      &lt;td&gt;已装配在不同层次上，用胶水代码连接&lt;/td&gt;
+      &lt;td&gt;成品软件产品&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;可修改的构件&lt;/td&gt;
+      &lt;td&gt;可修改错误、增加新功能&lt;/td&gt;
+      &lt;td&gt;常用功能模块&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;独显时装秀&lt;/strong&gt;（独立→限制→适应→装配→修改）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;CBSE 过程：&lt;/strong&gt; 系统需求概览 → 识别候选构件 → 根据发现的构件修改需求 → 体系结构设计 → 构件定制与适配 → 组装构件创建系统&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;构件组装方式：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;组装类型&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+      &lt;th&gt;特点&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;顺序组装&lt;/td&gt;
+      &lt;td&gt;按顺序调用已有构件创造新构件&lt;/td&gt;
+      &lt;td&gt;构件间不相互调用，需胶水代码&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;层次组装&lt;/td&gt;
+      &lt;td&gt;一个构件直接调用另一个构件的服务&lt;/td&gt;
+      &lt;td&gt;接口匹配无需额外代码，不匹配需转换代码&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;叠加组装&lt;/td&gt;
+      &lt;td&gt;两个或以上构件叠加创建新构件&lt;/td&gt;
+      &lt;td&gt;A 和 B 不相互依赖和调用&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;接口不兼容类型：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;类型&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;参数不兼容&lt;/td&gt;
+      &lt;td&gt;接口两侧操作名相同，但参数类型或数目不同&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;操作不兼容&lt;/td&gt;
+      &lt;td&gt;“提供”接口和”请求”接口操作名不同&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;操作不完备&lt;/td&gt;
+      &lt;td&gt;一个构件的”提供”接口是另一个构件”请求”接口的子集&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;13-软件过程生命周期模型&quot;&gt;1.3 软件过程/生命周期模型&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;软件过程 = 软件开发生命周期模型（同义词）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;前提条件&lt;/th&gt;
+      &lt;th&gt;具体模型&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;软件需求完全确定&lt;/td&gt;
+      &lt;td&gt;瀑布模型&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;开发初始阶段仅能提供基本需求&lt;/td&gt;
+      &lt;td&gt;喷泉模型、螺旋模型、统一开发过程、敏捷方法&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;以形式化开发方法为基础&lt;/td&gt;
+      &lt;td&gt;变换模型&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;131-瀑布模型&quot;&gt;1.3.1 瀑布模型&lt;/h4&gt;
+
+&lt;p&gt;将软件开发分为 6 个阶段：需求分析和定义 → 系统和软件设计 → 实现和单元测试 → 集成和系统测试 → 运行维护。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;缺点：&lt;/strong&gt; 依赖于早期需求调查，不能适应需求的变化。&lt;/p&gt;
+
+&lt;h4 id=&quot;132-原型模型演化模型&quot;&gt;1.3.2 原型模型/演化模型&lt;/h4&gt;
+
+&lt;p&gt;适用于需求难完整定义的软件开发，基于快速开发的原型，依据用户反馈改进，不断迭代直至形成最终产品。&lt;strong&gt;特点是迭代。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;133-螺旋模型&quot;&gt;1.3.3 螺旋模型&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;螺旋模型 = 快速原型 + 风险分析&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;适用于庞大、复杂并具有高风险的系统，支持用户需求的动态变化。过多迭代会增加开发成本，延迟提交时间。&lt;/p&gt;
+
+&lt;h4 id=&quot;134-喷泉模型&quot;&gt;1.3.4 喷泉模型&lt;/h4&gt;
+
+&lt;p&gt;以用户需求为动力，以对象为驱动，主要用于面向对象的软件开发。各阶段可以&lt;strong&gt;交互进行&lt;/strong&gt;，没有特定次序要求。&lt;/p&gt;
+
+&lt;h4 id=&quot;135-v-模型&quot;&gt;1.3.5 V 模型&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;测试类型&lt;/th&gt;
+      &lt;th&gt;测试依据（文档）&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;单元测试&lt;/td&gt;
+      &lt;td&gt;软件详细设计说明书&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;集成测试&lt;/td&gt;
+      &lt;td&gt;软件概要设计文档&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;系统测试&lt;/td&gt;
+      &lt;td&gt;需求分析文档或开发合同&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;验收测试&lt;/td&gt;
+      &lt;td&gt;用户需求&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;136-统一过程rup&quot;&gt;1.3.6 统一过程（RUP）&lt;/h4&gt;
+
+&lt;p&gt;RUP 是&lt;strong&gt;用例驱动的、以体系结构为中心的、迭代和增量的&lt;/strong&gt;软件开发过程。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;9 大核心工作流：&lt;/strong&gt; 业务建模、需求、分析与设计、实现、测试、部署、配置与变更管理、项目管理、环境&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;建需分食测&lt;/strong&gt;（建模→需求→分析→实现→测试），&lt;strong&gt;部配变项环&lt;/strong&gt;（部署→配置变更→项目管理→环境）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;137-敏捷方法&quot;&gt;1.3.7 敏捷方法&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;敏捷宣言：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;个体和交互 &lt;strong&gt;胜过&lt;/strong&gt; 过程和工具&lt;/li&gt;
+  &lt;li&gt;可工作的软件 &lt;strong&gt;胜过&lt;/strong&gt; 大量的文档&lt;/li&gt;
+  &lt;li&gt;客户合作 &lt;strong&gt;胜过&lt;/strong&gt; 合同谈判&lt;/li&gt;
+  &lt;li&gt;响应变化 &lt;strong&gt;胜过&lt;/strong&gt; 遵循计划&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;适用场景：&lt;/strong&gt; 规模较小的项目；需求快速改变的情况。不适用于高关键性、可靠性、安全性要求的系统。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;小变&lt;/strong&gt;（规模小、快速改变）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;主要敏捷方法：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;方法&lt;/th&gt;
+      &lt;th&gt;简介&lt;/th&gt;
+      &lt;th&gt;核心价值观&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;极限编程（XP）&lt;/td&gt;
+      &lt;td&gt;短开发周期和频繁发布&lt;/td&gt;
+      &lt;td&gt;交流、朴素、反馈、勇气&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;水晶系列方法&lt;/td&gt;
+      &lt;td&gt;具有共性核心元素&lt;/td&gt;
+      &lt;td&gt;以人为中心&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Scrum&lt;/td&gt;
+      &lt;td&gt;迭代式增量软件开发&lt;/td&gt;
+      &lt;td&gt;团队协作、响应变化、关注商业价值&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;特征驱动开发（FDD）&lt;/td&gt;
+      &lt;td&gt;强调人、过程和技术三要素&lt;/td&gt;
+      &lt;td&gt;迭代开发模型&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Scrum 框架：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;角色&lt;/th&gt;
+      &lt;th&gt;职责&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Product Owner&lt;/td&gt;
+      &lt;td&gt;业务价值代言人，管理产品需求列表&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Scrum Master&lt;/td&gt;
+      &lt;td&gt;推动框架落地，清除团队障碍&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Development Team&lt;/td&gt;
+      &lt;td&gt;跨功能自组织团队，执行 Sprint 任务&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;活动&lt;/th&gt;
+      &lt;th&gt;目的&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sprint Planning&lt;/td&gt;
+      &lt;td&gt;定义冲刺工作，制定执行计划&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Daily Scrum&lt;/td&gt;
+      &lt;td&gt;每日同步进展，暴露障碍&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sprint Review&lt;/td&gt;
+      &lt;td&gt;展示成果，收集反馈&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;工件&lt;/th&gt;
+      &lt;th&gt;定义&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Product Backlog&lt;/td&gt;
+      &lt;td&gt;按业务价值优先级排序的功能需求清单&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sprint Backlog&lt;/td&gt;
+      &lt;td&gt;冲刺规划阶段筛选出的工作项集合&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Increment&lt;/td&gt;
+      &lt;td&gt;满足”完成定义”的可交付产品改进&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;138-增量模型&quot;&gt;1.3.8 增量模型&lt;/h4&gt;
+
+&lt;p&gt;将系统分为多个模块，逐步实现。每次增量版本都可以作为独立可操作的作品。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;迭代 vs 增量：&lt;/strong&gt; 迭代是功能深度优化的螺旋上升（逐步完善同一功能）；增量是模块叠加的线性扩展（逐个添加新功能模块）。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;14-软件过程管理&quot;&gt;1.4 软件过程管理&lt;/h3&gt;
+
+&lt;h4 id=&quot;141-cmm软件能力成熟度模型&quot;&gt;1.4.1 CMM（软件能力成熟度模型）&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;等级&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;初始级&lt;/td&gt;
+      &lt;td&gt;过程没有明确规定，成功依赖个别高手和运气&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;可重复级&lt;/td&gt;
+      &lt;td&gt;已建立基本项目管理过程，能跟踪成本、进度、功能&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;已定义级&lt;/td&gt;
+      &lt;td&gt;软件过程已文档化、标准化，形成组织级标准过程&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;已管理级&lt;/td&gt;
+      &lt;td&gt;对过程和产品质量有详细度量标准，能定量分析&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;优化级&lt;/td&gt;
+      &lt;td&gt;基于量化分析不断持续改进过程&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;初重定管优&lt;/strong&gt;（除虫顶管用）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;142-cmmi能力成熟度模型集成&quot;&gt;1.4.2 CMMI（能力成熟度模型集成）&lt;/h4&gt;
+
+&lt;p&gt;CMMI 是 CMM 的升级版本，理论基础源于四大知识体系：系统工程（SE）、软件工程（SW）、集成产品与流程开发（IPPD）、供应商采购（SS）。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;细软开工&lt;/strong&gt;（系统工程→软件工程→开发→供应商采购）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;等级&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;初始级&lt;/td&gt;
+      &lt;td&gt;过程通常是随意且混乱的&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;已管理级&lt;/td&gt;
+      &lt;td&gt;确保策划、文档化、执行、监督和控制项目级过程&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;已定义级&lt;/td&gt;
+      &lt;td&gt;根据自身情况定义标准流程并制度化&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;量化管理级&lt;/td&gt;
+      &lt;td&gt;建立产品质量、服务质量和过程性能的定量目标&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;优化级&lt;/td&gt;
+      &lt;td&gt;动态调整软件过程以适应不同项目需求&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;储罐定粮油&lt;/strong&gt;（初始→管理→定义→量化→优化）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;二需求工程&quot;&gt;二、需求工程&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;需求工程 = 需求开发 + 需求管理&lt;/p&gt;
+
+  &lt;p&gt;需求开发包括：需求获取 → 需求分析 → 需求定义（SRS） → 需求验证&lt;/p&gt;
+
+  &lt;p&gt;需求管理包括：需求基线、需求变更、需求跟踪&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;21-需求获取&quot;&gt;2.1 需求获取&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;方法&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+      &lt;th&gt;优缺点&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;用户访谈&lt;/td&gt;
+      &lt;td&gt;结构化和非结构化两种形式&lt;/td&gt;
+      &lt;td&gt;灵活性强；对沟通能力要求高&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;问卷调查&lt;/td&gt;
+      &lt;td&gt;制作调查表确定问题类型&lt;/td&gt;
+      &lt;td&gt;高效低成本；缺乏灵活性&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;采样&lt;/td&gt;
+      &lt;td&gt;从种群中选出代表性样本&lt;/td&gt;
+      &lt;td&gt;加快收集、减少偏差；依赖设计师经验&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;情节串联板&lt;/td&gt;
+      &lt;td&gt;通过图片辅助讲故事叙述需求&lt;/td&gt;
+      &lt;td&gt;生动友好；花费时间多&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;联合需求计划（JRP）&lt;/td&gt;
+      &lt;td&gt;开发者与顾客深入合作的集会&lt;/td&gt;
+      &lt;td&gt;对需求不清晰领域有用；组织和人员是难点&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;收集资料&lt;/td&gt;
+      &lt;td&gt;查阅已有文档、报告、标准&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;获取文档&lt;/td&gt;
+      &lt;td&gt;索取项目相关文档&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;参加业务实践&lt;/td&gt;
+      &lt;td&gt;体验和观察业务活动&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;访问踩窗帘，合收十文&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;22-结构化分析sa&quot;&gt;2.2 结构化分析（SA）&lt;/h3&gt;
+
+&lt;p&gt;基本思想：&lt;strong&gt;自顶向下，逐层分解&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;分析模型核心是&lt;strong&gt;数据字典&lt;/strong&gt;，围绕三个层次的模型：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;模型&lt;/th&gt;
+      &lt;th&gt;表示工具&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;数据模型&lt;/td&gt;
+      &lt;td&gt;ER 图&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;功能模型&lt;/td&gt;
+      &lt;td&gt;DFD 图（数据流图）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;行为模型&lt;/td&gt;
+      &lt;td&gt;状态转换图&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;221-数据流图dfd&quot;&gt;2.2.1 数据流图（DFD）&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;基本符号：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;符号&lt;/th&gt;
+      &lt;th&gt;表示内容&lt;/th&gt;
+      &lt;th&gt;图形&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;数据流&lt;/td&gt;
+      &lt;td&gt;具有名字和流向的数据&lt;/td&gt;
+      &lt;td&gt;标有名字的箭头&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;加工&lt;/td&gt;
+      &lt;td&gt;对数据流的变换&lt;/td&gt;
+      &lt;td&gt;圆圈&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;数据存储&lt;/td&gt;
+      &lt;td&gt;可访问的存储信息&lt;/td&gt;
+      &lt;td&gt;直线段&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;外部实体&lt;/td&gt;
+      &lt;td&gt;数据源及数据终点&lt;/td&gt;
+      &lt;td&gt;标有名字的方框&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;补充：数据存储要被外部实体使用必须经过加工。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;DFD 层次：&lt;/strong&gt; 顶层图（整个系统表示为一个加工） → 逐层分解&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;数据流图平衡原则：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;原则&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;父图与子图平衡&lt;/td&gt;
+      &lt;td&gt;数据流个数一致、方向一致&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;黑洞&lt;/td&gt;
+      &lt;td&gt;加工只有输入没有输出&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;奇迹&lt;/td&gt;
+      &lt;td&gt;加工只有输出没有输入&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;灰洞&lt;/td&gt;
+      &lt;td&gt;加工中输入不足以产生输出&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;23-面向对象分析ooa&quot;&gt;2.3 面向对象分析（OOA）&lt;/h3&gt;
+
+&lt;h4 id=&quot;231-用例模型&quot;&gt;2.3.1 用例模型&lt;/h4&gt;
+
+&lt;p&gt;构建用例模型 4 个阶段：识别参与者 → 合并需求获得用例 → 细化用例描述 → 调整用例模型&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;人合细条&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;用例之间的关系：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;关系&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+      &lt;th&gt;构造型&lt;/th&gt;
+      &lt;th&gt;箭头指向&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;包含&lt;/td&gt;
+      &lt;td&gt;从多个用例提取公共行为&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;指向抽象用例&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;扩展&lt;/td&gt;
+      &lt;td&gt;一个用例混合多种场景分为基本+扩展&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;指向基本用例&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;泛化&lt;/td&gt;
+      &lt;td&gt;多个用例有类似结构，抽象为父用例&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+      &lt;td&gt;指向父用例&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;232-分析模型类图&quot;&gt;2.3.2 分析模型（类图）&lt;/h4&gt;
+
+&lt;p&gt;类之间的 6 大关系（强弱排序）：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;泛化 = 实现 &amp;gt; 组合 &amp;gt; 聚合 &amp;gt; 关联 &amp;gt; 依赖&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;饭食组聚关羽&lt;/strong&gt;（泛化→实现→组合→聚合→关联→依赖）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;关系&lt;/th&gt;
+      &lt;th&gt;定义&lt;/th&gt;
+      &lt;th&gt;特点&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;关联&lt;/td&gt;
+      &lt;td&gt;两个事物间存在明确稳定的语义联系&lt;/td&gt;
+      &lt;td&gt;强语义、结构稳定&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;依赖&lt;/td&gt;
+      &lt;td&gt;B 的变化可能引起 A 的变化&lt;/td&gt;
+      &lt;td&gt;临时使用关系&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;泛化&lt;/td&gt;
+      &lt;td&gt;父类与子类的关系（is-a）&lt;/td&gt;
+      &lt;td&gt;子类继承父类属性和方法&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;聚合&lt;/td&gt;
+      &lt;td&gt;整体与部分，部分可属于多个整体&lt;/td&gt;
+      &lt;td&gt;部分能单独存在，生命周期可不同&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;组合&lt;/td&gt;
+      &lt;td&gt;整体与部分，部分只能属于一个整体&lt;/td&gt;
+      &lt;td&gt;部分唯一归属，生命周期同步&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;实现&lt;/td&gt;
+      &lt;td&gt;接口定义行为，类实现接口&lt;/td&gt;
+      &lt;td&gt;接口定行为，类负责实现&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;24-建模语言uml&quot;&gt;2.4 建模语言（UML）&lt;/h3&gt;
+
+&lt;p&gt;UML 结构包括：构造块、规则和公共机制。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UML 4+1 视图：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;视图&lt;/th&gt;
+      &lt;th&gt;关注点&lt;/th&gt;
+      &lt;th&gt;关注角色&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;逻辑视图&lt;/td&gt;
+      &lt;td&gt;系统功能模块及相互关系&lt;/td&gt;
+      &lt;td&gt;最终用户&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;进程视图&lt;/td&gt;
+      &lt;td&gt;系统运行时的进程和线程&lt;/td&gt;
+      &lt;td&gt;系统集成人员&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;实现视图&lt;/td&gt;
+      &lt;td&gt;软件构件在开发环境中的组织&lt;/td&gt;
+      &lt;td&gt;程序员&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;部署视图&lt;/td&gt;
+      &lt;td&gt;软件到硬件的映射和分布&lt;/td&gt;
+      &lt;td&gt;系统工程师&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;用例视图&lt;/td&gt;
+      &lt;td&gt;系统功能需求（+1，核心）&lt;/td&gt;
+      &lt;td&gt;分析人员和测试人员&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;UML 图分类：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;结构图：&lt;/strong&gt; 类图、对象图、包图、组合结构图、构件图、部署图、轮廓图&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;行为图：&lt;/strong&gt; 用例图、活动图、状态机图、顺序图、通信图、时间图、交互概览图&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;UML 4 种基本关系：&lt;/strong&gt; 依赖、关联、泛化、实现&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;用例图中的包含和扩展属于&lt;strong&gt;依赖关系&lt;/strong&gt;；类图中的组合和聚合属于&lt;strong&gt;关联关系&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;25-需求管理&quot;&gt;2.5 需求管理&lt;/h3&gt;
+
+&lt;h4 id=&quot;251-需求基线&quot;&gt;2.5.1 需求基线&lt;/h4&gt;
+
+&lt;p&gt;已经通过正式评审和批准的规约或产品，作为进一步开发的基础，只能通过正式的变更控制系统进行变化。&lt;/p&gt;
+
+&lt;h4 id=&quot;252-需求变更&quot;&gt;2.5.2 需求变更&lt;/h4&gt;
+
+&lt;p&gt;变更管理流程：变更申请 → 变更评估 → 通告评估结果 → 变更实施 → 变更验证与确认 → 变更发布&lt;/p&gt;
+
+&lt;h4 id=&quot;253-需求跟踪&quot;&gt;2.5.3 需求跟踪&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;跟踪类型&lt;/th&gt;
+      &lt;th&gt;概念&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;正向跟踪&lt;/td&gt;
+      &lt;td&gt;检查 SRS 中的每个需求是否在后继工作成果中找到对应点&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;反向跟踪&lt;/td&gt;
+      &lt;td&gt;检查设计文档、代码、测试用例等是否都能在 SRS 中找到出处&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;三系统设计&quot;&gt;三、系统设计&lt;/h2&gt;
+
+&lt;h3 id=&quot;31-系统设计概述&quot;&gt;3.1 系统设计概述&lt;/h3&gt;
+
+&lt;p&gt;系统设计包括概要设计和详细设计：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;概要设计：&lt;/strong&gt; 对系统进行高层次规划，确定系统的基本结构、组成要素及其关系&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;详细设计：&lt;/strong&gt; 在概要设计基础上，确定各个模块的具体实现方式、接口定义、算法实现&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;系统设计 7 类：&lt;/strong&gt; 网络设计、代码设计（面向对象设计+结构化设计）、输入设计、输出设计、处理流程设计、数据存储设计、用户界面设计、安全性和可靠性设计&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;用户界面设计黄金三原则：置于用户控制之下、减轻用户记忆负担、保持界面一致性&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;32-处理流程设计&quot;&gt;3.2 处理流程设计&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;流程 6 要素：&lt;/strong&gt; 输入资源、活动、活动的相互作用（结构）、输出结果、用户、价值&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;流程设计工具：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;类别&lt;/th&gt;
+      &lt;th&gt;工具&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;图形工具&lt;/td&gt;
+      &lt;td&gt;程序流程图（PFD）&lt;/td&gt;
+      &lt;td&gt;用图框表示各种操作，独立于程序设计语言&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;图形工具&lt;/td&gt;
+      &lt;td&gt;N-S 图（盒图）&lt;/td&gt;
+      &lt;td&gt;以方框代替传统 PFD，具有强烈结构化特征&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;图形工具&lt;/td&gt;
+      &lt;td&gt;IPO 图&lt;/td&gt;
+      &lt;td&gt;描述模块的输入、输出和数据加工&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;图形工具&lt;/td&gt;
+      &lt;td&gt;问题分析图（PAD）&lt;/td&gt;
+      &lt;td&gt;支持结构化程序设计，适合嵌套和层次关系&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;图形工具&lt;/td&gt;
+      &lt;td&gt;判定树&lt;/td&gt;
+      &lt;td&gt;用树形结构表示逻辑判断&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;表格工具&lt;/td&gt;
+      &lt;td&gt;判定表&lt;/td&gt;
+      &lt;td&gt;用表格形式表示逻辑判断问题&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;语言工具&lt;/td&gt;
+      &lt;td&gt;过程设计语言（PDL）&lt;/td&gt;
+      &lt;td&gt;混合自然语言和结构化程序设计语法（伪代码）&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;工作流管理系统（WFMS）：&lt;/strong&gt; 通过软件定义、创建工作流并管理其执行。&lt;/p&gt;
+
+&lt;p&gt;基本功能：工作流建模 → 工作流执行 → 业务过程管理 → 业务过程分析&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;简直过分&lt;/strong&gt;（建模→执行→过程→分析）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;33-面向对象设计ood&quot;&gt;3.3 面向对象设计（OOD）&lt;/h3&gt;
+
+&lt;h4 id=&quot;331-设计类分类&quot;&gt;3.3.1 设计类分类&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;类别&lt;/th&gt;
+      &lt;th&gt;定义&lt;/th&gt;
+      &lt;th&gt;命名规则&lt;/th&gt;
+      &lt;th&gt;生命周期&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;实体类&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;映射需求中的实体，保存永久存储信息&lt;/td&gt;
+      &lt;td&gt;业务领域术语（名词）&lt;/td&gt;
+      &lt;td&gt;具有永久性&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;控制类&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;控制用例工作，对控制行为建模&lt;/td&gt;
+      &lt;td&gt;动宾结构短语转化的名词&lt;/td&gt;
+      &lt;td&gt;用例执行时产生，完毕后消亡&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;边界类&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;封装系统与外界交互的信息流&lt;/td&gt;
+      &lt;td&gt;与系统接口相关&lt;/td&gt;
+      &lt;td&gt;随系统运行一直存在&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;判断方法：先看是否是窗口、通信协议、打印机接口、报表等（边界类），再用命名规则判断（名词→实体类，动名词→控制类）。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;332-面向对象设计原则solid&quot;&gt;3.3.2 面向对象设计原则（SOLID）&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;原则&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;S&lt;/strong&gt; - 单一职责原则&lt;/td&gt;
+      &lt;td&gt;类应该只有一个设计目的&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;O&lt;/strong&gt; - 开闭原则&lt;/td&gt;
+      &lt;td&gt;对扩展开放，对修改封闭（是其他原则的基础）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;L&lt;/strong&gt; - 里氏替换原则&lt;/td&gt;
+      &lt;td&gt;子类对象必须能替换父类对象&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;I&lt;/strong&gt; - 接口隔离原则&lt;/td&gt;
+      &lt;td&gt;客户端不应依赖它不需要的接口&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;D&lt;/strong&gt; - 依赖倒置原则&lt;/td&gt;
+      &lt;td&gt;抽象不依赖于细节，针对接口编程&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;组合/聚合复用原则&lt;/td&gt;
+      &lt;td&gt;通过组合或聚合复用已有对象，比继承更灵活&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;最少知识原则（迪米特法则）&lt;/td&gt;
+      &lt;td&gt;软件实体应尽量少与其他实体相互作用&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;34-结构化设计sd&quot;&gt;3.4 结构化设计（SD）&lt;/h3&gt;
+
+&lt;p&gt;结构化设计是一种&lt;strong&gt;面向数据流&lt;/strong&gt;的方法，以 SRS、数据流图和数据字典为基础，是自顶向下、逐步求精和模块化的过程。&lt;/p&gt;
+
+&lt;p&gt;软件设计模型包括 4 个活动：&lt;strong&gt;数据设计、软件结构设计、人机界面设计（接口设计）、过程设计&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h4 id=&quot;341-模块划分原则&quot;&gt;3.4.1 模块划分原则&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;模块大小适中（1-2 页纸或 50-200 行）&lt;/li&gt;
+  &lt;li&gt;模块扇入扇出合理（平均 3 或 4，不超过 7）&lt;/li&gt;
+  &lt;li&gt;深度和宽度适当&lt;/li&gt;
+  &lt;li&gt;信息隐蔽（封装技术隐藏实现细节）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;342-耦合从低到高&quot;&gt;3.4.2 耦合（从低到高）&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;耦合类型&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;非直接耦合&lt;/td&gt;
+      &lt;td&gt;两个模块之间没有直接关系&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;数据耦合&lt;/td&gt;
+      &lt;td&gt;借助参数表传递简单数据值&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;标记耦合&lt;/td&gt;
+      &lt;td&gt;通过参数表传递记录信息（数据结构）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;控制耦合&lt;/td&gt;
+      &lt;td&gt;传递的信息中包含控制模块内部逻辑的信息&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;外部耦合&lt;/td&gt;
+      &lt;td&gt;都访问同一全局简单变量&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;公共耦合&lt;/td&gt;
+      &lt;td&gt;都访问同一个公共数据环境&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;内容耦合&lt;/td&gt;
+      &lt;td&gt;一个模块直接访问另一个模块的内部数据&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;非鼠标控制外公嘞&lt;/strong&gt;（非直接→数据→标记→控制→外部→公共→内容）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;343-内聚从高到低&quot;&gt;3.4.3 内聚（从高到低）&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;内聚类型&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;功能内聚&lt;/td&gt;
+      &lt;td&gt;完成一个单一功能，各部分协同工作，缺一不可&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;顺序内聚&lt;/td&gt;
+      &lt;td&gt;处理元素相关且必须顺序执行（存在数据传递）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;通信内聚&lt;/td&gt;
+      &lt;td&gt;所有处理元素集中在一个数据结构的区域上&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;过程内聚&lt;/td&gt;
+      &lt;td&gt;处理元素相关且必须按特定次序执行（不存在数据传递）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;瞬时内聚&lt;/td&gt;
+      &lt;td&gt;所包含的任务必须在同一时间间隔内执行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;逻辑内聚&lt;/td&gt;
+      &lt;td&gt;完成逻辑上相关的一组任务&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;偶然内聚&lt;/td&gt;
+      &lt;td&gt;完成一组没有关系或松散关系的任务&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;公孙铜锅涮罗欧&lt;/strong&gt;（功能→顺序→通信→过程→瞬时→逻辑→偶然）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;35-设计模式&quot;&gt;3.5 设计模式&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;模式大类&lt;/th&gt;
+      &lt;th&gt;包含模式&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;创建模式&lt;/td&gt;
+      &lt;td&gt;工厂方法、抽象工厂、生成器、原型、单例&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;结构模式&lt;/td&gt;
+      &lt;td&gt;适配器、桥接、组合、装饰、外观、享元、代理&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;行为模式&lt;/td&gt;
+      &lt;td&gt;职责链、命令、解释器、迭代器、中介者、备忘录、观察者、状态、策略、模板方法、访问者&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;四软件测试&quot;&gt;四、软件测试&lt;/h2&gt;
+
+&lt;h3 id=&quot;41-测试分类&quot;&gt;4.1 测试分类&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;分类维度&lt;/th&gt;
+      &lt;th&gt;类别&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;按程序可见性&lt;/td&gt;
+      &lt;td&gt;黑盒测试&lt;/td&gt;
+      &lt;td&gt;不考虑内部结构，从用户角度基于输入输出测试&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;按程序可见性&lt;/td&gt;
+      &lt;td&gt;白盒测试&lt;/td&gt;
+      &lt;td&gt;需了解程序内部逻辑结构，对所有逻辑路径测试&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;按程序可见性&lt;/td&gt;
+      &lt;td&gt;灰盒测试&lt;/td&gt;
+      &lt;td&gt;介于白盒与黑盒之间，多用于集成测试&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;按是否执行&lt;/td&gt;
+      &lt;td&gt;静态测试&lt;/td&gt;
+      &lt;td&gt;不运行程序，通过分析源程序检查正确性&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;按是否执行&lt;/td&gt;
+      &lt;td&gt;动态测试&lt;/td&gt;
+      &lt;td&gt;运行被测程序，检查运行结果与预期差异&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;按测试阶段&lt;/td&gt;
+      &lt;td&gt;单元测试&lt;/td&gt;
+      &lt;td&gt;对最小可测试单元检查，以白盒为主&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;按测试阶段&lt;/td&gt;
+      &lt;td&gt;集成测试&lt;/td&gt;
+      &lt;td&gt;将软件集成后测试，针对模块间接口&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;按测试阶段&lt;/td&gt;
+      &lt;td&gt;系统测试&lt;/td&gt;
+      &lt;td&gt;对整个系统测试，检验是否符合系统说明书&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;按测试对象&lt;/td&gt;
+      &lt;td&gt;功能测试&lt;/td&gt;
+      &lt;td&gt;验证程序按预期方式运行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;按测试对象&lt;/td&gt;
+      &lt;td&gt;性能测试&lt;/td&gt;
+      &lt;td&gt;测试响应时间，包括负载、压力、并发等&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;按测试对象&lt;/td&gt;
+      &lt;td&gt;安全测试&lt;/td&gt;
+      &lt;td&gt;验证应用程序安全等级&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;42-白盒测试覆盖标准从弱到强&quot;&gt;4.2 白盒测试覆盖标准（从弱到强）&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;覆盖标准&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+      &lt;th&gt;发现错误能力&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;语句覆盖&lt;/td&gt;
+      &lt;td&gt;每条语句至少执行一次&lt;/td&gt;
+      &lt;td&gt;1（最弱）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;判定覆盖&lt;/td&gt;
+      &lt;td&gt;每个判定的每个分支至少执行一次&lt;/td&gt;
+      &lt;td&gt;2.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;条件覆盖&lt;/td&gt;
+      &lt;td&gt;每个条件的每个可能值取到&lt;/td&gt;
+      &lt;td&gt;2.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;判定条件覆盖&lt;/td&gt;
+      &lt;td&gt;同时满足判定覆盖和条件覆盖&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;条件组合覆盖&lt;/td&gt;
+      &lt;td&gt;每个判定中各条件的每一种组合至少出现一次&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;路径覆盖&lt;/td&gt;
+      &lt;td&gt;所有可能的执行路径都执行过&lt;/td&gt;
+      &lt;td&gt;6（最强）&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;路条组判｜条条判语&lt;/strong&gt;（从高到低）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;43-性能测试辨析&quot;&gt;4.3 性能测试辨析&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;类别&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;负载测试&lt;/td&gt;
+      &lt;td&gt;在已达到瓶颈的情况下继续运行，测试各项性能指标&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;压力测试&lt;/td&gt;
+      &lt;td&gt;不断给系统加压，直到某些性能指标达到瓶颈&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;并发测试&lt;/td&gt;
+      &lt;td&gt;负载测试和压力测试的结合，确定系统并发性能&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;容量测试&lt;/td&gt;
+      &lt;td&gt;预先分析出某项指标的极限值，测试极限状态下系统表现&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;强度测试&lt;/td&gt;
+      &lt;td&gt;检查程序对异常情况的抵抗能力（超负荷或最差环境）&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;强度测试 vs 压力测试：&lt;/strong&gt; 强度测试侧重制造极限状态（超负荷或环境）；压力测试是慢慢加压、渐增负载的过程。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;44-测试模型&quot;&gt;4.4 测试模型&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;模型&lt;/th&gt;
+      &lt;th&gt;定义&lt;/th&gt;
+      &lt;th&gt;测试与开发关系&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;W 模型&lt;/td&gt;
+      &lt;td&gt;在 V 模型基础上发展而来&lt;/td&gt;
+      &lt;td&gt;同步&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;H 模型&lt;/td&gt;
+      &lt;td&gt;测试活动独立&lt;/td&gt;
+      &lt;td&gt;独立&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;X 模型&lt;/td&gt;
+      &lt;td&gt;针对单独程序片段进行编码和测试&lt;/td&gt;
+      &lt;td&gt;交错&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;五系统运行与维护&quot;&gt;五、系统运行与维护&lt;/h2&gt;
+
+&lt;h3 id=&quot;51-运维技术指标&quot;&gt;5.1 运维技术指标&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;指标&lt;/th&gt;
+      &lt;th&gt;含义&lt;/th&gt;
+      &lt;th&gt;计算方式&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MTTR&lt;/td&gt;
+      &lt;td&gt;平均故障修复时间&lt;/td&gt;
+      &lt;td&gt;总修复时间 / 维修次数&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MTBF&lt;/td&gt;
+      &lt;td&gt;平均故障间隔时间&lt;/td&gt;
+      &lt;td&gt;总运行时间 / 故障总数&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MTTF&lt;/td&gt;
+      &lt;td&gt;平均无故障时间&lt;/td&gt;
+      &lt;td&gt;正常运行总时间 / 故障总数&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MTTA&lt;/td&gt;
+      &lt;td&gt;平均应答时间&lt;/td&gt;
+      &lt;td&gt;告警到确认累计时间 / 事件总数&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;52-软件系统维护&quot;&gt;5.2 软件系统维护&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;维护类型&lt;/th&gt;
+      &lt;th&gt;维护原因&lt;/th&gt;
+      &lt;th&gt;定义&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;改正性维护&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;纠正软件错误、性能缺陷&lt;/td&gt;
+      &lt;td&gt;诊断和改正错误的过程（修 Bug）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;适应性维护&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;外部环境或数据环境发生变化&lt;/td&gt;
+      &lt;td&gt;为适应环境变化而修改软件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;完善性维护&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;用户提出新的功能与性能要求&lt;/td&gt;
+      &lt;td&gt;修改或再开发软件以扩充功能、增强性能&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;预防性维护&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;预先提高可维护性和可靠性&lt;/td&gt;
+      &lt;td&gt;采用先进方法对软件进行重新设计、编码和测试&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;适应性 vs 完善性：&lt;/strong&gt; 外部环境改变导致的维护→适应性维护；用户想要更多/更好导致的维护→完善性维护。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;53-遗留系统处置&quot;&gt;5.3 遗留系统处置&lt;/h3&gt;
+
+&lt;p&gt;根据技术水平和业务价值两个维度，分四象限选择演化策略：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;象限&lt;/th&gt;
+      &lt;th&gt;技术与业务价值&lt;/th&gt;
+      &lt;th&gt;策略&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;第一象限&lt;/td&gt;
+      &lt;td&gt;高技术、高价值&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;改造策略&lt;/strong&gt;（功能增强+数据模型改造）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;第二象限&lt;/td&gt;
+      &lt;td&gt;高技术、低价值&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;集成策略&lt;/strong&gt;（对遗留系统进行集成）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;第三象限&lt;/td&gt;
+      &lt;td&gt;低技术、低价值&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;淘汰策略&lt;/strong&gt;（重新开发新系统）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;第四象限&lt;/td&gt;
+      &lt;td&gt;低技术、高价值&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;继承策略&lt;/strong&gt;（新系统完全兼容旧系统功能）&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;记忆口诀：&lt;strong&gt;该记陶吉&lt;/strong&gt;（改造→集成→淘汰→继承，按逆时针顺序）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;54-新旧系统转换&quot;&gt;5.4 新旧系统转换&lt;/h3&gt;
+
+&lt;p&gt;系统转换策略：直接转换、并行转换、分段转换。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;六项目管理&quot;&gt;六、项目管理&lt;/h2&gt;
+
+&lt;h3 id=&quot;61-范围管理&quot;&gt;6.1 范围管理&lt;/h3&gt;
+
+&lt;p&gt;5 个管理过程：编制范围管理计划 → 定义范围 → 创建工作分解结构（WBS） → 确认范围 → 范围控制&lt;/p&gt;
+
+&lt;h3 id=&quot;62-进度管理&quot;&gt;6.2 进度管理&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;关键概念：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;AOV 网（单代号网络图）：&lt;/strong&gt; 顶点表示活动，弧表示活动之间的先后关系&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;AOE 网（双代号网络图）：&lt;/strong&gt; 顶点表示事件，弧表示活动&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;三点估算法：&lt;/strong&gt;&lt;/p&gt;
+
+\[期望时间 = \frac{乐观时间 + 4 \times 最可能时间 + 悲观时间}{6}\]
+
+&lt;p&gt;&lt;strong&gt;关键路径：&lt;/strong&gt; 项目中耗时最长的路径，决定了项目的最短完工时间。&lt;/p&gt;
+
+&lt;h3 id=&quot;63-成本管理&quot;&gt;6.3 成本管理&lt;/h3&gt;
+
+&lt;p&gt;3 个过程：成本估算 → 成本预算 → 成本控制&lt;/p&gt;
+
+&lt;p&gt;成本估算方法：自顶向下估算、自底向上估算、差别估算法&lt;/p&gt;
+
+&lt;h3 id=&quot;64-配置管理&quot;&gt;6.4 配置管理&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;过程&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;编制配置管理计划&lt;/td&gt;
+      &lt;td&gt;制订整个项目开发计划的一部分&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;配置标识&lt;/td&gt;
+      &lt;td&gt;确定配置项，明确命名方式及描述信息&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;变更管理和配置控制&lt;/td&gt;
+      &lt;td&gt;对配置项变更加以控制和管理&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;配置状态报告&lt;/td&gt;
+      &lt;td&gt;记录、报告管理配置所需信息&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;配置审核&lt;/td&gt;
+      &lt;td&gt;验证配置项对配置标识的一致性&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;65-风险管理&quot;&gt;6.5 风险管理&lt;/h3&gt;
+
+&lt;p&gt;6 大过程：风险管理计划编制 → 风险识别 → 风险定性分析 → 风险定量分析 → 风险应对计划编制 → 风险监控&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;重点关注：风险管理计划编制、风险识别（选择题考察概率较高）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;领域&lt;/th&gt;
+      &lt;th&gt;核心要点&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;软件工程概述&lt;/td&gt;
+      &lt;td&gt;PDCA 循环、开发方法分类、生命周期模型、CMM/CMMI&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;需求工程&lt;/td&gt;
+      &lt;td&gt;需求获取方法、结构化分析（DFD）、面向对象分析（用例图+类图）、UML&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;系统设计&lt;/td&gt;
+      &lt;td&gt;面向对象设计原则（SOLID）、结构化设计（耦合+内聚）、设计模式&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;软件测试&lt;/td&gt;
+      &lt;td&gt;黑/白盒测试、覆盖标准、性能测试辨析、测试模型&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;系统运行与维护&lt;/td&gt;
+      &lt;td&gt;运维指标（MTTR/MTBF/MTTF）、维护四分类、遗留系统四象限&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;项目管理&lt;/td&gt;
+      &lt;td&gt;范围管理（WBS）、进度管理（关键路径）、成本管理、配置管理、风险管理&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
+        <link>https://kaws-y.github.io/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</link>
+        <guid isPermaLink="true">https://kaws-y.github.io/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</guid>
+        
+        <category>学习资料</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>软件可靠性</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;考点定位：综合知识选择题（指标与串并联计算），案例题常考高可用设计，论文方向（论软件可靠性测试、论系统可靠性设计）。
+优先级：中高。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-知识地图&quot;&gt;1. 知识地图&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;子模块&lt;/th&gt;
+      &lt;th&gt;核心考点&lt;/th&gt;
+      &lt;th&gt;考查形式&lt;/th&gt;
+      &lt;th&gt;优先级&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;可靠性基础&lt;/td&gt;
+      &lt;td&gt;定义、MTTF/MTBF/MTTR、可用度&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;可靠性模型&lt;/td&gt;
+      &lt;td&gt;串联系统、并联系统、混联可靠性计算&lt;/td&gt;
+      &lt;td&gt;计算题高频&lt;/td&gt;
+      &lt;td&gt;★★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;容错技术&lt;/td&gt;
+      &lt;td&gt;冗余（主动/ standby）、N 版本、恢复块、表决&lt;/td&gt;
+      &lt;td&gt;选择题 + 案例&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;可靠性测试与管理&lt;/td&gt;
+      &lt;td&gt;可靠性增长模型、失效数据、可靠性目标&lt;/td&gt;
+      &lt;td&gt;案例 + 论文&lt;/td&gt;
+      &lt;td&gt;★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;相关指标&lt;/td&gt;
+      &lt;td&gt;RTO/RPO、SLA、与可用性的关系&lt;/td&gt;
+      &lt;td&gt;选择 + 论文&lt;/td&gt;
+      &lt;td&gt;★★★&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;2-核心知识&quot;&gt;2. 核心知识&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-可靠性基础&quot;&gt;2.1 可靠性基础&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;可靠性&lt;/strong&gt;：系统在&lt;strong&gt;规定条件下、规定时间内&lt;/strong&gt;完成规定功能的能力（概率）。注意与「正确性」「可用性」的区别。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;关键指标&lt;/strong&gt;：
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;MTTF&lt;/strong&gt;（Mean Time To Failure）：不可修复系统的平均无故障时间。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;MTBF&lt;/strong&gt;（Mean Time Between Failures）：可修复系统平均故障间隔时间，\(MTBF = MTTF + MTTR\)。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;MTTR&lt;/strong&gt;（Mean Time To Repair）：平均修复时间，反映可维护性。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;可靠度 R(t)&lt;/strong&gt;：\(R(t) = e^{-\lambda t}\)（指数分布，λ 为失效率）；&lt;strong&gt;失效率 λ = 1/MTTF&lt;/strong&gt;。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;可用度 A&lt;/strong&gt; = \(MTBF / (MTBF + MTTR) = MTTF/(MTTF+MTTR)\)。99.9% 称三个 9，99.99% 四个 9。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;辨析&lt;/strong&gt;：可靠性强调「不中断运行的能力」（与时间长短相关）；可用性强调「任意时刻可提供服务的能力」（含修复速度）。MTTR 越小，可用性越高但可靠性未必改变。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;22-可靠性模型必考计算&quot;&gt;2.2 可靠性模型（必考计算）&lt;/h3&gt;
+
+&lt;p&gt;设各部件可靠度为 \(R_i\)：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;串联系统&lt;/strong&gt;（任一失效则系统失效）：\(R = \prod_{i=1}^{n} R_i\)。系统可靠度低于任一部件。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;并联系统&lt;/strong&gt;（全部失效才失效）：\(R = 1 - \prod_{i=1}^{n}(1 - R_i)\)。系统可靠度高于任一部件。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;混联系统&lt;/strong&gt;：先化简局部串并联再逐层计算。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;失效率近似&lt;/strong&gt;：串联系统 \(\lambda \approx \sum \lambda_i\)（指数分布下精确成立）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;决策意义：串联环节越多，整体可靠性越低（架构设计的「短板效应」）；提高可靠性的关键是减少关键路径串联环节或为薄弱环节加冗余（改串联为并联）。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;23-容错技术&quot;&gt;2.3 容错技术&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;冗余类型&lt;/strong&gt;：
+    &lt;ul&gt;
+      &lt;li&gt;结构冗余（硬件/软件/信息/时间冗余）。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;主动冗余（热备）&lt;/strong&gt;：多个副本同时运行，表决输出结果；恢复快、资源开销大。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;备用冗余（冷备/温备）&lt;/strong&gt;：主用故障时切换备用；资源省但切换有延迟。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;典型技术&lt;/strong&gt;：
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;N 版本程序设计&lt;/strong&gt;：多个独立实现的版本并行执行、多数表决（防设计故障）。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;恢复块（Recovery Block）&lt;/strong&gt;：主版本 + 后备版本，验收测试失败则切换回滚。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;检查点与回滚&lt;/strong&gt;：定期保存状态，故障后回退到最近检查点。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;防卫式程序设计&lt;/strong&gt;：前置/后置条件、异常处理。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;高可用架构战术&lt;/strong&gt;（呼应第 4 章）：负载均衡、集群、故障检测与转移、限流降级熔断、异地多活。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;24-可靠性测试与管理&quot;&gt;2.4 可靠性测试与管理&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;可靠性测试&lt;/strong&gt;：在规定环境下长时间运行、采集失效数据，估计 MTTF/失效率；加速寿命测试通过提高应力缩短周期（需合理换算）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;软件可靠性增长模型&lt;/strong&gt;：如 Jelinski-Moranda、Goel-Okumoto（非齐次泊松过程 NHPP）模型，用失效历史预测剩余缺陷与可靠性增长趋势（了解层次）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;可靠性管理&lt;/strong&gt;：设定可靠性目标 → 分配指标到部件 → 设计冗余与容错 → 测试验证 → 运行监控与反馈。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;与业务连续性&lt;/strong&gt;：RTO（恢复时间目标）/ RPO（恢复点目标）从业务视角约束可靠性与灾难恢复方案设计。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-易混淆概念对比&quot;&gt;3. 易混淆概念对比&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;对比项&lt;/th&gt;
+      &lt;th&gt;关键区别&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MTTF vs MTBF&lt;/td&gt;
+      &lt;td&gt;MTTF 用于不可修复系统；MTBF 用于可修复系统（= MTTF + MTTR）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;可靠性 vs 可用性&lt;/td&gt;
+      &lt;td&gt;可靠性看「连续无故障运行时长」；可用性看「任意时刻可服务的概率」，含修复因素&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;串联 vs 并联可靠度&lt;/td&gt;
+      &lt;td&gt;串联相乘（降低）；并联 1-∏(1-R)（提高）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;主动冗余 vs 备用冗余&lt;/td&gt;
+      &lt;td&gt;主动同时运行表决；备用故障后切换&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;N 版本 vs 恢复块&lt;/td&gt;
+      &lt;td&gt;N 版本多点表决并行；恢复块主备串行 + 验收测试切换&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;4-考试重点&quot;&gt;4. 考试重点&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;串并联系统可靠度计算（必考）：先算并联支路，再算串联整体。&lt;/li&gt;
+  &lt;li&gt;由失效率求 MTTF、由 MTBF/MTTR 求可用度。&lt;/li&gt;
+  &lt;li&gt;判断提高系统可靠性的措施（增加并联冗余 vs 减少串联环节）。&lt;/li&gt;
+  &lt;li&gt;容错技术归类（N 版本、恢复块、检查点回滚）。&lt;/li&gt;
+  &lt;li&gt;RTO/RPO 与可靠性、可用性指标的对应关系。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;5-典型例题原创模拟题&quot;&gt;5. 典型例题（原创模拟题）&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 1&lt;/strong&gt;：三个部件串联，可靠度分别为 0.9、0.95、0.99，系统可靠度约为（　）。
+A. 0.95　B. 0.90　C. 0.85　D. 0.99&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：C。&lt;strong&gt;解析&lt;/strong&gt;：串联 \(R = 0.9 \times 0.95 \times 0.99 \approx 0.846\)，约 0.85。说明串联环节越多可靠度越低。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 2&lt;/strong&gt;：某系统 MTBF=1000 小时，MTTR=10 小时，其可用度约为（　）。
+A. 99.0%　B. 99.1%　C. 99.9%　D. 98.0%&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：A。&lt;strong&gt;解析&lt;/strong&gt;：\(A = MTBF/(MTBF+MTTR) = 1000/1010 \approx 99.0\%\)。&lt;/p&gt;
+
+&lt;h2 id=&quot;6-记忆技巧&quot;&gt;6. 记忆技巧&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;指标口诀：&lt;strong&gt;MTTF 用到坏，MTBF 修了再来，MTTR 修多久，可用度看占比&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;串并联公式：&lt;strong&gt;串联直接乘，并联「1 减全坏之积」&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;容错手段：&lt;strong&gt;多跑表决（N 版本）、主备切换（恢复块）、存点回滚（检查点）&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-随堂测试&quot;&gt;7. 随堂测试&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;某部件失效率 λ=0.001/小时，其 MTTF 是多少？&lt;/li&gt;
+  &lt;li&gt;两个可靠度均为 0.9 的部件并联，系统可靠度是多少？&lt;/li&gt;
+  &lt;li&gt;若想提升一个由多个部件串联而成的系统可靠性，从架构上有哪些思路？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;details&gt;
+&lt;summary&gt;参考答案&lt;/summary&gt;
+
+1. \\(MTTF = 1/\lambda = 1000\\) 小时。
+2. \\(R = 1-(1-0.9)^2 = 0.99\\)。
+3. 减少关键路径上的串联环节；对薄弱环节增加冗余（并联或主备）；引入故障检测与快速切换、降级与容错设计，降低 MTTR 提升可用度。
+&lt;/details&gt;
+
+&lt;h2 id=&quot;8-芝士架构资料补充重点&quot;&gt;8. 芝士架构资料补充（重点★★★★★）&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;来源：《公共知识红宝书》第 7 章。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;81-可靠性六大时间指标&quot;&gt;8.1 可靠性六大时间指标（★★★★★）&lt;/h3&gt;
+&lt;p&gt;近年爱考偏门指标，记忆后缀含义即可。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;指标&lt;/th&gt;
+      &lt;th&gt;英文全称&lt;/th&gt;
+      &lt;th&gt;定义&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MTBF&lt;/td&gt;
+      &lt;td&gt;Mean Time Between Failures&lt;/td&gt;
+      &lt;td&gt;平均故障间隔时间，两次相邻故障间的平均工作时间（&lt;strong&gt;含故障检测与修复时间&lt;/strong&gt;）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MTTR&lt;/td&gt;
+      &lt;td&gt;Mean Time To Repair/Recover&lt;/td&gt;
+      &lt;td&gt;平均修复时间，从故障发生到恢复正常运行的平均时间&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MTTA&lt;/td&gt;
+      &lt;td&gt;Mean Time To Acknowledge&lt;/td&gt;
+      &lt;td&gt;平均确认时间，从发出故障警报到人员确认的平均时间（A=Acknowledge 确认）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MTTF&lt;/td&gt;
+      &lt;td&gt;Mean Time To Failure&lt;/td&gt;
+      &lt;td&gt;平均失效时间，从开始使用到出现故障的平均时间（&lt;strong&gt;不含检测与修复&lt;/strong&gt;）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MTTD&lt;/td&gt;
+      &lt;td&gt;Mean Time To Detect&lt;/td&gt;
+      &lt;td&gt;平均发现时间，从故障发生到被检测到的平均时间（D=Detect 检测）&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;实际应用中 MTTR、MTTD 很小，通常认为 &lt;strong&gt;MTBF ≈ MTTF&lt;/strong&gt;（选择题考过）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;失效概率 F(t)&lt;/strong&gt;：初始为 0，随时间增大，趋于无穷时接近 1。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;可靠度 R(t) = 1 - F(t)&lt;/strong&gt;，R(0)=1，R(+∞)=0。规定时间指 CPU 执行程序指令的时间总和。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;82-影响软件可靠性的-5-大因素&quot;&gt;8.2 影响软件可靠性的 5 大因素（☆☆☆☆☆）&lt;/h3&gt;
+&lt;p&gt;运行剖面（环境）、软件规模、软件内部结构、开发方法和开发环境、可靠性投入。口诀：&lt;strong&gt;还（环境）闺（规模）内（内部）发（方法）钱（投入）&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;83-mccabe-环形复杂度只考选择题&quot;&gt;8.3 McCabe 环形复杂度（★★★☆☆，只考选择题）&lt;/h3&gt;
+&lt;p&gt;衡量程序控制结构复杂程度，三种等价算法：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;流图中&lt;strong&gt;线性无关的区域数&lt;/strong&gt;（含图外部区域）；&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;V(G) = E - N + 2&lt;/strong&gt;，E 为边数，N 为结点数；&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;V(G) = P + 1&lt;/strong&gt;，P 为判定结点（菱形框）数目。
+    &lt;ul&gt;
+      &lt;li&gt;用途：复杂度 × 适当常数可估算错误数量与开发工作量，用于比较不同设计/算法优劣。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;84-可靠性设计技术论文可展开&quot;&gt;8.4 可靠性设计技术（★★★☆☆，论文可展开）&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;分类&lt;/th&gt;
+      &lt;th&gt;具体技术&lt;/th&gt;
+      &lt;th&gt;原理&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;容错设计&lt;/td&gt;
+      &lt;td&gt;恢复块设计&lt;/td&gt;
+      &lt;td&gt;程序划分为恢复块，每块含多个功能同但设计不同的程序块，检测故障切换备用块&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;容错设计&lt;/td&gt;
+      &lt;td&gt;N 版本程序设计&lt;/td&gt;
+      &lt;td&gt;多个不同版本对同样输入多数表决，用不同算法/语言/测试方法确保独立&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;冗余设计&lt;/td&gt;
+      &lt;td&gt;备用软件模块&lt;/td&gt;
+      &lt;td&gt;主模块故障切换，提高可靠性但增加开销&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;检错技术&lt;/td&gt;
+      &lt;td&gt;检测点机制&lt;/td&gt;
+      &lt;td&gt;监测返回结果、运行时间，发现故障停止并报警&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;降低复杂度&lt;/td&gt;
+      &lt;td&gt;简化结构&lt;/td&gt;
+      &lt;td&gt;降低模块内部与模块间关联复杂性（复杂度是缺陷根源）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;系统配置&lt;/td&gt;
+      &lt;td&gt;双机热备/服务器集群&lt;/td&gt;
+      &lt;td&gt;心跳检测切换；某台故障其他接管&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;85-串并联可靠性公式&quot;&gt;8.5 串并联可靠性公式（★★★★★）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;串联&lt;/strong&gt;（全部正常才正常）：\(R_{串联} = R_1 \times R_2 \times \cdots \times R_n\)，任一组件失效则系统失效。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;并联&lt;/strong&gt;（任一正常即正常）：\(R_{并联} = 1 - \prod_{i=1}^{n}(1 - R_i)\)。&lt;/li&gt;
+  &lt;li&gt;真题出现过&lt;strong&gt;串并联混合系统&lt;/strong&gt;，先化简局部再逐层计算。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
+        <link>https://kaws-y.github.io/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%8F%AF%E9%9D%A0%E6%80%A7/</link>
+        <guid isPermaLink="true">https://kaws-y.github.io/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%8F%AF%E9%9D%A0%E6%80%A7/</guid>
+        
+        <category>学习资料</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>计算机网络</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;考点定位：综合知识稳定考点，含子网划分等计算题。
+优先级：中。芝士架构公开课程大纲中「计算机网络」子模块：数据通信、网络体系结构、IP 分组、IP 地址、ARP、网络划分。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-知识地图&quot;&gt;1. 知识地图&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;子模块&lt;/th&gt;
+      &lt;th&gt;核心考点&lt;/th&gt;
+      &lt;th&gt;考查形式&lt;/th&gt;
+      &lt;th&gt;优先级&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;数据通信基础&lt;/td&gt;
+      &lt;td&gt;奈奎斯特/香农公式、编码与调制、信道复用&lt;/td&gt;
+      &lt;td&gt;计算题&lt;/td&gt;
+      &lt;td&gt;★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;体系结构&lt;/td&gt;
+      &lt;td&gt;OSI 七层 vs TCP/IP 四层、各层协议与设备&lt;/td&gt;
+      &lt;td&gt;选择题高频&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;数据链路层&lt;/td&gt;
+      &lt;td&gt;CRC、滑动窗口、停止-等待、PPP/HDLC&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;网络层&lt;/td&gt;
+      &lt;td&gt;IP 分组、IP 地址与子网划分、ARP/ICMP、路由协议&lt;/td&gt;
+      &lt;td&gt;计算 + 选择&lt;/td&gt;
+      &lt;td&gt;★★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;传输层&lt;/td&gt;
+      &lt;td&gt;TCP/UDP、三次握手四次挥手、拥塞控制、滑动窗口&lt;/td&gt;
+      &lt;td&gt;选择题高频&lt;/td&gt;
+      &lt;td&gt;★★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;应用层&lt;/td&gt;
+      &lt;td&gt;DNS、HTTP/HTTPS、DHCP、FTP、SMTP、SNMP&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;网络存储与无线&lt;/td&gt;
+      &lt;td&gt;DAS/NAS/SAN、VLAN、VPN、无线基础&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;2-核心知识&quot;&gt;2. 核心知识&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-数据通信基础公式题&quot;&gt;2.1 数据通信基础（公式题）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;奈奎斯特准则（无噪声）&lt;/strong&gt;：最高码元速率 \(R = 2W\)（W 为带宽 Hz）；数据速率 \(C = 2W \log_2 M\)，M 为码元种类数。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;香农公式（有噪声）&lt;/strong&gt;：\(C = W \log_2(1 + S/N)\)，S/N 为信噪比（若给出 dB，先换算：\(S/N = 10^{dB/10}\)）。&lt;/li&gt;
+  &lt;li&gt;典型考法：给定带宽 3000Hz、信噪比 30dB，求最大数据速率 → \(S/N = 1000\)，\(C = 3000 \times \log_2(1001) \approx 30000\) bps。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;22-osi-七层与-tcpip-四层&quot;&gt;2.2 OSI 七层与 TCP/IP 四层&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;OSI 层&lt;/th&gt;
+      &lt;th&gt;核心功能&lt;/th&gt;
+      &lt;th&gt;典型协议&lt;/th&gt;
+      &lt;th&gt;设备&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;物理层&lt;/td&gt;
+      &lt;td&gt;比特传输、电气特性&lt;/td&gt;
+      &lt;td&gt;RS-232、以太网物理层&lt;/td&gt;
+      &lt;td&gt;集线器、中继器&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;数据链路层&lt;/td&gt;
+      &lt;td&gt;帧、MAC 寻址、差错控制&lt;/td&gt;
+      &lt;td&gt;Ethernet、PPP、HDLC、ARP（常归此层讨论）&lt;/td&gt;
+      &lt;td&gt;交换机、网桥&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;网络层&lt;/td&gt;
+      &lt;td&gt;路由、IP 寻址、分组转发&lt;/td&gt;
+      &lt;td&gt;IP、ICMP、IGMP、OSPF、RIP、BGP&lt;/td&gt;
+      &lt;td&gt;路由器&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;传输层&lt;/td&gt;
+      &lt;td&gt;端到端可靠传输、端口&lt;/td&gt;
+      &lt;td&gt;TCP、UDP&lt;/td&gt;
+      &lt;td&gt;—&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;会话层&lt;/td&gt;
+      &lt;td&gt;建立/管理/终止会话&lt;/td&gt;
+      &lt;td&gt;RPC、SQL（会话管理）&lt;/td&gt;
+      &lt;td&gt;—&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;表示层&lt;/td&gt;
+      &lt;td&gt;数据格式、加密压缩&lt;/td&gt;
+      &lt;td&gt;JPEG、ASCII、SSL/TLS（常归会话层讨论）&lt;/td&gt;
+      &lt;td&gt;—&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;应用层&lt;/td&gt;
+      &lt;td&gt;为应用提供网络服务&lt;/td&gt;
+      &lt;td&gt;HTTP、DNS、FTP、SMTP、SNMP、DHCP&lt;/td&gt;
+      &lt;td&gt;—&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;TCP/IP 四层：网络接口层、网际层（IP）、传输层、应用层。记忆口诀：&lt;strong&gt;物数网传会表应&lt;/strong&gt;（OSI 自下而上）。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;23-网络层ip-与子网划分&quot;&gt;2.3 网络层：IP 与子网划分&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;IP 地址&lt;/strong&gt;：A 类（1～126，/8）、B 类（128～191，/16）、C 类（192～223，/24）；127 为回环；私有地址段：10.0.0.0/8、172.16.0.0/12、192.168.0.0/16。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;子网划分（必考计算）&lt;/strong&gt;：
+    &lt;ul&gt;
+      &lt;li&gt;从主机位借 n 位作子网位 → 可划分 \(2^n\) 个子网（现代 CIDR 下 subnet-zero 可用）。&lt;/li&gt;
+      &lt;li&gt;每个子网可用主机数 = \(2^{主机位数} - 2\)（去掉网络地址与广播地址；/31、/32 例外）。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;无类域间路由 CIDR&lt;/strong&gt;：如 192.168.1.0/26 → 掩码 255.255.255.192，4 个子网，每子网 62 台主机。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ARP&lt;/strong&gt;：IP → MAC 地址解析（广播请求、单播应答）；&lt;strong&gt;RARP&lt;/strong&gt;：MAC → IP；&lt;strong&gt;ICMP&lt;/strong&gt;：差错报告与探测（ping 基于 ICMP Echo）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;路由协议&lt;/strong&gt;：RIP（距离矢量，跳数 ≤15，周期广播）、OSPF（链路状态，Dijkstra，区域划分）、BGP（自治系统间路径矢量）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;24-传输层tcp-vs-udp&quot;&gt;2.4 传输层：TCP vs UDP&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;对比项&lt;/th&gt;
+      &lt;th&gt;TCP&lt;/th&gt;
+      &lt;th&gt;UDP&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;连接&lt;/td&gt;
+      &lt;td&gt;面向连接（三次握手）&lt;/td&gt;
+      &lt;td&gt;无连接&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;可靠性&lt;/td&gt;
+      &lt;td&gt;可靠、确认重传、按序&lt;/td&gt;
+      &lt;td&gt;尽力而为&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;流量/拥塞控制&lt;/td&gt;
+      &lt;td&gt;有（滑动窗口、拥塞窗口）&lt;/td&gt;
+      &lt;td&gt;无&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;开销&lt;/td&gt;
+      &lt;td&gt;大（20 字节头部起）&lt;/td&gt;
+      &lt;td&gt;小（8 字节头部）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;适用&lt;/td&gt;
+      &lt;td&gt;文件传输、网页、邮件&lt;/td&gt;
+      &lt;td&gt;DNS 查询、音视频、广播&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;三次握手&lt;/strong&gt;：SYN → SYN+ACK → ACK（防止已失效的连接请求突然传到服务端）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;四次挥手&lt;/strong&gt;：FIN → ACK → FIN → ACK（TIME_WAIT 等待 2MSL，确保最后 ACK 到达并让旧报文消失）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;拥塞控制&lt;/strong&gt;：慢启动（cwnd 指数增长）→ 拥塞避免（线性增长）→ 快重传 → 快恢复。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;25-应用层&quot;&gt;2.5 应用层&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;DNS&lt;/strong&gt;：域名 ↔ IP；分层解析（根 → 顶级域 → 权威域）；递归查询（服务器代查）vs 迭代查询（返回线索）；记录类型 A、AAAA、CNAME、MX、NS。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;HTTP&lt;/strong&gt;：请求/响应模型，无状态；HTTPS = HTTP + TLS（端口 443）；HTTP 常见状态码：200 成功、301/302 重定向、304 未修改、400 请求错误、401 未认证、403 禁止、404 未找到、500 服务端错误。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DHCP&lt;/strong&gt;：动态分配 IP（Discover → Offer → Request → Ack，四步广播交互）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;FTP&lt;/strong&gt;：控制连接 21、数据连接 20；&lt;strong&gt;SMTP&lt;/strong&gt; 发邮件 25、&lt;strong&gt;POP3&lt;/strong&gt; 110、&lt;strong&gt;IMAP&lt;/strong&gt; 143；&lt;strong&gt;SNMP&lt;/strong&gt; 161（UDP）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;26-网络存储与其他&quot;&gt;2.6 网络存储与其他&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;DAS&lt;/strong&gt;（直连存储）、&lt;strong&gt;NAS&lt;/strong&gt;（文件级网络存储，NFS/CIFS）、&lt;strong&gt;SAN&lt;/strong&gt;（块级高速网络存储，iSCSI/FC）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;VLAN&lt;/strong&gt;：逻辑划分广播域；&lt;strong&gt;VPN&lt;/strong&gt;：隧道 + 加密实现远程安全接入。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-易混淆概念对比&quot;&gt;3. 易混淆概念对比&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;对比项&lt;/th&gt;
+      &lt;th&gt;关键区别&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ARP vs DNS&lt;/td&gt;
+      &lt;td&gt;ARP：IP→MAC（局域网）；DNS：域名→IP（全球分布式）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;交换机 vs 路由器&lt;/td&gt;
+      &lt;td&gt;交换机工作在数据链路层（MAC 转发）；路由器工作在网络层（IP 路由）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TCP 三次握手 vs 四次挥手&lt;/td&gt;
+      &lt;td&gt;建连 3 次（SYN 合并 ACK）；断连 4 次（FIN 与 ACK 不能合并，因半关闭）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;拥塞控制 vs 流量控制&lt;/td&gt;
+      &lt;td&gt;拥塞控制针对网络整体；流量控制针对接收方处理能力（滑动窗口 rwnd）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NAS vs SAN&lt;/td&gt;
+      &lt;td&gt;NAS 提供文件级共享；SAN 提供块级存储&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;递归 vs 迭代 DNS 查询&lt;/td&gt;
+      &lt;td&gt;递归由 DNS 服务器一路查到底返回最终结果；迭代返回下一级服务器地址由客户端再查&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;4-考试重点&quot;&gt;4. 考试重点&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;子网划分与可用主机数计算（必考）。&lt;/li&gt;
+  &lt;li&gt;OSI 层与协议/设备的配对。&lt;/li&gt;
+  &lt;li&gt;TCP 三次握手/四次挥手的状态与意义。&lt;/li&gt;
+  &lt;li&gt;香农/奈奎斯特公式计算。&lt;/li&gt;
+  &lt;li&gt;HTTP 状态码、DNS 记录类型、端口配对。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;5-典型例题原创模拟题&quot;&gt;5. 典型例题（原创模拟题）&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 1&lt;/strong&gt;：某公司获得 192.168.10.0/24，需划分至少 5 个子网，每个子网至少 25 台主机。合适的子网掩码是（　）。
+A. 255.255.255.192　B. 255.255.255.224　C. 255.255.255.240　D. 255.255.255.248&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：B。&lt;strong&gt;解析&lt;/strong&gt;：借 3 位（/27）→ 8 个子网 ≥5，每子网 \(2^5-2=30\) 台 ≥25，掩码 255.255.255.224。A（/26）只有 4 个子网不够；C（/28）每子网 14 台不够；D 更少。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 2&lt;/strong&gt;：客户端与服务器建立 TCP 连接时，第二次握手报文的标志位组合是（　）。
+A. SYN　B. ACK　C. SYN+ACK　D. FIN+ACK&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：C。&lt;strong&gt;解析&lt;/strong&gt;：三次握手依次为 SYN、SYN+ACK、ACK。第二次是服务器确认客户端 SYN 并发起自己的 SYN。&lt;/p&gt;
+
+&lt;h2 id=&quot;6-记忆技巧&quot;&gt;6. 记忆技巧&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;OSI 七层：&lt;strong&gt;物数网传会表应&lt;/strong&gt;；TCP/IP：&lt;strong&gt;网际、传输、应用 + 网络接口&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;TCP 建连：&lt;strong&gt;SYN、SYN-ACK、ACK（客人敲门、主人回敲门、客人确认）&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;私有地址：&lt;strong&gt;10 / 172.16-31 / 192.168&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;端口：&lt;strong&gt;HTTP 80、HTTPS 443、FTP 21/20、DNS 53、SMTP 25、DHCP 67/68&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-随堂测试&quot;&gt;7. 随堂测试&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;/26 掩码每个子网可用主机数是多少？&lt;/li&gt;
+  &lt;li&gt;ping 命令基于哪个协议？&lt;/li&gt;
+  &lt;li&gt;交换机与路由器分别工作在 OSI 的哪一层？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;details&gt;
+&lt;summary&gt;参考答案&lt;/summary&gt;
+
+1. 62 台（\\(2^6 - 2\\)）。
+2. ICMP（Echo Request/Reply）。
+3. 交换机在数据链路层（二层），路由器在网络层（三层）。
+&lt;/details&gt;
+
+&lt;h2 id=&quot;7-芝士架构资料补充&quot;&gt;7. 芝士架构资料补充&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;来源：《公共知识红宝书》第 10 章。本章整体次重点★★★☆☆，其中网络互连与常用设备为重点★★★★★。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;71-数据通信基础公式&quot;&gt;7.1 数据通信基础公式（★★★☆☆）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;奈奎斯特准则&lt;/strong&gt;（无噪声）：\(C = 2W \log_2 M\)，W 为带宽（Hz），M 为码元种类数。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;香农公式&lt;/strong&gt;（有噪声）：\(C = W \log_2(1 + S/N)\)，S/N 为信噪比；若给 dB 需先换算 \(S/N = 10^{dB/10}\)。&lt;/li&gt;
+  &lt;li&gt;示例：带宽 3000Hz、信噪比 30dB → \(S/N = 1000\)，\(C \approx 30000\) bps。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;72-cidr-与子网划分&quot;&gt;7.2 CIDR 与子网划分（★★★☆☆）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;CIDR&lt;/strong&gt;（无分类域间路由）：用”IP 地址/前缀长度”表示，如 192.168.1.0/26；消除了传统 A/B/C 类边界，支持路由聚合（超网）。&lt;/li&gt;
+  &lt;li&gt;子网划分：借 n 位主机位作子网位 → \(2^n\) 个子网，每子网可用主机 \(2^{主机位}-2\) 台。&lt;/li&gt;
+  &lt;li&gt;特殊地址：网络地址（主机位全 0）、广播地址（主机位全 1）不可分配给主机；/31、/32 例外。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;73-ipv4-vs-ipv6&quot;&gt;7.3 IPv4 vs IPv6（★★★☆☆）&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;对比项&lt;/th&gt;
+      &lt;th&gt;IPv4&lt;/th&gt;
+      &lt;th&gt;IPv6&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;地址长度&lt;/td&gt;
+      &lt;td&gt;32 位（约 43 亿）&lt;/td&gt;
+      &lt;td&gt;128 位&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;表示法&lt;/td&gt;
+      &lt;td&gt;点分十进制&lt;/td&gt;
+      &lt;td&gt;冒号十六进制（可零压缩）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;地址配置&lt;/td&gt;
+      &lt;td&gt;手工/DHCP&lt;/td&gt;
+      &lt;td&gt;自动配置（无状态自动配置 SLAAC）、DHCPv6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;安全性&lt;/td&gt;
+      &lt;td&gt;需额外 IPSec&lt;/td&gt;
+      &lt;td&gt;内置 IPSec&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;头部&lt;/td&gt;
+      &lt;td&gt;变长 20～60 字节&lt;/td&gt;
+      &lt;td&gt;固定 40 字节，扩展头&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;兼容性&lt;/td&gt;
+      &lt;td&gt;主流&lt;/td&gt;
+      &lt;td&gt;不兼容 IPv4，需双栈/隧道/转换技术过渡&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;74-局域网与无线&quot;&gt;7.4 局域网与无线（★★★☆☆）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;局域网拓扑：星型（集线器/交换机为中心）、总线型、环型、网状。&lt;/li&gt;
+  &lt;li&gt;VLAN（虚拟局域网）：在物理网络上逻辑划分广播域，隔离广播、增强安全、简化管理。&lt;/li&gt;
+  &lt;li&gt;无线局域网：IEEE 802.11 系列（Wi-Fi），CSMA/CA 介质访问控制；蓝牙、ZigBee 为短距离低功耗技术。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;75-网络互连设备&quot;&gt;7.5 网络互连设备（★★★★★）&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;设备&lt;/th&gt;
+      &lt;th&gt;OSI 层&lt;/th&gt;
+      &lt;th&gt;功能&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;中继器/集线器&lt;/td&gt;
+      &lt;td&gt;物理层&lt;/td&gt;
+      &lt;td&gt;信号放大、延长传输距离；不隔离冲突域&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;网桥/交换机&lt;/td&gt;
+      &lt;td&gt;数据链路层&lt;/td&gt;
+      &lt;td&gt;按 MAC 地址转发，隔离冲突域；不隔离广播域&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;路由器&lt;/td&gt;
+      &lt;td&gt;网络层&lt;/td&gt;
+      &lt;td&gt;按 IP 路由选择，隔离广播域，连接不同网络&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;网关&lt;/td&gt;
+      &lt;td&gt;传输层及以上&lt;/td&gt;
+      &lt;td&gt;连接不同协议体系，做协议转换&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;76-网络工程&quot;&gt;7.6 网络工程（★★★☆☆）&lt;/h3&gt;
+&lt;p&gt;五个阶段：网络规划 → 网络设计 → 网络实施 → 网络运维 → 网络优化。网络实施含：编制实施计划、设备到货验收、设备安装、系统测试、系统试运行、用户培训、系统转换。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
+        <link>https://kaws-y.github.io/2026/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+        <guid isPermaLink="true">https://kaws-y.github.io/2026/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</guid>
+        
+        <category>学习资料</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>计算机系统</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;考点定位：综合知识选择题，含补码运算、Cache 命中率、RAID、流水线、Amdahl 定律等计算题。
+优先级：中。芝士架构公开课程大纲中「计算机组成原理」子模块：计算机系统概述、存储器层次结构、硬盘、RAID、Cache、主存映射。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-知识地图&quot;&gt;1. 知识地图&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;子模块&lt;/th&gt;
+      &lt;th&gt;核心考点&lt;/th&gt;
+      &lt;th&gt;考查形式&lt;/th&gt;
+      &lt;th&gt;优先级&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;数据表示&lt;/td&gt;
+      &lt;td&gt;原码/反码/补码、定点浮点、IEEE 754&lt;/td&gt;
+      &lt;td&gt;计算题&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;存储层次&lt;/td&gt;
+      &lt;td&gt;Cache、主存、虚拟存储、主存映射&lt;/td&gt;
+      &lt;td&gt;计算 + 选择&lt;/td&gt;
+      &lt;td&gt;★★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;磁盘与 RAID&lt;/td&gt;
+      &lt;td&gt;磁盘结构、RAID 0～6 特性&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;指令系统&lt;/td&gt;
+      &lt;td&gt;寻址方式、CISC/RISC&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;流水线&lt;/td&gt;
+      &lt;td&gt;时空图、吞吐率、加速比&lt;/td&gt;
+      &lt;td&gt;计算题&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;性能评价&lt;/td&gt;
+      &lt;td&gt;Amdahl 定律、CPI/MIPS、基准测试&lt;/td&gt;
+      &lt;td&gt;计算题&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;总线与 I/O&lt;/td&gt;
+      &lt;td&gt;总线类型、中断/DMA&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;2-核心知识&quot;&gt;2. 核心知识&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-数据表示&quot;&gt;2.1 数据表示&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;机器数与码制&lt;/strong&gt;：正数原码=反码=补码；负数反码为原码数值位取反，补码为反码 +1。补码使减法可用加法实现，0 只有一种表示。n 位补码范围：\(-2^{n-1}\) ~ \(+2^{n-1}-1\)。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;溢出判断&lt;/strong&gt;：同号相加才可能溢出；结果的符号与操作数符号不同即溢出（或用双符号位 01/10 判断）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;浮点数&lt;/strong&gt;：\(N = M \times 2^E\)，阶码 E 决定范围，尾数 M 决定精度；对阶（小阶向大阶看齐）→ 尾数运算 → 规格化 → 舍入 → 溢出判断。IEEE 754 单精度 32 位（1 符号 + 8 阶码 + 23 尾数）、双精度 64 位。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;22-存储层次&quot;&gt;2.2 存储层次&lt;/h3&gt;
+
+&lt;p&gt;层次（快→慢、小→大）：寄存器 → Cache → 主存 → 辅存（磁盘/SSD）。依据是&lt;strong&gt;程序局部性原理&lt;/strong&gt;（时间局部性 + 空间局部性）。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Cache 命中率&lt;/strong&gt;：\(H = N_c/(N_c+N_m)\)；平均访问时间 \(T_a = H \times T_c + (1-H) \times T_m\)。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;主存-Cache 映射&lt;/strong&gt;：
+    &lt;ul&gt;
+      &lt;li&gt;直接映射：每主存块只能放一个 Cache 行，实现简单、冲突率高。&lt;/li&gt;
+      &lt;li&gt;全相联映射：任意放，冲突最低、硬件成本高。&lt;/li&gt;
+      &lt;li&gt;组相联映射：折中（如 2 路组相联）。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;替换算法&lt;/strong&gt;：LRU、FIFO、随机。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;写策略&lt;/strong&gt;：写回法（写命中只改 Cache，换出时写回主存）、写直达法（同时写 Cache 与主存）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;虚拟存储器&lt;/strong&gt;：页式/段式/段页式，地址由 MMU 转换；TLB 快表加速。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;23-磁盘与-raid&quot;&gt;2.3 磁盘与 RAID&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;RAID 级别&lt;/th&gt;
+      &lt;th&gt;机制&lt;/th&gt;
+      &lt;th&gt;特点&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RAID 0&lt;/td&gt;
+      &lt;td&gt;条带化，无冗余&lt;/td&gt;
+      &lt;td&gt;读写快，无容错，一块坏全丢&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RAID 1&lt;/td&gt;
+      &lt;td&gt;镜像&lt;/td&gt;
+      &lt;td&gt;读快、写较慢，利用率 50%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RAID 3/4&lt;/td&gt;
+      &lt;td&gt;专用校验盘 + 条带&lt;/td&gt;
+      &lt;td&gt;读快，校验盘瓶颈&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RAID 5&lt;/td&gt;
+      &lt;td&gt;分布式奇偶校验（至少 3 盘）&lt;/td&gt;
+      &lt;td&gt;读快、写有校验开销，坏 1 盘可恢复，利用率 (N-1)/N&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RAID 6&lt;/td&gt;
+      &lt;td&gt;双分布式校验（至少 4 盘）&lt;/td&gt;
+      &lt;td&gt;可坏 2 盘，利用率 (N-2)/N&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RAID 10&lt;/td&gt;
+      &lt;td&gt;镜像 + 条带&lt;/td&gt;
+      &lt;td&gt;性能与可靠性兼得，成本高（利用率 50%）&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;24-指令系统与流水线&quot;&gt;2.4 指令系统与流水线&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;寻址方式&lt;/strong&gt;：立即、直接、间接、寄存器、寄存器间接、基址、变址、相对寻址。有效地址计算是选择题常客。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CISC vs RISC&lt;/strong&gt;：CISC 指令多而复杂、变长、微程序控制；RISC 指令少而简单、定长、硬布线控制 + 流水线和大量寄存器。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;流水线&lt;/strong&gt;：把指令执行分为取指 IF、译码 ID、执行 EX、访存 MEM、写回 WB 等阶段并行。
+    &lt;ul&gt;
+      &lt;li&gt;吞吐率 \(TP = n / T_k\)（n 条指令，k 段流水，总时间 \(T_k = (k + n - 1)\Delta t\)）。&lt;/li&gt;
+      &lt;li&gt;加速比 \(S_p = T_{非流水} / T_{流水}\)。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;相关冲突&lt;/strong&gt;：结构相关（资源冲突）、数据相关（RAW/WAR/WAW）、控制相关（转移）；解决：转发（旁路）、暂停、分支预测。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;25-性能评价&quot;&gt;2.5 性能评价&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Amdahl 定律&lt;/strong&gt;：系统加速比 \(S = 1 / [(1-F) + F/S_F]\)，F 是可改进部分比例，\(S_F\) 是该部分加速比。&lt;strong&gt;含义&lt;/strong&gt;：加速某部分收益受其占比限制（经典：若某功能占 10%，即使无限加速，整体也只提升约 11%）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CPI&lt;/strong&gt;（每条指令周期数）、&lt;strong&gt;MIPS&lt;/strong&gt; = 时钟频率 / CPI（单位 MHz → 百万条指令/秒）。&lt;/li&gt;
+  &lt;li&gt;基准测试程序（SPEC 等）用于综合评价。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-易混淆概念对比&quot;&gt;3. 易混淆概念对比&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;对比项&lt;/th&gt;
+      &lt;th&gt;关键区别&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;原码 vs 补码&lt;/td&gt;
+      &lt;td&gt;补码统一了 +0/-0，减法可用加法实现，表示范围多一个负数&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Cache 直接映射 vs 全相联&lt;/td&gt;
+      &lt;td&gt;直接映射冲突率高但硬件简单；全相联相反&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;写回 vs 写直达&lt;/td&gt;
+      &lt;td&gt;写回延迟写主存、速度快但有一致性风险；写直达一致性好但写慢&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RAID 5 vs RAID 6&lt;/td&gt;
+      &lt;td&gt;RAID5 容 1 盘故障；RAID6 容 2 盘故障&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RISC vs CISC&lt;/td&gt;
+      &lt;td&gt;RISC 指令精简、定长、流水线友好；CISC 指令丰富、变长&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Amdahl 定律 vs Gustafson 定律&lt;/td&gt;
+      &lt;td&gt;Amdahl 固定问题规模；Gustafson 认为规模随处理器数增长&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;4-考试重点&quot;&gt;4. 考试重点&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Cache 命中率与平均访问时间计算；主存地址到 Cache 行的映射计算。&lt;/li&gt;
+  &lt;li&gt;补码范围、溢出判断、浮点数对阶与规格化。&lt;/li&gt;
+  &lt;li&gt;RAID 级别选择（性能 vs 可靠性 vs 磁盘利用率）。&lt;/li&gt;
+  &lt;li&gt;流水线时空图、吞吐率、加速比计算。&lt;/li&gt;
+  &lt;li&gt;Amdahl 定律计算（给出可加速比例与加速倍数求整体加速比）。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;5-典型例题原创模拟题&quot;&gt;5. 典型例题（原创模拟题）&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 1&lt;/strong&gt;：某程序可并行部分占 80%，若将这部分加速 4 倍，整体加速比约为（　）。
+A. 1.6　B. 2.0　C. 2.5　D. 3.2&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：C。&lt;strong&gt;解析&lt;/strong&gt;：按 Amdahl 定律 \(S = 1/[(1-0.8) + 0.8/4] = 1/(0.2+0.2) = 2.5\)。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 2&lt;/strong&gt;：Cache 命中率 95%，Cache 访问时间 1ns，主存访问时间 20ns，平均访问时间约为（　）。
+A. 1.95ns　B. 2.0ns　C. 2.5ns　D. 19ns&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：B。&lt;strong&gt;解析&lt;/strong&gt;：\(T_a = 0.95\times1 + 0.05\times20 = 0.95 + 1 = 1.95\) ns，约 2.0ns。&lt;/p&gt;
+
+&lt;h2 id=&quot;6-记忆技巧&quot;&gt;6. 记忆技巧&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;存储层次：&lt;strong&gt;寄 Cache 主辅&lt;/strong&gt;，越往上越快越小越贵。&lt;/li&gt;
+  &lt;li&gt;RAID 口诀：&lt;strong&gt;0 条带无冗余，1 镜像，5 分布校验坏一盘，6 双校验坏两盘，10 镜条兼顾&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;Amdahl：&lt;strong&gt;整体收益 = 1 /（不可加速部分 + 可加速部分/加速倍数）&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-随堂测试&quot;&gt;7. 随堂测试&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;8 位补码的表示范围是多少？&lt;/li&gt;
+  &lt;li&gt;RAID 5 至少几块磁盘？磁盘利用率如何计算？&lt;/li&gt;
+  &lt;li&gt;流水线中「后一条指令需要前一条指令的运算结果」属于哪类相关？如何解决？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;details&gt;
+&lt;summary&gt;参考答案&lt;/summary&gt;
+
+1. -128 ~ +127。
+2. 至少 3 块；利用率 (N-1)/N。
+3. 数据相关（RAW，写后读）；可通过转发（旁路）技术或插入暂停周期解决。
+&lt;/details&gt;
+
+&lt;h2 id=&quot;7-芝士架构资料补充&quot;&gt;7. 芝士架构资料补充&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;来源：《公共知识红宝书》第 9 章。本章整体次重点★★★☆☆，其中流水线技术为重点★★★★★。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;71-数据表示与编码&quot;&gt;7.1 数据表示与编码（★★★☆☆）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;机器数：原码、反码、补码、移码。正数三码相同；负数补码 = 反码 + 1。&lt;/li&gt;
+  &lt;li&gt;n 位补码范围：\(-2^{n-1} \sim +(2^{n-1}-1)\)；0 的补码唯一。&lt;/li&gt;
+  &lt;li&gt;浮点数 \(N = M \times 2^E\)：阶码 E 决定表示范围，尾数 M 决定精度；运算需对阶（小阶向大阶看齐）→ 尾数运算 → 规格化 → 舍入 → 溢出判断。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;72-存储器系统&quot;&gt;7.2 存储器系统（★★★☆☆）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;层次：寄存器 → Cache → 主存 → 外存；依据程序局部性原理。&lt;/li&gt;
+  &lt;li&gt;Cache 命中率 \(H = N_c/(N_c+N_m)\)；平均访问时间 \(T_a = H \cdot T_c + (1-H) \cdot T_m\)。&lt;/li&gt;
+  &lt;li&gt;地址映射：直接映射、全相联映射、组相联映射；替换算法 LRU/FIFO/随机。&lt;/li&gt;
+  &lt;li&gt;虚拟存储器：页式、段式、段页式，由 MMU 完成地址转换，快表（TLB）加速。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;73-寻址方式&quot;&gt;7.3 寻址方式（★★★☆☆）&lt;/h3&gt;
+&lt;p&gt;立即寻址、直接寻址、间接寻址、寄存器寻址、寄存器间接寻址、基址寻址、变址寻址、相对寻址。有效地址（EA）计算是选择题常客。&lt;/p&gt;
+
+&lt;h3 id=&quot;74-流水线技术&quot;&gt;7.4 流水线技术（★★★★★）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;把指令处理分为取指 IF、译码 ID、执行 EX、访存 MEM、写回 WB 等阶段并行。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;时空图&lt;/strong&gt;：横轴时间、纵轴功能段；n 条指令、k 段流水，总时间 \(T_k = (k + n - 1)\Delta t\)。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;吞吐率&lt;/strong&gt; \(TP = n / T_k\)；&lt;strong&gt;加速比&lt;/strong&gt; \(S_p = T_{串行} / T_{流水}\)；&lt;strong&gt;效率&lt;/strong&gt; = 时空图中阴影面积 / 总面积。&lt;/li&gt;
+  &lt;li&gt;相关冲突：结构相关（资源冲突）、数据相关（RAW/WAR/WAW）、控制相关（转移）；解决办法：资源重复、转发（旁路）、暂停、分支预测。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;75-amdahl-定律与性能评估&quot;&gt;7.5 Amdahl 定律与性能评估（★★★☆☆）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Amdahl 定律&lt;/strong&gt;：\(S = 1 / [(1-F) + F/S_F]\)，F 为可改进部分比例，\(S_F\) 为其加速比。含义：整体加速受可改进部分占比限制。&lt;/li&gt;
+  &lt;li&gt;性能指标：MIPS（每秒百万条指令）、MFLOPS、CPI（每条指令时钟周期数）。&lt;/li&gt;
+  &lt;li&gt;基准测试程序：SPEC 等用于综合性能评价。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
+        <link>https://kaws-y.github.io/2026/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/</link>
+        <guid isPermaLink="true">https://kaws-y.github.io/2026/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/</guid>
+        
+        <category>学习资料</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>绪论</title>
+        <description>&lt;p&gt;绪论&lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
+        <link>https://kaws-y.github.io/2026/07/20/%E7%BB%AA%E8%AE%BA/</link>
+        <guid isPermaLink="true">https://kaws-y.github.io/2026/07/20/%E7%BB%AA%E8%AE%BA/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>系统运行与维护</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;考点定位：综合知识选择题（维护类型、可维护性），案例题常考遗留系统改造与运维方案，论文方向（论软件维护、论系统演化）。
+优先级：中。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-知识地图&quot;&gt;1. 知识地图&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;子模块&lt;/th&gt;
+      &lt;th&gt;核心考点&lt;/th&gt;
+      &lt;th&gt;考查形式&lt;/th&gt;
+      &lt;th&gt;优先级&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;软件维护类型&lt;/td&gt;
+      &lt;td&gt;改正性、适应性、完善性、预防性维护及占比&lt;/td&gt;
+      &lt;td&gt;选择题高频&lt;/td&gt;
+      &lt;td&gt;★★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;维护过程&lt;/td&gt;
+      &lt;td&gt;维护申请、影响分析、修改、验证、回归&lt;/td&gt;
+      &lt;td&gt;案例&lt;/td&gt;
+      &lt;td&gt;★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;可维护性&lt;/td&gt;
+      &lt;td&gt;易理解、易测试、易修改；度量指标&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;逆向工程与再工程&lt;/td&gt;
+      &lt;td&gt;逆向、重构、正向工程的区分&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;系统转换与部署&lt;/td&gt;
+      &lt;td&gt;直接/并行/分段/试运行转换&lt;/td&gt;
+      &lt;td&gt;选择题&lt;/td&gt;
+      &lt;td&gt;★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;运行管理&lt;/td&gt;
+      &lt;td&gt;监控、备份恢复、故障管理、ITIL/ITSM&lt;/td&gt;
+      &lt;td&gt;案例 + 论文&lt;/td&gt;
+      &lt;td&gt;★★★&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;遗留系统演化&lt;/td&gt;
+      &lt;td&gt;淘汰/改造/集成/继承四策略（与第 4 章衔接）&lt;/td&gt;
+      &lt;td&gt;案例 + 论文&lt;/td&gt;
+      &lt;td&gt;★★★★&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;2-核心知识&quot;&gt;2. 核心知识&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-软件维护类型必考&quot;&gt;2.1 软件维护类型（必考）&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;类型&lt;/th&gt;
+      &lt;th&gt;定义&lt;/th&gt;
+      &lt;th&gt;典型场景&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;改正性维护&lt;/td&gt;
+      &lt;td&gt;修复运行中发现的错误&lt;/td&gt;
+      &lt;td&gt;修复线上缺陷&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;适应性维护&lt;/td&gt;
+      &lt;td&gt;适应外部环境变化&lt;/td&gt;
+      &lt;td&gt;适配新操作系统/数据库、法规变更&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;完善性维护&lt;/td&gt;
+      &lt;td&gt;满足用户新增或改进需求&lt;/td&gt;
+      &lt;td&gt;增加功能、优化性能与界面&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;预防性维护&lt;/td&gt;
+      &lt;td&gt;为未来变化提前改进&lt;/td&gt;
+      &lt;td&gt;重构、提升可维护性、消除技术债务&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;工程实践数据&lt;/strong&gt;：完善性维护通常占维护工作量最大（约 50%～60%），改正性约 20% 左右（比例因项目而异，属经验统计）。&lt;/li&gt;
+  &lt;li&gt;记忆：&lt;strong&gt;改错、适境、完善、预防&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;22-维护过程&quot;&gt;2.2 维护过程&lt;/h3&gt;
+
+&lt;p&gt;维护申请 → 分类与优先级评定 → &lt;strong&gt;影响分析&lt;/strong&gt;（范围、接口、数据、风险）→ 制定维护计划 → 修改设计与代码 → 测试（含回归测试）→ 评审与发布 → 记录与归档。关键：任何修改都需经过变更控制与配置管理（与第 1 章基线呼应）。&lt;/p&gt;
+
+&lt;h3 id=&quot;23-可维护性&quot;&gt;2.3 可维护性&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;可维护性 = 易理解性 + 易测试性 + 易修改性（ISO 9126 中子特性：易分析、易改变、稳定性、易测试）。&lt;/li&gt;
+  &lt;li&gt;影响因素：模块化、内聚耦合、文档质量、编码规范、设计可追溯性。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;软件再工程&lt;/strong&gt;：清查清单 → 反工程（逆向）→ 重构/重组 → 正向工程（重新生成文档与代码）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;逆向工程&lt;/strong&gt;：从代码恢复设计信息（抽象与反推），本身不改变系统；&lt;strong&gt;再工程&lt;/strong&gt;包含修改并重建系统。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;24-系统转换方式&quot;&gt;2.4 系统转换方式&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;方式&lt;/th&gt;
+      &lt;th&gt;做法&lt;/th&gt;
+      &lt;th&gt;风险&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;直接转换&lt;/td&gt;
+      &lt;td&gt;旧系统停止、新系统立即启用&lt;/td&gt;
+      &lt;td&gt;风险最高，但成本低&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;并行转换&lt;/td&gt;
+      &lt;td&gt;新旧系统同时运行一段时间&lt;/td&gt;
+      &lt;td&gt;最安全，成本最高&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;分段（逐步）转换&lt;/td&gt;
+      &lt;td&gt;按模块/部门分批切换&lt;/td&gt;
+      &lt;td&gt;风险与成本折中&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;试运行转换&lt;/td&gt;
+      &lt;td&gt;先局部试用再全面推广&lt;/td&gt;
+      &lt;td&gt;需明确试点范围与回退方案&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;25-运行与运维管理&quot;&gt;2.5 运行与运维管理&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;运行监控&lt;/strong&gt;：性能指标、日志、告警、健康检查；建立基线以识别异常。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;备份策略&lt;/strong&gt;：全量备份 / 增量备份 / 差分备份；&lt;strong&gt;异地备份&lt;/strong&gt;与定期恢复演练（备份不等于可恢复）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;故障管理&lt;/strong&gt;：发现 → 定级 → 定位 → 恢复 → 复盘（RCA 根因分析）；与 RTO/RPO 指标关联（第 10、14 章）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ITIL/ITSM&lt;/strong&gt;：事件管理（尽快恢复服务）、问题管理（消除根因）、变更管理、配置管理、服务级别管理（SLA）等流程。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;系统评价&lt;/strong&gt;：从功能、性能、可用性、安全性、经济效益等维度评估，作为后续演化依据。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-易混淆概念对比&quot;&gt;3. 易混淆概念对比&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;对比项&lt;/th&gt;
+      &lt;th&gt;关键区别&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;改正性 vs 适应性维护&lt;/td&gt;
+      &lt;td&gt;改错（内部缺陷）vs 适应外部环境变化&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;完善性 vs 预防性维护&lt;/td&gt;
+      &lt;td&gt;满足用户新需求 vs 为未来提前改进（无外部要求）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;逆向工程 vs 再工程&lt;/td&gt;
+      &lt;td&gt;逆向只恢复理解、不改系统；再工程实际重建系统&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;事件管理 vs 问题管理&lt;/td&gt;
+      &lt;td&gt;事件管理目标是最快恢复服务；问题管理目标是消除根本原因&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;直接转换 vs 并行转换&lt;/td&gt;
+      &lt;td&gt;直接切换风险高成本低；并行双跑风险低成本高&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;备份 vs 容灾&lt;/td&gt;
+      &lt;td&gt;备份关注数据可恢复；容灾关注业务连续与系统可用&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;4-考试重点&quot;&gt;4. 考试重点&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;给出场景判断维护类型：新法规导致调整 → 适应性；重构代码降低耦合 → 预防性。&lt;/li&gt;
+  &lt;li&gt;维护过程必须包含影响分析与回归测试。&lt;/li&gt;
+  &lt;li&gt;系统转换方式的适用场景与风险对比。&lt;/li&gt;
+  &lt;li&gt;逆向工程与再工程的区分。&lt;/li&gt;
+  &lt;li&gt;备份类型（全量/增量/差分）与恢复窗口。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;5-典型例题原创模拟题&quot;&gt;5. 典型例题（原创模拟题）&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 1&lt;/strong&gt;：因新版操作系统上线，某系统需调整底层接口调用以保证正常运行。这属于（　）。
+A. 改正性维护　B. 适应性维护　C. 完善性维护　D. 预防性维护&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：B。&lt;strong&gt;解析&lt;/strong&gt;：外部环境（操作系统）变化引发的接口适配属于适应性维护。若题干是「修复接口实现中的编码缺陷」才是改正性维护。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;例题 2&lt;/strong&gt;：关于逆向工程，说法正确的是（　）。
+A. 会直接修改源代码　B. 从已有代码恢复设计信息，不改变系统
+C. 等同于重新开发　D. 只适用于面向对象系统&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：B。&lt;strong&gt;解析&lt;/strong&gt;：逆向工程是分析已有系统、恢复设计抽象的过程，本身不改动系统；再工程才包含后续的修改与重建。&lt;/p&gt;
+
+&lt;h2 id=&quot;6-记忆技巧&quot;&gt;6. 记忆技巧&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;维护四类型：&lt;strong&gt;改（错）适（境）完（善）预（防）&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;转换四方式：&lt;strong&gt;直（接）并（行）分（段）试（运行）&lt;/strong&gt;，风险由高到低。&lt;/li&gt;
+  &lt;li&gt;运维流程：&lt;strong&gt;事件先恢复，问题找根因，变更要审批，配置留记录&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-随堂测试&quot;&gt;7. 随堂测试&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;哪种维护类型通常占维护工作量最大？&lt;/li&gt;
+  &lt;li&gt;差分备份与增量备份的区别是什么？&lt;/li&gt;
+  &lt;li&gt;系统切换时要求「风险最低」应选哪种转换方式？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;details&gt;
+&lt;summary&gt;参考答案&lt;/summary&gt;
+
+1. 完善性维护（经验统计，因项目而异）。
+2. 差分备份备份自**上次全量备份**以来的变化；增量备份备份自**上次备份（任意类型）**以来的变化。差分恢复更快，增量备份更快更省空间。
+3. 并行转换。
+&lt;/details&gt;
+
+&lt;h2 id=&quot;8-芝士架构资料补充&quot;&gt;8. 芝士架构资料补充&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;来源：《公共知识红宝书》第 6 章。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;81-新旧系统转换三策略选择题考点&quot;&gt;8.1 新旧系统转换三策略（★★★☆☆，选择题考点）&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;策略&lt;/th&gt;
+      &lt;th&gt;定义&lt;/th&gt;
+      &lt;th&gt;适用场景&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;直接转换&lt;/td&gt;
+      &lt;td&gt;原系统停止的某一时刻，新系统立即投入运行，无过渡阶段&lt;/td&gt;
+      &lt;td&gt;新系统不太复杂，或现有系统完全不能使用&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;并行转换&lt;/td&gt;
+      &lt;td&gt;新旧系统并行工作一段时间，试运行后新系统正式替换&lt;/td&gt;
+      &lt;td&gt;较大的信息系统，或处理过程复杂、数据重要的系统&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;分段转换&lt;/td&gt;
+      &lt;td&gt;直接转换与并行转换结合，分期分批逐步转换&lt;/td&gt;
+      &lt;td&gt;较大系统；现有系统稳定；新旧转换风险大&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;82-遗留系统处置&quot;&gt;8.2 遗留系统处置（★★★☆☆）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;遗留系统特征：年代久远、技术陈旧但仍承载关键业务。&lt;/li&gt;
+  &lt;li&gt;处置策略（与第 4 章架构演化呼应）：&lt;strong&gt;淘汰&lt;/strong&gt;（退休）、&lt;strong&gt;改造/再工程&lt;/strong&gt;、&lt;strong&gt;集成&lt;/strong&gt;（封装为服务）、&lt;strong&gt;继承&lt;/strong&gt;（继续维护）。选择依据：业务价值与技术质量的组合评估。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;83-软件维护类型补充&quot;&gt;8.3 软件维护类型补充（★★★☆☆）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;改正性（修错误）、适应性（适应环境变化）、完善性（新增/改进需求）、预防性（为未来变化提前改进）。&lt;/li&gt;
+  &lt;li&gt;维护成本高昂的主因：文档缺失、人员变动、软件结构随修改腐化；控制手段：配置管理、回归测试、再工程。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
+        <link>https://kaws-y.github.io/2026/07/20/%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E7%BB%B4%E6%8A%A4/</link>
+        <guid isPermaLink="true">https://kaws-y.github.io/2026/07/20/%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E7%BB%B4%E6%8A%A4/</guid>
+        
+        <category>学习资料</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

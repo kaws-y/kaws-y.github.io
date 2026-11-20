@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="本文整理自《芝士架构公共知识红宝书》系统架构设计师公共基础知识，涵盖软件工程概述、需求工程、系统设计、软件测试、系统运行与维护、项目管理六大核心领域。">
+    <meta name="keywords" content="学习资料,Java,Ts,Solidity,大数据，区块链">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F2F5F9" data-kg-theme-color>
+
+    <title>软件工程 - if miracle had a sound</title>
+
+    <link rel="canonical" href="https://kaws-y.github.io/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">
+    <meta property="og:site_name" content="kaws-y‘s Wonderland">
+    <meta property="og:title" content="软件工程">
+    <meta property="og:description" content="本文整理自《芝士架构公共知识红宝书》系统架构设计师公共基础知识，涵盖软件工程概述、需求工程、系统设计、软件测试、系统运行与维护、项目管理六大核心领域。">
+    <meta property="og:url" content="https://kaws-y.github.io/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-07-20T00:00:00+08:00">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"软件工程","datePublished":"2026-07-20T00:00:00+08:00","author":{"@type":"Person","name":"kaws-y"},"mainEntityOfPage":"https://kaws-y.github.io/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"}</script>
+
+    <link rel="manifest" href="/pwa/manifest.json">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="kaws-y‘s Wonderland" href="/feed.xml">
+
+    <!-- Apply the saved theme before first paint -->
+    <script>
+    (function () {
+        var t = 'light';
+        try { t = localStorage.getItem('kg:theme') || 'light'; } catch (e) {}
+        var d = document.documentElement;
+        d.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+        d.classList.add('kg-js');
+        // If the runtime never boots, drop JS-only states so content stays visible.
+        setTimeout(function () { if (!(window.KG && window.KG.ready)) d.classList.remove('kg-js'); }, 4000);
+    })();
+    </script>
+
+    <link rel="stylesheet" href="/assets/kg/css/tokens.css?v=202611201059">
+    <link rel="stylesheet" href="/assets/kg/css/base.css?v=202611201059">
+    <link rel="stylesheet" href="/assets/kg/css/components.css?v=202611201059">
+    <link rel="stylesheet" href="/assets/kg/css/pages.css?v=202611201059">
+    <link rel="stylesheet" href="/assets/kg/css/prose.css?v=202611201059">
+</head>
+
+<body class="kg-body kg-layout-post">
+    <a class="kg-skip" href="#kg-main">跳到正文</a>
+    <div class="kg-ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <header class="kg-nav" data-kg-nav>
+    <div class="kg-nav__bar kg-glass">
+        <a class="kg-brand" href="/" aria-label="kaws-y‘s Wonderland 首页">
+            <span class="kg-brand__mark" aria-hidden="true"><img class="kg-brand__logo" src="/img/logo-mark.png" alt="" width="186" height="96" decoding="async"></span>
+            <span class="kg-brand__text">Wonderland<small>Knowledge Garden</small></span>
+        </a>
+
+        <nav class="kg-nav__links" aria-label="主导航" data-kg-menu>
+            <a href="/handbook/">技术手册</a>
+            <a href="/ruankao/" aria-current="page">软考架构</a>
+            <a href="/agi/">AGI</a>
+            <a href="/life/">代码人生</a>
+            <a href="/reading/">精品阅读</a>
+            <span class="kg-nav__sep" aria-hidden="true"></span>
+            <a href="/library/">文库</a>
+            <a href="/map/">知识地图</a>
+            <a class="kg-nav__more" href="/1-resources/">资料索引</a>
+            <a class="kg-nav__more" href="/2-tags/">标签</a>
+            <a class="kg-nav__more" href="/3-about/">关于</a>
+        </nav>
+
+        <div class="kg-nav__tools">
+            <button class="kg-search-trigger" type="button" data-kg-search-open aria-label="搜索（快捷键 Ctrl K 或 /）">
+                <svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+<span>搜索</span><kbd>Ctrl K</kbd>
+            </button>
+            <a class="kg-iconbtn" href="/shelf/" aria-label="我的空间：收藏与最近阅读"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 4h11a.5.5 0 0 1 .5.5V20l-6-4-6 4V4.5a.5.5 0 0 1 .5-.5Z"/></svg>
+<span class="kg-badge" data-kg-fav-count hidden></span></a>
+            <button class="kg-iconbtn" type="button" data-kg-theme-toggle aria-label="切换深色 / 浅色主题" aria-pressed="false">
+                <svg class="kg-icon kg-only-light" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5Z"/></svg>
+<svg class="kg-icon kg-only-dark" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+
+            </button>
+            <button class="kg-iconbtn kg-nav__toggle" type="button" data-kg-menu-toggle aria-label="展开导航" aria-expanded="false">
+                <svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+
+            </button>
+        </div>
+    </div>
+</header>
+
+    <main id="kg-main" class="kg-main">
+        <div class="kg-progressbar" data-kg-progressbar aria-hidden="true"><i></i></div>
+
+<div class="kg-reader kg-container kg-container--wide" data-kg-reader data-url="/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" data-title="软件工程" data-module="软考架构" data-src="_posts/2026-07-20-软件工程.md" style="--hue:252">
+
+    <aside class="kg-reader__side kg-reader__side--nav" data-kg-drawer="nav" aria-label="系列导航">
+        <div class="kg-reader__sticky">
+            <div class="kg-drawer__head">
+                <strong>系列导航</strong>
+                <button class="kg-iconbtn" type="button" data-kg-drawer-close aria-label="关闭"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg>
+</button>
+            </div>
+            <a class="kg-sidehead" href="/ruankao/">
+                <span class="kg-sidehead__glyph"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg>
+</span>
+                <span><strong>软考架构</strong><small>System Architect</small></span>
+            </a>
+            <nav class="kg-series">
+                <details>
+                    <summary>14 章知识库<span class="kg-num">14</span></summary>
+                    <ol>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/01-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/01-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">第 1 章 软件工程</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/02-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/02-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/">第 2 章 需求工程</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/03-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/03-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">第 3 章 系统分析与设计</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/04-%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/04-%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">第 4 章 系统架构设计</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/05-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/05-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">第 5 章 数据库系统</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/06-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/06-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">第 6 章 操作系统</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/07-%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/07-%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/">第 7 章 法律法规</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/08-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/08-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">第 8 章 计算机网络</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/09-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/09-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">第 9 章 计算机组成原理</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/10-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/10-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/">第 10 章 信息安全</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/11-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/11-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">第 11 章 软件测试</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">第 12 章 项目管理</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/13-%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E7%BB%B4%E6%8A%A4/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/13-%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E7%BB%B4%E6%8A%A4/">第 13 章 系统运行与维护</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/14-%E7%B3%BB%E7%BB%9F%E5%8F%AF%E9%9D%A0%E6%80%A7/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/14-%E7%B3%BB%E7%BB%9F%E5%8F%AF%E9%9D%A0%E6%80%A7/">第 14 章 系统可靠性</a></li>
+                    </ol>
+                </details>
+                <details>
+                    <summary>7 个案例专题<span class="kg-num">7</span></summary>
+                    <ol>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/01-%E4%BA%91%E5%8E%9F%E7%94%9F%E4%B8%8E%E5%AE%B9%E5%99%A8/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/01-%E4%BA%91%E5%8E%9F%E7%94%9F%E4%B8%8E%E5%AE%B9%E5%99%A8/">01 云原生架构与容器技术</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/02-SOA%E4%B8%8E%E5%BE%AE%E6%9C%8D%E5%8A%A1/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/02-SOA%E4%B8%8E%E5%BE%AE%E6%9C%8D%E5%8A%A1/">02 面向服务架构 SOA 与微服务</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/03-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%9E%B6%E6%9E%84/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/03-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%9E%B6%E6%9E%84/">03 大数据架构（Lambda/Kappa）</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/04-%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/04-%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1/">04 领域驱动设计 DDD</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/05-%E7%BC%93%E5%AD%98%E6%90%9C%E7%B4%A2%E4%B8%8E%E6%96%87%E6%A1%A3%E5%BA%93/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/05-%E7%BC%93%E5%AD%98%E6%90%9C%E7%B4%A2%E4%B8%8E%E6%96%87%E6%A1%A3%E5%BA%93/">05 缓存、搜索与文档数据库</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/06-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/06-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8/">06 大模型应用（RAG / MCP / Agent）</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/07-%E9%94%81%E4%B8%8E%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/07-%E9%94%81%E4%B8%8E%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">07 锁机制、消息队列与秒杀</a></li>
+                    </ol>
+                </details>
+                <details open>
+                    <summary>精讲笔记<span class="kg-num">14</span></summary>
+                    <ol>
+                        <li><a href="/2026/07/20/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" data-kg-doc="/2026/07/20/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">系统架构设计</a></li>
+                        <li><a href="/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" data-kg-doc="/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" aria-current="page">软件工程</a></li>
+                        <li><a href="/2026/07/20/%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/" data-kg-doc="/2026/07/20/%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/">需求工程</a></li>
+                        <li><a href="/2026/07/20/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" data-kg-doc="/2026/07/20/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">系统分析与设计</a></li>
+                        <li><a href="/2026/07/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/" data-kg-doc="/2026/07/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/">数据库设计</a></li>
+                        <li><a href="/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%8F%AF%E9%9D%A0%E6%80%A7/" data-kg-doc="/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%8F%AF%E9%9D%A0%E6%80%A7/">软件可靠性</a></li>
+                        <li><a href="/2026/07/20/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" data-kg-doc="/2026/07/20/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a></li>
+                        <li><a href="/2026/07/20/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" data-kg-doc="/2026/07/20/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">项目管理</a></li>
+                        <li><a href="/2026/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" data-kg-doc="/2026/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/">计算机系统</a></li>
+                        <li><a href="/2026/07/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" data-kg-doc="/2026/07/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li>
+                        <li><a href="/2026/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" data-kg-doc="/2026/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li>
+                        <li><a href="/2026/07/20/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" data-kg-doc="/2026/07/20/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/">信息安全技术</a></li>
+                        <li><a href="/2026/07/20/%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/" data-kg-doc="/2026/07/20/%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/">法律法规</a></li>
+                        <li><a href="/2026/07/20/%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E7%BB%B4%E6%8A%A4/" data-kg-doc="/2026/07/20/%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E7%BB%B4%E6%8A%A4/">系统运行与维护</a></li>
+                    </ol>
+                </details>
+            </nav>
+            <div class="kg-series__extra">
+                <a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/">章节索引与复习顺序</a>
+                <a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/">案例专题索引</a>
+            </div>
+        </div>
+    </aside>
+
+    <article class="kg-reader__main">
+        <nav class="kg-crumbs" aria-label="面包屑">
+            <a href="/">首页</a><a href="/ruankao/">软考架构</a><a href="/ruankao/#notes">精讲笔记</a>
+            <span aria-current="page">软件工程</span>
+        </nav>
+
+        <header class="kg-reader__head">
+            <h1 class="kg-reader__title">软件工程</h1><p class="kg-reader__subtitle">Software Engineering</p>
+            <div class="kg-reader__meta"><span class="kg-pill">精讲笔记</span>
+                <span>kaws-y</span>
+                <time datetime="2026-07-20T00:00:00+08:00">2026 年 7 月 20 日</time>
+                <span>约 39 分钟</span>
+                <a class="kg-tag" href="/2-tags/#学习资料">#学习资料</a>
+            </div>
+            <div class="kg-reader__actions">
+                <button class="kg-btn kg-btn--ghost kg-btn--sm" type="button" data-kg-fav="/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" data-title="软件工程" data-module="软考架构" aria-pressed="false"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 4h11a.5.5 0 0 1 .5.5V20l-6-4-6 4V4.5a.5.5 0 0 1 .5-.5Z"/></svg>
+<span data-kg-fav-label>收藏</span></button>
+                <button class="kg-btn kg-btn--ghost kg-btn--sm kg-reader__resume" type="button" data-kg-resume hidden><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+<span>继续上次阅读</span></button>
+            </div>
+        </header>
+
+        <div class="kg-prose" data-kg-prose>
+            <blockquote>
+  <p>本文整理自《芝士架构公共知识红宝书》系统架构设计师公共基础知识，涵盖软件工程概述、需求工程、系统设计、软件测试、系统运行与维护、项目管理六大核心领域。</p>
+</blockquote>
+
+<hr />
+
+<h2 id="一软件工程概述">一、软件工程概述</h2>
+
+<h3 id="11-软件工程相关定义">1.1 软件工程相关定义</h3>
+
+<p>软件工程由<strong>方法、工具和过程</strong>三个部分组成，包含以下 4 个方面（PDCA 循环）：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>阶段</th>
+      <th>含义</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>P</strong> (Plan)</td>
+      <td>软件规格说明——规定软件的功能及其运行时的限制</td>
+    </tr>
+    <tr>
+      <td><strong>D</strong> (Do)</td>
+      <td>软件开发——开发出满足规格说明的软件</td>
+    </tr>
+    <tr>
+      <td><strong>C</strong> (Check)</td>
+      <td>软件确认——确认开发的软件能够满足用户的需求</td>
+    </tr>
+    <tr>
+      <td><strong>A</strong> (Action)</td>
+      <td>软件演进——软件在运行过程中不断改进以满足客户新的需求</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="12-软件开发方法">1.2 软件开发方法</h3>
+
+<h4 id="121-方法分类">1.2.1 方法分类</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>分类方法</th>
+      <th>具体方法</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">开发风格</td>
+      <td>自顶向下</td>
+      <td>系统整体结构首先被定义，然后逐步细化为更具体的模块</td>
+    </tr>
+    <tr>
+      <td>自底向上</td>
+      <td>从具体模块开始逐步构建整个系统</td>
+    </tr>
+    <tr>
+      <td rowspan="2">性质</td>
+      <td>形式化方法</td>
+      <td>具有坚实数学基础的开发方法</td>
+    </tr>
+    <tr>
+      <td>非形式化方法</td>
+      <td>不把严格性作为主要着眼点</td>
+    </tr>
+    <tr>
+      <td rowspan="2">适应范围</td>
+      <td>整体性方法</td>
+      <td>适用于软件开发全过程</td>
+    </tr>
+    <tr>
+      <td>局部性方法</td>
+      <td>适用于开发过程某个具体阶段</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="122-形式化方法">1.2.2 形式化方法</h4>
+
+<p>使用严格的数学模型和形式化语言来描述系统的需求、设计和行为，通过逻辑推理或模型检测等手段证明软件正确性。</p>
+
+<p><strong>特点：</strong></p>
+<ul>
+  <li>正确性验证难且耗时，数学模型和证明困难</li>
+  <li>仍需要和传统测试相结合（形式化方法提供理论保证，测试负责发现运行时错误）</li>
+</ul>
+
+<h4 id="123-净室软件工程cse">1.2.3 净室软件工程（CSE）</h4>
+
+<p>净室软件工程是一种<strong>形式化方法</strong>，强调用数学与统计理论在设计和规约阶段消除错误。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>理论基础</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>函数理论</strong></td>
+      <td>将程序定义为从输入集合到输出集合的严格映射，关注完备性、一致性、正确性</td>
+    </tr>
+    <tr>
+      <td><strong>抽样理论</strong></td>
+      <td>基于软件输入空间的无限性，通过科学抽样选取代表性测试用例推断系统可靠性</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>开发步骤：</strong> 统计过程控制下的增量式开发 → 基于函数的规约+盒子结构方法 → 正确性验证 → 统计测试与软件认证</p>
+
+<p><strong>局限性：</strong> 正确性验证依赖严格数学基础，对工程师要求极高；不依赖传统单元测试但仍需模块测试；未突破传统软件工程体系边界。</p>
+
+<h4 id="124-逆向工程-次重点">1.2.4 逆向工程 （次重点⭐⭐⭐）</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>概念</th>
+      <th>通俗解释</th>
+      <th>定义</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>逆向工程</strong></td>
+      <td>从低层（代码）推回高层设计</td>
+      <td>分析程序，在比源代码更高抽象层次上建立程序表示</td>
+    </tr>
+    <tr>
+      <td><strong>重构</strong></td>
+      <td>同一抽象层改结构</td>
+      <td>在同一抽象级别上转换系统描述形式</td>
+    </tr>
+    <tr>
+      <td><strong>设计恢复</strong></td>
+      <td>借助工具抽取设计信息</td>
+      <td>从已有程序中抽象出数据设计、总体结构设计和过程设计</td>
+    </tr>
+    <tr>
+      <td><strong>再工程</strong></td>
+      <td>逆向工程+新需求+正向工程</td>
+      <td>在逆向工程信息基础上，修改或重构已有系统产生新版本</td>
+    </tr>
+    <tr>
+      <td><strong>正向工程</strong></td>
+      <td>从设计到代码</td>
+      <td>从现有系统恢复设计信息，用此信息改变或重构系统</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>关键区分：</strong> 看到”分析程序、恢复设计”选<strong>逆向工程</strong>；看到”修改、重构、升级、产生新版本”选<strong>再工程</strong>。</p>
+</blockquote>
+
+<p><strong>逆向工程抽象层次（从低到高）：</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>层次</th>
+      <th>包含信息</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>实现级</td>
+      <td>程序的抽象语法树、符号表等信息，实现级是最贴近源代码的底层信息层级，涵盖抽象语法树、语句序列、变量及数据结构等内容，是剖析代码实现细节的核心依据。</td>
+    </tr>
+    <tr>
+      <td>结构级</td>
+      <td>反映程序分量相互依赖关系信息（调用图、结构图等）。结构级聚焦程序内部各组件的关联关系，包含模块依赖图、调用关系图等，能清晰呈现程序的整体架构结构。</td>
+    </tr>
+    <tr>
+      <td>功能级</td>
+      <td>反映程序段功能及程序段之间关系的信息，功能级围绕程序的功能模块及功能间的交互逻辑展开，帮助梳理系统的业务实现脉络。</td>
+    </tr>
+    <tr>
+      <td>领域级</td>
+      <td>反映程序分量或实体与应用领域概念对应关系的信息。领域级则实现程序实体与应用领域概念的映射，从业务领域视角完成对系统的深层理解，为系统的迭代适配业务需求提供支撑。</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>记忆口诀：<strong>世仇结分</strong>工龄（实现→结构→功能→领域）</p>
+</blockquote>
+
+<h4 id="125-基于构件的软件工程cbse">1.2.5 基于构件的软件工程（CBSE）</h4>
+
+<p>CBSE 旨在通过复用可重用的软件构件来构造高质量、高效率的应用软件系统。</p>
+
+<p><strong>构件特性：</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>特性</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>可组装性</td>
+      <td>所有外部交互必须通过公开定义的接口进行</td>
+    </tr>
+    <tr>
+      <td>可部署性</td>
+      <td>构件必须是自包含的，能作为独立实体运行（二进制形式）</td>
+    </tr>
+    <tr>
+      <td>文档化</td>
+      <td>构件必须完全文档化，所有接口语法和语义应被定义</td>
+    </tr>
+    <tr>
+      <td>独立性</td>
+      <td>可以在无其他特殊构件的情况下进行组装和部署</td>
+    </tr>
+    <tr>
+      <td>标准化</td>
+      <td>构件必须符合某种标准化的构件模型</td>
+    </tr>
+    <tr>
+      <td>可见性</td>
+      <td>没有（外部的）可见状态</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>记忆口诀：<strong>竹鼠挡毒标</strong>（组装→部署→文档→独立→标准）</p>
+</blockquote>
+
+<p><strong>构件分类：</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>特点</th>
+      <th>例子</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>独立而成熟的构件</td>
+      <td>完全隐藏接口，通过命令使用</td>
+      <td>数据库管理系统、操作系统</td>
+    </tr>
+    <tr>
+      <td>有限制的构件</td>
+      <td>提供接口并指出使用条件</td>
+      <td>面向对象基础类库</td>
+    </tr>
+    <tr>
+      <td>适应性构件</td>
+      <td>处理了不兼容性，可直接使用</td>
+      <td>ActiveX 组件</td>
+    </tr>
+    <tr>
+      <td>装配的构件</td>
+      <td>已装配在不同层次上，用胶水代码连接</td>
+      <td>成品软件产品</td>
+    </tr>
+    <tr>
+      <td>可修改的构件</td>
+      <td>可修改错误、增加新功能</td>
+      <td>常用功能模块</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>记忆口诀：<strong>独显时装秀</strong>（独立→限制→适应→装配→修改）</p>
+</blockquote>
+
+<p><strong>CBSE 过程：</strong> 系统需求概览 → 识别候选构件 → 根据发现的构件修改需求 → 体系结构设计 → 构件定制与适配 → 组装构件创建系统</p>
+
+<p><strong>构件组装方式：</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>组装类型</th>
+      <th>描述</th>
+      <th>特点</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>顺序组装</td>
+      <td>按顺序调用已有构件创造新构件</td>
+      <td>构件间不相互调用，需胶水代码</td>
+    </tr>
+    <tr>
+      <td>层次组装</td>
+      <td>一个构件直接调用另一个构件的服务</td>
+      <td>接口匹配无需额外代码，不匹配需转换代码</td>
+    </tr>
+    <tr>
+      <td>叠加组装</td>
+      <td>两个或以上构件叠加创建新构件</td>
+      <td>A 和 B 不相互依赖和调用</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>接口不兼容类型：</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>类型</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>参数不兼容</td>
+      <td>接口两侧操作名相同，但参数类型或数目不同</td>
+    </tr>
+    <tr>
+      <td>操作不兼容</td>
+      <td>“提供”接口和”请求”接口操作名不同</td>
+    </tr>
+    <tr>
+      <td>操作不完备</td>
+      <td>一个构件的”提供”接口是另一个构件”请求”接口的子集</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="13-软件过程生命周期模型">1.3 软件过程/生命周期模型</h3>
+
+<blockquote>
+  <p>软件过程 = 软件开发生命周期模型（同义词）</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>前提条件</th>
+      <th>具体模型</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>软件需求完全确定</td>
+      <td>瀑布模型</td>
+    </tr>
+    <tr>
+      <td>开发初始阶段仅能提供基本需求</td>
+      <td>喷泉模型、螺旋模型、统一开发过程、敏捷方法</td>
+    </tr>
+    <tr>
+      <td>以形式化开发方法为基础</td>
+      <td>变换模型</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="131-瀑布模型">1.3.1 瀑布模型</h4>
+
+<p>将软件开发分为 6 个阶段：需求分析和定义 → 系统和软件设计 → 实现和单元测试 → 集成和系统测试 → 运行维护。</p>
+
+<p><strong>缺点：</strong> 依赖于早期需求调查，不能适应需求的变化。</p>
+
+<h4 id="132-原型模型演化模型">1.3.2 原型模型/演化模型</h4>
+
+<p>适用于需求难完整定义的软件开发，基于快速开发的原型，依据用户反馈改进，不断迭代直至形成最终产品。<strong>特点是迭代。</strong></p>
+
+<h4 id="133-螺旋模型">1.3.3 螺旋模型</h4>
+
+<blockquote>
+  <p><strong>螺旋模型 = 快速原型 + 风险分析</strong></p>
+</blockquote>
+
+<p>适用于庞大、复杂并具有高风险的系统，支持用户需求的动态变化。过多迭代会增加开发成本，延迟提交时间。</p>
+
+<h4 id="134-喷泉模型">1.3.4 喷泉模型</h4>
+
+<p>以用户需求为动力，以对象为驱动，主要用于面向对象的软件开发。各阶段可以<strong>交互进行</strong>，没有特定次序要求。</p>
+
+<h4 id="135-v-模型">1.3.5 V 模型</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>测试类型</th>
+      <th>测试依据（文档）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>单元测试</td>
+      <td>软件详细设计说明书</td>
+    </tr>
+    <tr>
+      <td>集成测试</td>
+      <td>软件概要设计文档</td>
+    </tr>
+    <tr>
+      <td>系统测试</td>
+      <td>需求分析文档或开发合同</td>
+    </tr>
+    <tr>
+      <td>验收测试</td>
+      <td>用户需求</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="136-统一过程rup">1.3.6 统一过程（RUP）</h4>
+
+<p>RUP 是<strong>用例驱动的、以体系结构为中心的、迭代和增量的</strong>软件开发过程。</p>
+
+<p><strong>9 大核心工作流：</strong> 业务建模、需求、分析与设计、实现、测试、部署、配置与变更管理、项目管理、环境</p>
+
+<blockquote>
+  <p>记忆口诀：<strong>建需分食测</strong>（建模→需求→分析→实现→测试），<strong>部配变项环</strong>（部署→配置变更→项目管理→环境）</p>
+</blockquote>
+
+<h4 id="137-敏捷方法">1.3.7 敏捷方法</h4>
+
+<p><strong>敏捷宣言：</strong></p>
+<ul>
+  <li>个体和交互 <strong>胜过</strong> 过程和工具</li>
+  <li>可工作的软件 <strong>胜过</strong> 大量的文档</li>
+  <li>客户合作 <strong>胜过</strong> 合同谈判</li>
+  <li>响应变化 <strong>胜过</strong> 遵循计划</li>
+</ul>
+
+<p><strong>适用场景：</strong> 规模较小的项目；需求快速改变的情况。不适用于高关键性、可靠性、安全性要求的系统。</p>
+
+<blockquote>
+  <p>记忆口诀：<strong>小变</strong>（规模小、快速改变）</p>
+</blockquote>
+
+<p><strong>主要敏捷方法：</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>方法</th>
+      <th>简介</th>
+      <th>核心价值观</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>极限编程（XP）</td>
+      <td>短开发周期和频繁发布</td>
+      <td>交流、朴素、反馈、勇气</td>
+    </tr>
+    <tr>
+      <td>水晶系列方法</td>
+      <td>具有共性核心元素</td>
+      <td>以人为中心</td>
+    </tr>
+    <tr>
+      <td>Scrum</td>
+      <td>迭代式增量软件开发</td>
+      <td>团队协作、响应变化、关注商业价值</td>
+    </tr>
+    <tr>
+      <td>特征驱动开发（FDD）</td>
+      <td>强调人、过程和技术三要素</td>
+      <td>迭代开发模型</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Scrum 框架：</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>角色</th>
+      <th>职责</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Product Owner</td>
+      <td>业务价值代言人，管理产品需求列表</td>
+    </tr>
+    <tr>
+      <td>Scrum Master</td>
+      <td>推动框架落地，清除团队障碍</td>
+    </tr>
+    <tr>
+      <td>Development Team</td>
+      <td>跨功能自组织团队，执行 Sprint 任务</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>活动</th>
+      <th>目的</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sprint Planning</td>
+      <td>定义冲刺工作，制定执行计划</td>
+    </tr>
+    <tr>
+      <td>Daily Scrum</td>
+      <td>每日同步进展，暴露障碍</td>
+    </tr>
+    <tr>
+      <td>Sprint Review</td>
+      <td>展示成果，收集反馈</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>工件</th>
+      <th>定义</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Product Backlog</td>
+      <td>按业务价值优先级排序的功能需求清单</td>
+    </tr>
+    <tr>
+      <td>Sprint Backlog</td>
+      <td>冲刺规划阶段筛选出的工作项集合</td>
+    </tr>
+    <tr>
+      <td>Increment</td>
+      <td>满足”完成定义”的可交付产品改进</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="138-增量模型">1.3.8 增量模型</h4>
+
+<p>将系统分为多个模块，逐步实现。每次增量版本都可以作为独立可操作的作品。</p>
+
+<blockquote>
+  <p><strong>迭代 vs 增量：</strong> 迭代是功能深度优化的螺旋上升（逐步完善同一功能）；增量是模块叠加的线性扩展（逐个添加新功能模块）。</p>
+</blockquote>
+
+<h3 id="14-软件过程管理">1.4 软件过程管理</h3>
+
+<h4 id="141-cmm软件能力成熟度模型">1.4.1 CMM（软件能力成熟度模型）</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>等级</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>初始级</td>
+      <td>过程没有明确规定，成功依赖个别高手和运气</td>
+    </tr>
+    <tr>
+      <td>可重复级</td>
+      <td>已建立基本项目管理过程，能跟踪成本、进度、功能</td>
+    </tr>
+    <tr>
+      <td>已定义级</td>
+      <td>软件过程已文档化、标准化，形成组织级标准过程</td>
+    </tr>
+    <tr>
+      <td>已管理级</td>
+      <td>对过程和产品质量有详细度量标准，能定量分析</td>
+    </tr>
+    <tr>
+      <td>优化级</td>
+      <td>基于量化分析不断持续改进过程</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>记忆口诀：<strong>初重定管优</strong>（除虫顶管用）</p>
+</blockquote>
+
+<h4 id="142-cmmi能力成熟度模型集成">1.4.2 CMMI（能力成熟度模型集成）</h4>
+
+<p>CMMI 是 CMM 的升级版本，理论基础源于四大知识体系：系统工程（SE）、软件工程（SW）、集成产品与流程开发（IPPD）、供应商采购（SS）。</p>
+
+<blockquote>
+  <p>记忆口诀：<strong>细软开工</strong>（系统工程→软件工程→开发→供应商采购）</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>等级</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>初始级</td>
+      <td>过程通常是随意且混乱的</td>
+    </tr>
+    <tr>
+      <td>已管理级</td>
+      <td>确保策划、文档化、执行、监督和控制项目级过程</td>
+    </tr>
+    <tr>
+      <td>已定义级</td>
+      <td>根据自身情况定义标准流程并制度化</td>
+    </tr>
+    <tr>
+      <td>量化管理级</td>
+      <td>建立产品质量、服务质量和过程性能的定量目标</td>
+    </tr>
+    <tr>
+      <td>优化级</td>
+      <td>动态调整软件过程以适应不同项目需求</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>记忆口诀：<strong>储罐定粮油</strong>（初始→管理→定义→量化→优化）</p>
+</blockquote>
+
+<hr />
+
+<h2 id="二需求工程">二、需求工程</h2>
+
+<blockquote>
+  <p>需求工程 = 需求开发 + 需求管理</p>
+
+  <p>需求开发包括：需求获取 → 需求分析 → 需求定义（SRS） → 需求验证</p>
+
+  <p>需求管理包括：需求基线、需求变更、需求跟踪</p>
+</blockquote>
+
+<h3 id="21-需求获取">2.1 需求获取</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>方法</th>
+      <th>描述</th>
+      <th>优缺点</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>用户访谈</td>
+      <td>结构化和非结构化两种形式</td>
+      <td>灵活性强；对沟通能力要求高</td>
+    </tr>
+    <tr>
+      <td>问卷调查</td>
+      <td>制作调查表确定问题类型</td>
+      <td>高效低成本；缺乏灵活性</td>
+    </tr>
+    <tr>
+      <td>采样</td>
+      <td>从种群中选出代表性样本</td>
+      <td>加快收集、减少偏差；依赖设计师经验</td>
+    </tr>
+    <tr>
+      <td>情节串联板</td>
+      <td>通过图片辅助讲故事叙述需求</td>
+      <td>生动友好；花费时间多</td>
+    </tr>
+    <tr>
+      <td>联合需求计划（JRP）</td>
+      <td>开发者与顾客深入合作的集会</td>
+      <td>对需求不清晰领域有用；组织和人员是难点</td>
+    </tr>
+    <tr>
+      <td>收集资料</td>
+      <td>查阅已有文档、报告、标准</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>获取文档</td>
+      <td>索取项目相关文档</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>参加业务实践</td>
+      <td>体验和观察业务活动</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>记忆口诀：<strong>访问踩窗帘，合收十文</strong></p>
+</blockquote>
+
+<h3 id="22-结构化分析sa">2.2 结构化分析（SA）</h3>
+
+<p>基本思想：<strong>自顶向下，逐层分解</strong>。</p>
+
+<p>分析模型核心是<strong>数据字典</strong>，围绕三个层次的模型：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>模型</th>
+      <th>表示工具</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>数据模型</td>
+      <td>ER 图</td>
+    </tr>
+    <tr>
+      <td>功能模型</td>
+      <td>DFD 图（数据流图）</td>
+    </tr>
+    <tr>
+      <td>行为模型</td>
+      <td>状态转换图</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="221-数据流图dfd">2.2.1 数据流图（DFD）</h4>
+
+<p><strong>基本符号：</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>符号</th>
+      <th>表示内容</th>
+      <th>图形</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>数据流</td>
+      <td>具有名字和流向的数据</td>
+      <td>标有名字的箭头</td>
+    </tr>
+    <tr>
+      <td>加工</td>
+      <td>对数据流的变换</td>
+      <td>圆圈</td>
+    </tr>
+    <tr>
+      <td>数据存储</td>
+      <td>可访问的存储信息</td>
+      <td>直线段</td>
+    </tr>
+    <tr>
+      <td>外部实体</td>
+      <td>数据源及数据终点</td>
+      <td>标有名字的方框</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>补充：数据存储要被外部实体使用必须经过加工。</p>
+</blockquote>
+
+<p><strong>DFD 层次：</strong> 顶层图（整个系统表示为一个加工） → 逐层分解</p>
+
+<p><strong>数据流图平衡原则：</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>原则</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>父图与子图平衡</td>
+      <td>数据流个数一致、方向一致</td>
+    </tr>
+    <tr>
+      <td>黑洞</td>
+      <td>加工只有输入没有输出</td>
+    </tr>
+    <tr>
+      <td>奇迹</td>
+      <td>加工只有输出没有输入</td>
+    </tr>
+    <tr>
+      <td>灰洞</td>
+      <td>加工中输入不足以产生输出</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="23-面向对象分析ooa">2.3 面向对象分析（OOA）</h3>
+
+<h4 id="231-用例模型">2.3.1 用例模型</h4>
+
+<p>构建用例模型 4 个阶段：识别参与者 → 合并需求获得用例 → 细化用例描述 → 调整用例模型</p>
+
+<blockquote>
+  <p>记忆口诀：<strong>人合细条</strong></p>
+</blockquote>
+
+<p><strong>用例之间的关系：</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>关系</th>
+      <th>描述</th>
+      <th>构造型</th>
+      <th>箭头指向</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>包含</td>
+      <td>从多个用例提取公共行为</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;&lt;include&gt;&gt;</code></td>
+      <td>指向抽象用例</td>
+    </tr>
+    <tr>
+      <td>扩展</td>
+      <td>一个用例混合多种场景分为基本+扩展</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;&lt;extend&gt;&gt;</code></td>
+      <td>指向基本用例</td>
+    </tr>
+    <tr>
+      <td>泛化</td>
+      <td>多个用例有类似结构，抽象为父用例</td>
+      <td>-</td>
+      <td>指向父用例</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="232-分析模型类图">2.3.2 分析模型（类图）</h4>
+
+<p>类之间的 6 大关系（强弱排序）：</p>
+
+<blockquote>
+  <p><strong>泛化 = 实现 &gt; 组合 &gt; 聚合 &gt; 关联 &gt; 依赖</strong></p>
+</blockquote>
+
+<blockquote>
+  <p>记忆口诀：<strong>饭食组聚关羽</strong>（泛化→实现→组合→聚合→关联→依赖）</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>关系</th>
+      <th>定义</th>
+      <th>特点</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>关联</td>
+      <td>两个事物间存在明确稳定的语义联系</td>
+      <td>强语义、结构稳定</td>
+    </tr>
+    <tr>
+      <td>依赖</td>
+      <td>B 的变化可能引起 A 的变化</td>
+      <td>临时使用关系</td>
+    </tr>
+    <tr>
+      <td>泛化</td>
+      <td>父类与子类的关系（is-a）</td>
+      <td>子类继承父类属性和方法</td>
+    </tr>
+    <tr>
+      <td>聚合</td>
+      <td>整体与部分，部分可属于多个整体</td>
+      <td>部分能单独存在，生命周期可不同</td>
+    </tr>
+    <tr>
+      <td>组合</td>
+      <td>整体与部分，部分只能属于一个整体</td>
+      <td>部分唯一归属，生命周期同步</td>
+    </tr>
+    <tr>
+      <td>实现</td>
+      <td>接口定义行为，类实现接口</td>
+      <td>接口定行为，类负责实现</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="24-建模语言uml">2.4 建模语言（UML）</h3>
+
+<p>UML 结构包括：构造块、规则和公共机制。</p>
+
+<p><strong>UML 4+1 视图：</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>视图</th>
+      <th>关注点</th>
+      <th>关注角色</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>逻辑视图</td>
+      <td>系统功能模块及相互关系</td>
+      <td>最终用户</td>
+    </tr>
+    <tr>
+      <td>进程视图</td>
+      <td>系统运行时的进程和线程</td>
+      <td>系统集成人员</td>
+    </tr>
+    <tr>
+      <td>实现视图</td>
+      <td>软件构件在开发环境中的组织</td>
+      <td>程序员</td>
+    </tr>
+    <tr>
+      <td>部署视图</td>
+      <td>软件到硬件的映射和分布</td>
+      <td>系统工程师</td>
+    </tr>
+    <tr>
+      <td>用例视图</td>
+      <td>系统功能需求（+1，核心）</td>
+      <td>分析人员和测试人员</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>UML 图分类：</strong></p>
+
+<ul>
+  <li><strong>结构图：</strong> 类图、对象图、包图、组合结构图、构件图、部署图、轮廓图</li>
+  <li><strong>行为图：</strong> 用例图、活动图、状态机图、顺序图、通信图、时间图、交互概览图</li>
+</ul>
+
+<p><strong>UML 4 种基本关系：</strong> 依赖、关联、泛化、实现</p>
+
+<blockquote>
+  <p>用例图中的包含和扩展属于<strong>依赖关系</strong>；类图中的组合和聚合属于<strong>关联关系</strong>。</p>
+</blockquote>
+
+<h3 id="25-需求管理">2.5 需求管理</h3>
+
+<h4 id="251-需求基线">2.5.1 需求基线</h4>
+
+<p>已经通过正式评审和批准的规约或产品，作为进一步开发的基础，只能通过正式的变更控制系统进行变化。</p>
+
+<h4 id="252-需求变更">2.5.2 需求变更</h4>
+
+<p>变更管理流程：变更申请 → 变更评估 → 通告评估结果 → 变更实施 → 变更验证与确认 → 变更发布</p>
+
+<h4 id="253-需求跟踪">2.5.3 需求跟踪</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>跟踪类型</th>
+      <th>概念</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>正向跟踪</td>
+      <td>检查 SRS 中的每个需求是否在后继工作成果中找到对应点</td>
+    </tr>
+    <tr>
+      <td>反向跟踪</td>
+      <td>检查设计文档、代码、测试用例等是否都能在 SRS 中找到出处</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="三系统设计">三、系统设计</h2>
+
+<h3 id="31-系统设计概述">3.1 系统设计概述</h3>
+
+<p>系统设计包括概要设计和详细设计：</p>
+
+<ul>
+  <li><strong>概要设计：</strong> 对系统进行高层次规划，确定系统的基本结构、组成要素及其关系</li>
+  <li><strong>详细设计：</strong> 在概要设计基础上，确定各个模块的具体实现方式、接口定义、算法实现</li>
+</ul>
+
+<p><strong>系统设计 7 类：</strong> 网络设计、代码设计（面向对象设计+结构化设计）、输入设计、输出设计、处理流程设计、数据存储设计、用户界面设计、安全性和可靠性设计</p>
+
+<blockquote>
+  <p>用户界面设计黄金三原则：置于用户控制之下、减轻用户记忆负担、保持界面一致性</p>
+</blockquote>
+
+<h3 id="32-处理流程设计">3.2 处理流程设计</h3>
+
+<p><strong>流程 6 要素：</strong> 输入资源、活动、活动的相互作用（结构）、输出结果、用户、价值</p>
+
+<p><strong>流程设计工具：</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>类别</th>
+      <th>工具</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>图形工具</td>
+      <td>程序流程图（PFD）</td>
+      <td>用图框表示各种操作，独立于程序设计语言</td>
+    </tr>
+    <tr>
+      <td>图形工具</td>
+      <td>N-S 图（盒图）</td>
+      <td>以方框代替传统 PFD，具有强烈结构化特征</td>
+    </tr>
+    <tr>
+      <td>图形工具</td>
+      <td>IPO 图</td>
+      <td>描述模块的输入、输出和数据加工</td>
+    </tr>
+    <tr>
+      <td>图形工具</td>
+      <td>问题分析图（PAD）</td>
+      <td>支持结构化程序设计，适合嵌套和层次关系</td>
+    </tr>
+    <tr>
+      <td>图形工具</td>
+      <td>判定树</td>
+      <td>用树形结构表示逻辑判断</td>
+    </tr>
+    <tr>
+      <td>表格工具</td>
+      <td>判定表</td>
+      <td>用表格形式表示逻辑判断问题</td>
+    </tr>
+    <tr>
+      <td>语言工具</td>
+      <td>过程设计语言（PDL）</td>
+      <td>混合自然语言和结构化程序设计语法（伪代码）</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>工作流管理系统（WFMS）：</strong> 通过软件定义、创建工作流并管理其执行。</p>
+
+<p>基本功能：工作流建模 → 工作流执行 → 业务过程管理 → 业务过程分析</p>
+
+<blockquote>
+  <p>记忆口诀：<strong>简直过分</strong>（建模→执行→过程→分析）</p>
+</blockquote>
+
+<h3 id="33-面向对象设计ood">3.3 面向对象设计（OOD）</h3>
+
+<h4 id="331-设计类分类">3.3.1 设计类分类</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>类别</th>
+      <th>定义</th>
+      <th>命名规则</th>
+      <th>生命周期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>实体类</strong></td>
+      <td>映射需求中的实体，保存永久存储信息</td>
+      <td>业务领域术语（名词）</td>
+      <td>具有永久性</td>
+    </tr>
+    <tr>
+      <td><strong>控制类</strong></td>
+      <td>控制用例工作，对控制行为建模</td>
+      <td>动宾结构短语转化的名词</td>
+      <td>用例执行时产生，完毕后消亡</td>
+    </tr>
+    <tr>
+      <td><strong>边界类</strong></td>
+      <td>封装系统与外界交互的信息流</td>
+      <td>与系统接口相关</td>
+      <td>随系统运行一直存在</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>判断方法：先看是否是窗口、通信协议、打印机接口、报表等（边界类），再用命名规则判断（名词→实体类，动名词→控制类）。</p>
+</blockquote>
+
+<h4 id="332-面向对象设计原则solid">3.3.2 面向对象设计原则（SOLID）</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>原则</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>S</strong> - 单一职责原则</td>
+      <td>类应该只有一个设计目的</td>
+    </tr>
+    <tr>
+      <td><strong>O</strong> - 开闭原则</td>
+      <td>对扩展开放，对修改封闭（是其他原则的基础）</td>
+    </tr>
+    <tr>
+      <td><strong>L</strong> - 里氏替换原则</td>
+      <td>子类对象必须能替换父类对象</td>
+    </tr>
+    <tr>
+      <td><strong>I</strong> - 接口隔离原则</td>
+      <td>客户端不应依赖它不需要的接口</td>
+    </tr>
+    <tr>
+      <td><strong>D</strong> - 依赖倒置原则</td>
+      <td>抽象不依赖于细节，针对接口编程</td>
+    </tr>
+    <tr>
+      <td>组合/聚合复用原则</td>
+      <td>通过组合或聚合复用已有对象，比继承更灵活</td>
+    </tr>
+    <tr>
+      <td>最少知识原则（迪米特法则）</td>
+      <td>软件实体应尽量少与其他实体相互作用</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="34-结构化设计sd">3.4 结构化设计（SD）</h3>
+
+<p>结构化设计是一种<strong>面向数据流</strong>的方法，以 SRS、数据流图和数据字典为基础，是自顶向下、逐步求精和模块化的过程。</p>
+
+<p>软件设计模型包括 4 个活动：<strong>数据设计、软件结构设计、人机界面设计（接口设计）、过程设计</strong>。</p>
+
+<h4 id="341-模块划分原则">3.4.1 模块划分原则</h4>
+
+<ul>
+  <li>模块大小适中（1-2 页纸或 50-200 行）</li>
+  <li>模块扇入扇出合理（平均 3 或 4，不超过 7）</li>
+  <li>深度和宽度适当</li>
+  <li>信息隐蔽（封装技术隐藏实现细节）</li>
+</ul>
+
+<h4 id="342-耦合从低到高">3.4.2 耦合（从低到高）</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>耦合类型</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>非直接耦合</td>
+      <td>两个模块之间没有直接关系</td>
+    </tr>
+    <tr>
+      <td>数据耦合</td>
+      <td>借助参数表传递简单数据值</td>
+    </tr>
+    <tr>
+      <td>标记耦合</td>
+      <td>通过参数表传递记录信息（数据结构）</td>
+    </tr>
+    <tr>
+      <td>控制耦合</td>
+      <td>传递的信息中包含控制模块内部逻辑的信息</td>
+    </tr>
+    <tr>
+      <td>外部耦合</td>
+      <td>都访问同一全局简单变量</td>
+    </tr>
+    <tr>
+      <td>公共耦合</td>
+      <td>都访问同一个公共数据环境</td>
+    </tr>
+    <tr>
+      <td>内容耦合</td>
+      <td>一个模块直接访问另一个模块的内部数据</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>记忆口诀：<strong>非鼠标控制外公嘞</strong>（非直接→数据→标记→控制→外部→公共→内容）</p>
+</blockquote>
+
+<h4 id="343-内聚从高到低">3.4.3 内聚（从高到低）</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>内聚类型</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>功能内聚</td>
+      <td>完成一个单一功能，各部分协同工作，缺一不可</td>
+    </tr>
+    <tr>
+      <td>顺序内聚</td>
+      <td>处理元素相关且必须顺序执行（存在数据传递）</td>
+    </tr>
+    <tr>
+      <td>通信内聚</td>
+      <td>所有处理元素集中在一个数据结构的区域上</td>
+    </tr>
+    <tr>
+      <td>过程内聚</td>
+      <td>处理元素相关且必须按特定次序执行（不存在数据传递）</td>
+    </tr>
+    <tr>
+      <td>瞬时内聚</td>
+      <td>所包含的任务必须在同一时间间隔内执行</td>
+    </tr>
+    <tr>
+      <td>逻辑内聚</td>
+      <td>完成逻辑上相关的一组任务</td>
+    </tr>
+    <tr>
+      <td>偶然内聚</td>
+      <td>完成一组没有关系或松散关系的任务</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>记忆口诀：<strong>公孙铜锅涮罗欧</strong>（功能→顺序→通信→过程→瞬时→逻辑→偶然）</p>
+</blockquote>
+
+<h3 id="35-设计模式">3.5 设计模式</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>模式大类</th>
+      <th>包含模式</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>创建模式</td>
+      <td>工厂方法、抽象工厂、生成器、原型、单例</td>
+    </tr>
+    <tr>
+      <td>结构模式</td>
+      <td>适配器、桥接、组合、装饰、外观、享元、代理</td>
+    </tr>
+    <tr>
+      <td>行为模式</td>
+      <td>职责链、命令、解释器、迭代器、中介者、备忘录、观察者、状态、策略、模板方法、访问者</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="四软件测试">四、软件测试</h2>
+
+<h3 id="41-测试分类">4.1 测试分类</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>分类维度</th>
+      <th>类别</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>按程序可见性</td>
+      <td>黑盒测试</td>
+      <td>不考虑内部结构，从用户角度基于输入输出测试</td>
+    </tr>
+    <tr>
+      <td>按程序可见性</td>
+      <td>白盒测试</td>
+      <td>需了解程序内部逻辑结构，对所有逻辑路径测试</td>
+    </tr>
+    <tr>
+      <td>按程序可见性</td>
+      <td>灰盒测试</td>
+      <td>介于白盒与黑盒之间，多用于集成测试</td>
+    </tr>
+    <tr>
+      <td>按是否执行</td>
+      <td>静态测试</td>
+      <td>不运行程序，通过分析源程序检查正确性</td>
+    </tr>
+    <tr>
+      <td>按是否执行</td>
+      <td>动态测试</td>
+      <td>运行被测程序，检查运行结果与预期差异</td>
+    </tr>
+    <tr>
+      <td>按测试阶段</td>
+      <td>单元测试</td>
+      <td>对最小可测试单元检查，以白盒为主</td>
+    </tr>
+    <tr>
+      <td>按测试阶段</td>
+      <td>集成测试</td>
+      <td>将软件集成后测试，针对模块间接口</td>
+    </tr>
+    <tr>
+      <td>按测试阶段</td>
+      <td>系统测试</td>
+      <td>对整个系统测试，检验是否符合系统说明书</td>
+    </tr>
+    <tr>
+      <td>按测试对象</td>
+      <td>功能测试</td>
+      <td>验证程序按预期方式运行</td>
+    </tr>
+    <tr>
+      <td>按测试对象</td>
+      <td>性能测试</td>
+      <td>测试响应时间，包括负载、压力、并发等</td>
+    </tr>
+    <tr>
+      <td>按测试对象</td>
+      <td>安全测试</td>
+      <td>验证应用程序安全等级</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="42-白盒测试覆盖标准从弱到强">4.2 白盒测试覆盖标准（从弱到强）</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>覆盖标准</th>
+      <th>描述</th>
+      <th>发现错误能力</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>语句覆盖</td>
+      <td>每条语句至少执行一次</td>
+      <td>1（最弱）</td>
+    </tr>
+    <tr>
+      <td>判定覆盖</td>
+      <td>每个判定的每个分支至少执行一次</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <td>条件覆盖</td>
+      <td>每个条件的每个可能值取到</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <td>判定条件覆盖</td>
+      <td>同时满足判定覆盖和条件覆盖</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>条件组合覆盖</td>
+      <td>每个判定中各条件的每一种组合至少出现一次</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>路径覆盖</td>
+      <td>所有可能的执行路径都执行过</td>
+      <td>6（最强）</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>记忆口诀：<strong>路条组判｜条条判语</strong>（从高到低）</p>
+</blockquote>
+
+<h3 id="43-性能测试辨析">4.3 性能测试辨析</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>类别</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>负载测试</td>
+      <td>在已达到瓶颈的情况下继续运行，测试各项性能指标</td>
+    </tr>
+    <tr>
+      <td>压力测试</td>
+      <td>不断给系统加压，直到某些性能指标达到瓶颈</td>
+    </tr>
+    <tr>
+      <td>并发测试</td>
+      <td>负载测试和压力测试的结合，确定系统并发性能</td>
+    </tr>
+    <tr>
+      <td>容量测试</td>
+      <td>预先分析出某项指标的极限值，测试极限状态下系统表现</td>
+    </tr>
+    <tr>
+      <td>强度测试</td>
+      <td>检查程序对异常情况的抵抗能力（超负荷或最差环境）</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>强度测试 vs 压力测试：</strong> 强度测试侧重制造极限状态（超负荷或环境）；压力测试是慢慢加压、渐增负载的过程。</p>
+</blockquote>
+
+<h3 id="44-测试模型">4.4 测试模型</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>模型</th>
+      <th>定义</th>
+      <th>测试与开发关系</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>W 模型</td>
+      <td>在 V 模型基础上发展而来</td>
+      <td>同步</td>
+    </tr>
+    <tr>
+      <td>H 模型</td>
+      <td>测试活动独立</td>
+      <td>独立</td>
+    </tr>
+    <tr>
+      <td>X 模型</td>
+      <td>针对单独程序片段进行编码和测试</td>
+      <td>交错</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="五系统运行与维护">五、系统运行与维护</h2>
+
+<h3 id="51-运维技术指标">5.1 运维技术指标</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>指标</th>
+      <th>含义</th>
+      <th>计算方式</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MTTR</td>
+      <td>平均故障修复时间</td>
+      <td>总修复时间 / 维修次数</td>
+    </tr>
+    <tr>
+      <td>MTBF</td>
+      <td>平均故障间隔时间</td>
+      <td>总运行时间 / 故障总数</td>
+    </tr>
+    <tr>
+      <td>MTTF</td>
+      <td>平均无故障时间</td>
+      <td>正常运行总时间 / 故障总数</td>
+    </tr>
+    <tr>
+      <td>MTTA</td>
+      <td>平均应答时间</td>
+      <td>告警到确认累计时间 / 事件总数</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="52-软件系统维护">5.2 软件系统维护</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>维护类型</th>
+      <th>维护原因</th>
+      <th>定义</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>改正性维护</strong></td>
+      <td>纠正软件错误、性能缺陷</td>
+      <td>诊断和改正错误的过程（修 Bug）</td>
+    </tr>
+    <tr>
+      <td><strong>适应性维护</strong></td>
+      <td>外部环境或数据环境发生变化</td>
+      <td>为适应环境变化而修改软件</td>
+    </tr>
+    <tr>
+      <td><strong>完善性维护</strong></td>
+      <td>用户提出新的功能与性能要求</td>
+      <td>修改或再开发软件以扩充功能、增强性能</td>
+    </tr>
+    <tr>
+      <td><strong>预防性维护</strong></td>
+      <td>预先提高可维护性和可靠性</td>
+      <td>采用先进方法对软件进行重新设计、编码和测试</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>适应性 vs 完善性：</strong> 外部环境改变导致的维护→适应性维护；用户想要更多/更好导致的维护→完善性维护。</p>
+</blockquote>
+
+<h3 id="53-遗留系统处置">5.3 遗留系统处置</h3>
+
+<p>根据技术水平和业务价值两个维度，分四象限选择演化策略：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>象限</th>
+      <th>技术与业务价值</th>
+      <th>策略</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>第一象限</td>
+      <td>高技术、高价值</td>
+      <td><strong>改造策略</strong>（功能增强+数据模型改造）</td>
+    </tr>
+    <tr>
+      <td>第二象限</td>
+      <td>高技术、低价值</td>
+      <td><strong>集成策略</strong>（对遗留系统进行集成）</td>
+    </tr>
+    <tr>
+      <td>第三象限</td>
+      <td>低技术、低价值</td>
+      <td><strong>淘汰策略</strong>（重新开发新系统）</td>
+    </tr>
+    <tr>
+      <td>第四象限</td>
+      <td>低技术、高价值</td>
+      <td><strong>继承策略</strong>（新系统完全兼容旧系统功能）</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>记忆口诀：<strong>该记陶吉</strong>（改造→集成→淘汰→继承，按逆时针顺序）</p>
+</blockquote>
+
+<h3 id="54-新旧系统转换">5.4 新旧系统转换</h3>
+
+<p>系统转换策略：直接转换、并行转换、分段转换。</p>
+
+<hr />
+
+<h2 id="六项目管理">六、项目管理</h2>
+
+<h3 id="61-范围管理">6.1 范围管理</h3>
+
+<p>5 个管理过程：编制范围管理计划 → 定义范围 → 创建工作分解结构（WBS） → 确认范围 → 范围控制</p>
+
+<h3 id="62-进度管理">6.2 进度管理</h3>
+
+<p><strong>关键概念：</strong></p>
+<ul>
+  <li><strong>AOV 网（单代号网络图）：</strong> 顶点表示活动，弧表示活动之间的先后关系</li>
+  <li><strong>AOE 网（双代号网络图）：</strong> 顶点表示事件，弧表示活动</li>
+</ul>
+
+<p><strong>三点估算法：</strong></p>
+
+\[期望时间 = \frac{乐观时间 + 4 \times 最可能时间 + 悲观时间}{6}\]
+
+<p><strong>关键路径：</strong> 项目中耗时最长的路径，决定了项目的最短完工时间。</p>
+
+<h3 id="63-成本管理">6.3 成本管理</h3>
+
+<p>3 个过程：成本估算 → 成本预算 → 成本控制</p>
+
+<p>成本估算方法：自顶向下估算、自底向上估算、差别估算法</p>
+
+<h3 id="64-配置管理">6.4 配置管理</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>过程</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>编制配置管理计划</td>
+      <td>制订整个项目开发计划的一部分</td>
+    </tr>
+    <tr>
+      <td>配置标识</td>
+      <td>确定配置项，明确命名方式及描述信息</td>
+    </tr>
+    <tr>
+      <td>变更管理和配置控制</td>
+      <td>对配置项变更加以控制和管理</td>
+    </tr>
+    <tr>
+      <td>配置状态报告</td>
+      <td>记录、报告管理配置所需信息</td>
+    </tr>
+    <tr>
+      <td>配置审核</td>
+      <td>验证配置项对配置标识的一致性</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="65-风险管理">6.5 风险管理</h3>
+
+<p>6 大过程：风险管理计划编制 → 风险识别 → 风险定性分析 → 风险定量分析 → 风险应对计划编制 → 风险监控</p>
+
+<blockquote>
+  <p>重点关注：风险管理计划编制、风险识别（选择题考察概率较高）</p>
+</blockquote>
+
+<hr />
+
+<h2 id="总结">总结</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>领域</th>
+      <th>核心要点</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>软件工程概述</td>
+      <td>PDCA 循环、开发方法分类、生命周期模型、CMM/CMMI</td>
+    </tr>
+    <tr>
+      <td>需求工程</td>
+      <td>需求获取方法、结构化分析（DFD）、面向对象分析（用例图+类图）、UML</td>
+    </tr>
+    <tr>
+      <td>系统设计</td>
+      <td>面向对象设计原则（SOLID）、结构化设计（耦合+内聚）、设计模式</td>
+    </tr>
+    <tr>
+      <td>软件测试</td>
+      <td>黑/白盒测试、覆盖标准、性能测试辨析、测试模型</td>
+    </tr>
+    <tr>
+      <td>系统运行与维护</td>
+      <td>运维指标（MTTR/MTBF/MTTF）、维护四分类、遗留系统四象限</td>
+    </tr>
+    <tr>
+      <td>项目管理</td>
+      <td>范围管理（WBS）、进度管理（关键路径）、成本管理、配置管理、风险管理</td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+
+        <footer class="kg-reader__foot">
+            <nav class="kg-pager" aria-label="上一篇 / 下一篇">
+                <a class="kg-pager__item kg-glass kg-float" href="/2026/07/20/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="prev"><small>上一篇</small><strong>系统架构设计</strong></a>
+                <a class="kg-pager__item kg-pager__item--next kg-glass kg-float" href="/2026/07/20/%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/" rel="next"><small>下一篇</small><strong>需求工程</strong></a>
+            </nav>
+            <section class="kg-comments" aria-label="评论">
+                <h2 class="kg-h3">评论</h2>
+                <div id="gitalk-container" data-kg-gitalk
+                     data-client-id="d18b343dd9c7ca49518a" data-client-secret="539e88b8a7feffaddbb553b9c421dfefcbc6eced"
+                     data-repo="kaws-y.github.io" data-owner="kaws-y" data-admin="kaws-y"
+                     data-distraction-free="true" data-md5="/js/md5.min.js">
+                    <p class="kg-muted">评论将在滚动到此处时加载…</p>
+                </div>
+            </section>
+        </footer>
+    </article>
+
+    <aside class="kg-reader__side kg-reader__side--toc" data-kg-drawer="toc" aria-label="本页目录">
+        <div class="kg-reader__sticky">
+            <div class="kg-drawer__head">
+                <strong>本页目录</strong>
+                <button class="kg-iconbtn" type="button" data-kg-drawer-close aria-label="关闭"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg>
+</button>
+            </div>
+            <div class="kg-readstat">
+                <svg class="kg-ring" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true"><circle cx="18" cy="18" r="15" /><circle cx="18" cy="18" r="15" data-kg-ring /></svg>
+                <span><strong class="kg-num" data-kg-percent>0%</strong><small>阅读进度</small></span>
+            </div>
+            <p class="kg-toc__label">On this page</p>
+            <nav class="kg-toc" data-kg-toc aria-label="目录"></nav>
+        </div>
+    </aside>
+</div>
+
+<div class="kg-dock kg-glass kg-glass--strong" data-kg-dock>
+    <button type="button" data-kg-drawer-open="nav"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r=".6"/><circle cx="4.5" cy="12" r=".6"/><circle cx="4.5" cy="18" r=".6"/></svg>
+<span>系列</span></button>
+    <button type="button" data-kg-drawer-open="toc"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.500 4 7.500 20M16.500 4l-2 16M4.500 9h16M3.500 15h16"/></svg>
+<span>目录</span></button>
+    <button type="button" data-kg-fav="/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" data-title="软件工程" data-module="软考架构" aria-pressed="false"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 4h11a.5.5 0 0 1 .5.5V20l-6-4-6 4V4.5a.5.5 0 0 1 .5-.5Z"/></svg>
+<span data-kg-fav-label>收藏</span></button>
+    <span class="kg-dock__pct kg-num" data-kg-percent>0%</span>
+</div>
+<div class="kg-drawer-scrim" data-kg-drawer-close hidden></div>
+
+<script defer src="/assets/kg/js/reader.js?v=202611201059"></script>
+
+    </main>
+
+    <footer class="kg-footer">
+    <div class="kg-container kg-footer__grid">
+        <div class="kg-footer__brand">
+            <a class="kg-brand" href="/">
+                <span class="kg-brand__mark" aria-hidden="true"><img class="kg-brand__logo" src="/img/logo-mark.png" alt="" width="186" height="96" decoding="async"></span>
+                <span class="kg-brand__text">Wonderland<small>Knowledge Garden</small></span>
+            </a>
+            <p>未来已经来临，只是尚未流行</p>
+            <p class="kg-footer__quote">Goals determine what you're going to be!</p>
+        </div>
+        <nav aria-label="知识模块">
+            <h2>知识模块</h2>
+            <ul>
+                <li><a href="/handbook/">技术手册</a></li>
+                <li><a href="/ruankao/">软考架构</a></li>
+                <li><a href="/agi/">AGI</a></li>
+                <li><a href="/life/">代码人生</a></li>
+                <li><a href="/reading/">精品阅读</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="探索">
+            <h2>探索</h2>
+            <ul>
+                <li><a href="/library/">文库</a></li>
+                <li><a href="/map/">知识地图</a></li>
+                <li><a href="/2-tags/">标签</a></li>
+                <li><a href="/1-resources/">资料索引</a></li>
+                <li><a href="/shelf/">我的空间</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="关于">
+            <h2>关于</h2>
+            <ul>
+                <li><a href="/3-about/">关于本站</a></li>
+                <li><a href="https://github.com/kaws-y/kaws-yhub.io" rel="noopener" target="_blank">GitHub 仓库</a></li>
+                <li><a href="/feed.xml">RSS 订阅</a></li>
+                <li><a href="mailto:kaws-y@gmail.com">kaws-y@gmail.com</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="友情链接">
+            <h2>More Sites</h2>
+            <ul>
+                <li><a href="https://www.8btc.com/" rel="noopener" target="_blank">巴比特</a></li>
+                <li><a href="https://ethfans.org/" rel="noopener" target="_blank">EthFans</a></li>
+                <li><a href="https://zhuanlan.zhihu.com" rel="noopener" target="_blank">知乎</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="kg-container kg-footer__base">
+        <span>&copy; 2026 kaws-y‘s Wonderland</span>
+        <span>Built with Jekyll · Hosted on GitHub Pages</span>
+    </div>
+</footer>
+    <div class="kg-search" data-kg-search hidden>
+    <div class="kg-search__scrim" data-kg-search-close></div>
+    <div class="kg-search__panel kg-glass kg-glass--strong" role="dialog" aria-modal="true" aria-label="全站搜索">
+        <div class="kg-search__field">
+            <svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+
+            <input type="search" data-kg-search-input placeholder="搜索标题、标签或正文…" autocomplete="off" spellcheck="false" aria-label="搜索关键词" aria-controls="kg-search-results">
+            <button class="kg-kbd-btn" type="button" data-kg-search-close aria-label="关闭搜索">Esc</button>
+        </div>
+        <div class="kg-search__filters" role="group" aria-label="按模块筛选">
+            <button class="kg-chip" type="button" data-kg-search-module="" aria-pressed="true">全部</button>
+            <button class="kg-chip" type="button" data-kg-search-module="handbook" aria-pressed="false" style="--hue:218">技术手册</button>
+            <button class="kg-chip" type="button" data-kg-search-module="ruankao" aria-pressed="false" style="--hue:252">软考架构</button>
+            <button class="kg-chip" type="button" data-kg-search-module="agi" aria-pressed="false" style="--hue:190">AGI</button>
+            <button class="kg-chip" type="button" data-kg-search-module="life" aria-pressed="false" style="--hue:28">代码人生</button>
+        </div>
+        <div class="kg-search__status" data-kg-search-status aria-live="polite"></div>
+        <ul class="kg-search__results" id="kg-search-results" data-kg-search-results role="listbox" aria-label="搜索结果"></ul>
+        <div class="kg-search__foot">
+            <span><kbd>↑</kbd><kbd>↓</kbd> 选择</span><span><kbd>Enter</kbd> 打开</span><span><kbd>Esc</kbd> 关闭</span>
+            <a href="/library/">在文库中筛选 →</a>
+        </div>
+    </div>
+</div>
+
+    <button class="kg-totop kg-glass" type="button" data-kg-totop aria-label="回到顶部" hidden><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V6M6 11.500l6-6 6 6"/></svg>
+</button>
+
+    <script>
+    window.KG = {
+        base: "",
+        index: "/search.json?v=202611201059",
+        modules: [{"id":"handbook","title":"技术手册","hue":218,"url":"/handbook/"},{"id":"ruankao","title":"软考架构","hue":252,"url":"/ruankao/"},{"id":"agi","title":"AGI","hue":190,"url":"/agi/"},{"id":"life","title":"代码人生","hue":28,"url":"/life/"},{"id":"reading","title":"精品阅读","hue":152,"url":"/reading/"}]
+    };
+    </script>
+    <script defer src="/assets/kg/js/kg.js?v=202611201059"></script>
+
+    
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js').catch(function () {});
+        });
+    }
+    </script>
+    
+
+    
+    
+</body>
+
+</html>

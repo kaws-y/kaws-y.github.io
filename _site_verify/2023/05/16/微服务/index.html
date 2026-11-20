@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="什么是微服务 微服务就是一些可独立运行、可协同工作的小的服务。">
+    <meta name="keywords" content="学习资料,Java,Ts,Solidity,大数据，区块链">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F2F5F9" data-kg-theme-color>
+
+    <title>微服务 - if miracle had a sound</title>
+
+    <link rel="canonical" href="https://kaws-y.github.io/2023/05/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+    <meta property="og:site_name" content="kaws-y‘s Wonderland">
+    <meta property="og:title" content="微服务">
+    <meta property="og:description" content="什么是微服务 微服务就是一些可独立运行、可协同工作的小的服务。">
+    <meta property="og:url" content="https://kaws-y.github.io/2023/05/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2023-05-16T00:00:00+08:00">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"微服务","datePublished":"2023-05-16T00:00:00+08:00","author":{"@type":"Person","name":"kaws-y"},"mainEntityOfPage":"https://kaws-y.github.io/2023/05/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"}</script>
+
+    <link rel="manifest" href="/pwa/manifest.json">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="kaws-y‘s Wonderland" href="/feed.xml">
+
+    <!-- Apply the saved theme before first paint -->
+    <script>
+    (function () {
+        var t = 'light';
+        try { t = localStorage.getItem('kg:theme') || 'light'; } catch (e) {}
+        var d = document.documentElement;
+        d.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+        d.classList.add('kg-js');
+        // If the runtime never boots, drop JS-only states so content stays visible.
+        setTimeout(function () { if (!(window.KG && window.KG.ready)) d.classList.remove('kg-js'); }, 4000);
+    })();
+    </script>
+
+    <link rel="stylesheet" href="/assets/kg/css/tokens.css?v=202611201059">
+    <link rel="stylesheet" href="/assets/kg/css/base.css?v=202611201059">
+    <link rel="stylesheet" href="/assets/kg/css/components.css?v=202611201059">
+    <link rel="stylesheet" href="/assets/kg/css/pages.css?v=202611201059">
+    <link rel="stylesheet" href="/assets/kg/css/prose.css?v=202611201059">
+</head>
+
+<body class="kg-body kg-layout-post">
+    <a class="kg-skip" href="#kg-main">跳到正文</a>
+    <div class="kg-ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <header class="kg-nav" data-kg-nav>
+    <div class="kg-nav__bar kg-glass">
+        <a class="kg-brand" href="/" aria-label="kaws-y‘s Wonderland 首页">
+            <span class="kg-brand__mark" aria-hidden="true"><img class="kg-brand__logo" src="/img/logo-mark.png" alt="" width="186" height="96" decoding="async"></span>
+            <span class="kg-brand__text">Wonderland<small>Knowledge Garden</small></span>
+        </a>
+
+        <nav class="kg-nav__links" aria-label="主导航" data-kg-menu>
+            <a href="/handbook/" aria-current="page">技术手册</a>
+            <a href="/ruankao/">软考架构</a>
+            <a href="/agi/">AGI</a>
+            <a href="/life/">代码人生</a>
+            <a href="/reading/">精品阅读</a>
+            <span class="kg-nav__sep" aria-hidden="true"></span>
+            <a href="/library/">文库</a>
+            <a href="/map/">知识地图</a>
+            <a class="kg-nav__more" href="/1-resources/">资料索引</a>
+            <a class="kg-nav__more" href="/2-tags/">标签</a>
+            <a class="kg-nav__more" href="/3-about/">关于</a>
+        </nav>
+
+        <div class="kg-nav__tools">
+            <button class="kg-search-trigger" type="button" data-kg-search-open aria-label="搜索（快捷键 Ctrl K 或 /）">
+                <svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+<span>搜索</span><kbd>Ctrl K</kbd>
+            </button>
+            <a class="kg-iconbtn" href="/shelf/" aria-label="我的空间：收藏与最近阅读"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 4h11a.5.5 0 0 1 .5.5V20l-6-4-6 4V4.5a.5.5 0 0 1 .5-.5Z"/></svg>
+<span class="kg-badge" data-kg-fav-count hidden></span></a>
+            <button class="kg-iconbtn" type="button" data-kg-theme-toggle aria-label="切换深色 / 浅色主题" aria-pressed="false">
+                <svg class="kg-icon kg-only-light" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5Z"/></svg>
+<svg class="kg-icon kg-only-dark" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+
+            </button>
+            <button class="kg-iconbtn kg-nav__toggle" type="button" data-kg-menu-toggle aria-label="展开导航" aria-expanded="false">
+                <svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+
+            </button>
+        </div>
+    </div>
+</header>
+
+    <main id="kg-main" class="kg-main">
+        <div class="kg-progressbar" data-kg-progressbar aria-hidden="true"><i></i></div>
+
+<div class="kg-reader kg-container kg-container--wide" data-kg-reader data-url="/2023/05/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" data-title="微服务" data-module="技术手册" data-src="_posts/2023-05-16-微服务.md" style="--hue:218">
+
+    <aside class="kg-reader__side kg-reader__side--nav" data-kg-drawer="nav" aria-label="系列导航">
+        <div class="kg-reader__sticky">
+            <div class="kg-drawer__head">
+                <strong>系列导航</strong>
+                <button class="kg-iconbtn" type="button" data-kg-drawer-close aria-label="关闭"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg>
+</button>
+            </div>
+            <a class="kg-sidehead" href="/handbook/">
+                <span class="kg-sidehead__glyph"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3.5 9 4.75-9 4.75-9-4.75L12 3.5Z"/><path d="m3.5 12.5 8.5 4.5 8.5-4.5M3.5 16.5 12 21l8.5-4.5"/></svg>
+</span>
+                <span><strong>技术手册</strong><small>Handbook</small></span>
+            </a>
+            <nav class="kg-series">
+                <details>
+                    <summary>前端技术手册<span class="kg-num">5</span></summary>
+                    <ol>
+                        <li><a href="/2021/11/26/%E5%9B%9E%E6%BA%AF%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/" data-kg-doc="/2021/11/26/%E5%9B%9E%E6%BA%AF%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/">回溯前端之路</a></li>
+                        <li><a href="/2023/05/29/Node%E5%AD%A6%E4%B9%A0/" data-kg-doc="/2023/05/29/Node%E5%AD%A6%E4%B9%A0/">Node学习</a></li>
+                        <li><a href="/2023/05/29/node%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/" data-kg-doc="/2023/05/29/node%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/">文件系统操作</a></li>
+                        <li><a href="/2023/05/29/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" data-kg-doc="/2023/05/29/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">域名解析</a></li>
+                        <li><a href="/2023/05/29/%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1/" data-kg-doc="/2023/05/29/%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1/">网络服务</a></li>
+                    </ol>
+                </details>
+                <details open>
+                    <summary>后端技术手册<span class="kg-num">6</span></summary>
+                    <ol>
+                        <li><a href="/2021/08/29/Java%E9%87%8D%E7%94%9F/" data-kg-doc="/2021/08/29/Java%E9%87%8D%E7%94%9F/">Java重生</a></li>
+                        <li><a href="/2023/05/23/Java%E5%9F%BA%E7%A1%80/" data-kg-doc="/2023/05/23/Java%E5%9F%BA%E7%A1%80/">Java基础</a></li>
+                        <li><a href="/2023/05/23/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/" data-kg-doc="/2023/05/23/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/">Java虚拟机</a></li>
+                        <li><a href="/2023/05/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" data-kg-doc="/2023/05/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" aria-current="page">微服务</a></li>
+                        <li><a href="/2024/01/09/Go%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/" data-kg-doc="/2024/01/09/Go%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/">Go语言笔记</a></li>
+                        <li><a href="/2021/08/30/BigData%E5%A4%A7%E8%B7%83%E8%BF%9B/" data-kg-doc="/2021/08/30/BigData%E5%A4%A7%E8%B7%83%E8%BF%9B/">BigData 大跃进</a></li>
+                    </ol>
+                </details>
+                <details>
+                    <summary>区块链技术手册<span class="kg-num">2</span></summary>
+                    <ol>
+                        <li><a href="/2021/07/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/" data-kg-doc="/2021/07/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/">区块链概述</a></li>
+                        <li><a href="/2022/01/25/%E5%8C%BA%E5%9D%97%E9%93%BE/" data-kg-doc="/2022/01/25/%E5%8C%BA%E5%9D%97%E9%93%BE/">区块链-技术篇</a></li>
+                    </ol>
+                </details>
+            </nav>
+        </div>
+    </aside>
+
+    <article class="kg-reader__main">
+        <nav class="kg-crumbs" aria-label="面包屑">
+            <a href="/">首页</a><a href="/handbook/">技术手册</a><a href="/handbook/#backend">后端技术手册</a>
+            <span aria-current="page">微服务</span>
+        </nav>
+
+        <header class="kg-reader__head">
+            <h1 class="kg-reader__title">微服务</h1><p class="kg-reader__subtitle">MicroService</p>
+            <div class="kg-reader__meta"><span class="kg-pill">后端技术手册</span>
+                <span>kaws-y</span>
+                <time datetime="2023-05-16T00:00:00+08:00">2023 年 5 月 16 日</time>
+                <span>约 7 分钟</span>
+                <a class="kg-tag" href="/2-tags/#学习资料">#学习资料</a>
+            </div>
+            <div class="kg-reader__actions">
+                <button class="kg-btn kg-btn--ghost kg-btn--sm" type="button" data-kg-fav="/2023/05/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" data-title="微服务" data-module="技术手册" aria-pressed="false"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 4h11a.5.5 0 0 1 .5.5V20l-6-4-6 4V4.5a.5.5 0 0 1 .5-.5Z"/></svg>
+<span data-kg-fav-label>收藏</span></button>
+                <button class="kg-btn kg-btn--ghost kg-btn--sm kg-reader__resume" type="button" data-kg-resume hidden><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+<span>继续上次阅读</span></button>
+            </div>
+        </header>
+
+        <div class="kg-prose" data-kg-prose>
+            <h2 id="什么是微服务">什么是微服务</h2>
+<blockquote>
+  <p>微服务就是一些可独立运行、可协同工作的小的服务。</p>
+</blockquote>
+
+<p>从概念中我们可以提取三个关键词：可独立运行、可协同工作、小。这三个词高度概括了微服务的核心特性。下面我们就对这三个词作详细解释。</p>
+
+<ul>
+  <li>可独立运行
+    <ul>
+      <li>微服务是一个个可以独立开发、独立部署、独立运行的系统或者进程。</li>
+    </ul>
+  </li>
+  <li>可协同工作
+    <ul>
+      <li>采用了微服务架构后，整个系统被拆分成多个微服务，这些服务之间往往不是完全独立的，在业务上存在一定的耦合，即一个服务可能需要使用另一个服务所提供的功能。这就是所谓的“可协同工作”。与单服务应用不同的是，多个微服务之间的调用时通过RPC通信来实现，而非单服务的本地调用，所以通信的成本相对要高一些，但带来的好处也是可观的。</li>
+    </ul>
+  </li>
+  <li>小而美
+    <ul>
+      <li>微服务的思想是，将一个拥有复杂功能的庞大系统，按照业务功能，拆分成多个相互独立的子系统，这些子系统则被称为“微服务”。每个微服务只承担某一项职责，从而相对于单服务应用来说，微服务的体积是“小”的。小也就意味着每个服务承担的职责变少，根据单一职责原则，我们在系统设计时，要尽量使得每一项服务只承担一项职责，从而实现系统的“高内聚”</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<h2 id="数据库的服务化切分">数据库的服务化切分</h2>
+<p><strong>1.什么是”分库分表”？</strong></p>
+
+<p>随着微服务架构、分布式存储等概念的出现，数据存储问题也渐渐迎来了转机。而数据分片是目前解决海量数据持久化存储与高效查询的一种重要手段。数据分库分表的过程在系统设计阶段完成，要求系统设计人员根据系统预期的业务量，将未来可能出现瓶颈的数据库、数据表按照一定规则拆分成多个库、多张表。这些数据库和数据表需要部署在不同的服务器上，从而将数据读写压力分摊至集群中的各个节点，提升数据库整体处理能力，避免出现读写瓶颈的现象。</p>
+
+<p>目前数据分片的方式一共有两种：<strong>离散分片和连续分片</strong></p>
+
+<p>离散分片是按照数据的某一字段哈希取模后进行分片存储。只要哈希算法选择得当，数据就会均匀地分布在不同的分片中，从而将读写压力平均分配给所有分片，整体上提升数据的读写能力。然而，离散存储要求数据之间有较强的独立性，但实际业务系统并非如此，不同分片之间的数据往往存在一定的关联性，因此在某些场景下需要跨分片连接查询。由于目前所有的关系型数据库出于安全性考虑，均不支持跨库连接。因此，跨库操作需要由数据分库分表中间件来完成，这极大影响数据的查询效率。此外，当数据存储能力出现瓶颈需要扩容时，离散分片规则需要将所有数据重新进行哈希取模运算，这无疑成为限制系统可扩展性的一个重要因素。虽然，一致性哈希能在一定程度上减少系统扩容时的数据迁移，但数据迁移问题仍然不可避免。对于一个已经上线运行的系统而言，系统停止对外服务进行数据迁移的代价太大。</p>
+
+<p>第二种数据分片的方式即为连续分片，它能解决系统扩容时产生的数据迁移问题。这种方式要求数据按照时间或连续自增主键连续存储。从而一段时间内的数据或相邻主键的数据会被存储在同一个分片中。当需要增加分片时，不会影响现有的分片。因此，连续分片能解决扩容所带来的数据迁移问题。但是，数据的存储时间和读写频率往往呈正比，也就是大量的读写往往都集中在最新存储的那一部分数据，这就会导致热点问题，并不能起到分摊读写压力的初衷。</p>
+
+<p><strong>2.数据库的扩展</strong></p>
+
+<p>数据库扩展一共有四种分配方式，分别是：垂直分库、垂直分表、水平分表、水平数据分片。每一种策略都有各自的适用场景。</p>
+
+<p>i.垂直分库</p>
+
+<p>垂直分库即是将一个完整的数据库根据业务功能拆分成多个独立的数据库，这些数据库可以运行在不同的服务器上，从而提升数据库整体的数据读写性能。这种方式在微服务架构中非常常用。微服务架构的核心思想是将一个完整的应用按照业务功能拆分成多个可独立运行的子系统，这些子系统称为“微服务”，各个服务之间通过RPC接口通信，这样的结构使得系统耦合度更低、更易于扩展。垂直分库的理念与微服务的理念不谋而合，可以将原本完整的数据按照微服务拆分系统的方式，拆分成多个独立的数据库，使得每个微服务系统都有各自独立的数据库，从而可以避免单个数据库节点压力过大，影响系统的整体性能，如下图所示。</p>
+
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/3/11/162140b0cebe0f17~tplv-t2oaga2asx-zoom-in-crop-mark:4536:0:0:0.image" alt="" title="url" /></p>
+
+<p>ii.垂直分表</p>
+
+<p>垂直分表如果一张表的字段非常多，那么很有可能会引起数据的跨页存储，这会造成数据库额外的性能开销，而垂直分表可以解决这个问题。垂直分表就是将一张表中不常用的字段拆分到另一张表中，从而保证第一章表中的字段较少，避免出现数据库跨页存储的问题，从而提升查询效率。而另一张表中的数据通过外键与第一张表进行关联，如下图所示。</p>
+
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/3/11/162140df47d13a5e~tplv-t2oaga2asx-zoom-in-crop-mark:4536:0:0:0.image" alt="" title="url" /></p>
+
+<p>iii.水平分表</p>
+
+<p>如果一张表中的记录数过多（超过1000万条记录），那么会对数据库的读写性能产生较大的影响，虽然此时仍然能够正确地读写，但读写的速度已经到了业务无法忍受的地步，此时就需要使用水平分表来解决这个问题。水平分表是将一张含有很多记录数的表水平切分，拆分成几张结构相同的表。举个例子，假设一张订单表目前存储了2000万条订单的数据，导致数据读写效率极低。此时可以采用水平分表的方式，将订单表拆分成100张结构相同的订单表，分别叫做order_1、order_2……、order_100。然后可以根据订单所属用户的id进行哈希取模后均匀地存储在这100张表中，从而每张表中只存储了20万条订单记录，极大提升了订单的读写效率，如下图所示。
+当然，如果拆分出来的表都存储在同一个数据库节点上，那么当请求量过大的时候，毕竟单台服务器的处理能力是有限的，数据库仍然会成为系统的瓶颈，所以为了解决这个问题，就出现了水平数据分片的解决方案。</p>
+
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/3/11/162140e408031cba~tplv-t2oaga2asx-zoom-in-crop-mark:4536:0:0:0.image" alt="" title="url" /></p>
+
+<p>iiii.水平分库分表</p>
+
+<p>水平数据分片与数据分片区别在于：水平数据分片首先将数据表进行水平拆分，然后按照某一分片规则存储在多台数据库服务器上。从而将单库的压力分摊到了多库上，从而避免因为数据库硬件资源有限导致的数据库性能瓶颈，如下图所示。</p>
+
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/3/11/162140e71d1d21e4~tplv-t2oaga2asx-zoom-in-crop-mark:4536:0:0:0.image" alt="" title="url" /></p>
+
+<p><strong>3.引入分库分表中间件后面临的问题</strong></p>
+
+<p><em>跨库操作</em></p>
+
+<p>在关系型数据库中，多张表之间往往存在关联，我们在开发过程中需要使用JOIN操作进行多表连接。但是当我们使用了分库分表模式后，由于数据库厂商处于安全考虑，不允许跨库JOIN操作，从而如果需要连接的两张表被分到不同的库中后，就无法使用SQL提供的JOIN关键字来实现表连接，我们可能需要在业务系统层面，通过多次SQL查询，完成数据的组装和拼接。这一方面会增加业务系统的复杂度，另一方面会增加业务系统的负载。
+因此，当我们使用分库分表模式时，需要根据具体的业务场景，合理地设置分片策略、设置分片字段，这将会在本文的后续章节中介绍。</p>
+
+<p><em>分布式事务</em></p>
+
+<p>我们知道，数据库提供了事务的功能，以保证数据一致性。然而，这种事务只是针对单数据库而言的，数据库厂商并未提供跨库事务。因此，当我们使用了分库分表之后，就需要我们在业务系统层面实现分布式事务。
+<a href="https://juejin.cn/post/6844903573667446797">常用的分布式事务解决方案</a></p>
+
+<h2 id="分布式事务">分布式事务</h2>
+
+
+        </div>
+
+        <footer class="kg-reader__foot">
+            <nav class="kg-pager" aria-label="上一篇 / 下一篇">
+                <a class="kg-pager__item kg-glass kg-float" href="/2023/05/23/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="prev"><small>上一篇</small><strong>Java虚拟机</strong></a>
+                <a class="kg-pager__item kg-pager__item--next kg-glass kg-float" href="/2024/01/09/Go%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/" rel="next"><small>下一篇</small><strong>Go语言笔记</strong></a>
+            </nav>
+            <section class="kg-comments" aria-label="评论">
+                <h2 class="kg-h3">评论</h2>
+                <div id="gitalk-container" data-kg-gitalk
+                     data-client-id="d18b343dd9c7ca49518a" data-client-secret="539e88b8a7feffaddbb553b9c421dfefcbc6eced"
+                     data-repo="kaws-y.github.io" data-owner="kaws-y" data-admin="kaws-y"
+                     data-distraction-free="true" data-md5="/js/md5.min.js">
+                    <p class="kg-muted">评论将在滚动到此处时加载…</p>
+                </div>
+            </section>
+        </footer>
+    </article>
+
+    <aside class="kg-reader__side kg-reader__side--toc" data-kg-drawer="toc" aria-label="本页目录">
+        <div class="kg-reader__sticky">
+            <div class="kg-drawer__head">
+                <strong>本页目录</strong>
+                <button class="kg-iconbtn" type="button" data-kg-drawer-close aria-label="关闭"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg>
+</button>
+            </div>
+            <div class="kg-readstat">
+                <svg class="kg-ring" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true"><circle cx="18" cy="18" r="15" /><circle cx="18" cy="18" r="15" data-kg-ring /></svg>
+                <span><strong class="kg-num" data-kg-percent>0%</strong><small>阅读进度</small></span>
+            </div>
+            <p class="kg-toc__label">On this page</p>
+            <nav class="kg-toc" data-kg-toc aria-label="目录"></nav>
+        </div>
+    </aside>
+</div>
+
+<div class="kg-dock kg-glass kg-glass--strong" data-kg-dock>
+    <button type="button" data-kg-drawer-open="nav"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r=".6"/><circle cx="4.5" cy="12" r=".6"/><circle cx="4.5" cy="18" r=".6"/></svg>
+<span>系列</span></button>
+    <button type="button" data-kg-drawer-open="toc"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.500 4 7.500 20M16.500 4l-2 16M4.500 9h16M3.500 15h16"/></svg>
+<span>目录</span></button>
+    <button type="button" data-kg-fav="/2023/05/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" data-title="微服务" data-module="技术手册" aria-pressed="false"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 4h11a.5.5 0 0 1 .5.5V20l-6-4-6 4V4.5a.5.5 0 0 1 .5-.5Z"/></svg>
+<span data-kg-fav-label>收藏</span></button>
+    <span class="kg-dock__pct kg-num" data-kg-percent>0%</span>
+</div>
+<div class="kg-drawer-scrim" data-kg-drawer-close hidden></div>
+
+<script defer src="/assets/kg/js/reader.js?v=202611201059"></script>
+
+    </main>
+
+    <footer class="kg-footer">
+    <div class="kg-container kg-footer__grid">
+        <div class="kg-footer__brand">
+            <a class="kg-brand" href="/">
+                <span class="kg-brand__mark" aria-hidden="true"><img class="kg-brand__logo" src="/img/logo-mark.png" alt="" width="186" height="96" decoding="async"></span>
+                <span class="kg-brand__text">Wonderland<small>Knowledge Garden</small></span>
+            </a>
+            <p>未来已经来临，只是尚未流行</p>
+            <p class="kg-footer__quote">Goals determine what you're going to be!</p>
+        </div>
+        <nav aria-label="知识模块">
+            <h2>知识模块</h2>
+            <ul>
+                <li><a href="/handbook/">技术手册</a></li>
+                <li><a href="/ruankao/">软考架构</a></li>
+                <li><a href="/agi/">AGI</a></li>
+                <li><a href="/life/">代码人生</a></li>
+                <li><a href="/reading/">精品阅读</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="探索">
+            <h2>探索</h2>
+            <ul>
+                <li><a href="/library/">文库</a></li>
+                <li><a href="/map/">知识地图</a></li>
+                <li><a href="/2-tags/">标签</a></li>
+                <li><a href="/1-resources/">资料索引</a></li>
+                <li><a href="/shelf/">我的空间</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="关于">
+            <h2>关于</h2>
+            <ul>
+                <li><a href="/3-about/">关于本站</a></li>
+                <li><a href="https://github.com/kaws-y/kaws-yhub.io" rel="noopener" target="_blank">GitHub 仓库</a></li>
+                <li><a href="/feed.xml">RSS 订阅</a></li>
+                <li><a href="mailto:kaws-y@gmail.com">kaws-y@gmail.com</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="友情链接">
+            <h2>More Sites</h2>
+            <ul>
+                <li><a href="https://www.8btc.com/" rel="noopener" target="_blank">巴比特</a></li>
+                <li><a href="https://ethfans.org/" rel="noopener" target="_blank">EthFans</a></li>
+                <li><a href="https://zhuanlan.zhihu.com" rel="noopener" target="_blank">知乎</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="kg-container kg-footer__base">
+        <span>&copy; 2026 kaws-y‘s Wonderland</span>
+        <span>Built with Jekyll · Hosted on GitHub Pages</span>
+    </div>
+</footer>
+    <div class="kg-search" data-kg-search hidden>
+    <div class="kg-search__scrim" data-kg-search-close></div>
+    <div class="kg-search__panel kg-glass kg-glass--strong" role="dialog" aria-modal="true" aria-label="全站搜索">
+        <div class="kg-search__field">
+            <svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+
+            <input type="search" data-kg-search-input placeholder="搜索标题、标签或正文…" autocomplete="off" spellcheck="false" aria-label="搜索关键词" aria-controls="kg-search-results">
+            <button class="kg-kbd-btn" type="button" data-kg-search-close aria-label="关闭搜索">Esc</button>
+        </div>
+        <div class="kg-search__filters" role="group" aria-label="按模块筛选">
+            <button class="kg-chip" type="button" data-kg-search-module="" aria-pressed="true">全部</button>
+            <button class="kg-chip" type="button" data-kg-search-module="handbook" aria-pressed="false" style="--hue:218">技术手册</button>
+            <button class="kg-chip" type="button" data-kg-search-module="ruankao" aria-pressed="false" style="--hue:252">软考架构</button>
+            <button class="kg-chip" type="button" data-kg-search-module="agi" aria-pressed="false" style="--hue:190">AGI</button>
+            <button class="kg-chip" type="button" data-kg-search-module="life" aria-pressed="false" style="--hue:28">代码人生</button>
+        </div>
+        <div class="kg-search__status" data-kg-search-status aria-live="polite"></div>
+        <ul class="kg-search__results" id="kg-search-results" data-kg-search-results role="listbox" aria-label="搜索结果"></ul>
+        <div class="kg-search__foot">
+            <span><kbd>↑</kbd><kbd>↓</kbd> 选择</span><span><kbd>Enter</kbd> 打开</span><span><kbd>Esc</kbd> 关闭</span>
+            <a href="/library/">在文库中筛选 →</a>
+        </div>
+    </div>
+</div>
+
+    <button class="kg-totop kg-glass" type="button" data-kg-totop aria-label="回到顶部" hidden><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V6M6 11.500l6-6 6 6"/></svg>
+</button>
+
+    <script>
+    window.KG = {
+        base: "",
+        index: "/search.json?v=202611201059",
+        modules: [{"id":"handbook","title":"技术手册","hue":218,"url":"/handbook/"},{"id":"ruankao","title":"软考架构","hue":252,"url":"/ruankao/"},{"id":"agi","title":"AGI","hue":190,"url":"/agi/"},{"id":"life","title":"代码人生","hue":28,"url":"/life/"},{"id":"reading","title":"精品阅读","hue":152,"url":"/reading/"}]
+    };
+    </script>
+    <script defer src="/assets/kg/js/kg.js?v=202611201059"></script>
+
+    
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js').catch(function () {});
+        });
+    }
+    </script>
+    
+
+    
+    
+</body>
+
+</html>

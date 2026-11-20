@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="结构化方法、UML、设计模式、设计原则">
+    <meta name="keywords" content="Java,Ts,Solidity,大数据，区块链">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F2F5F9" data-kg-theme-color>
+
+    <title>第 3 章 系统分析与设计 - if miracle had a sound</title>
+
+    <link rel="canonical" href="https://kaws-y.github.io/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/03-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">
+    <meta property="og:site_name" content="kaws-y‘s Wonderland">
+    <meta property="og:title" content="第 3 章 系统分析与设计">
+    <meta property="og:description" content="结构化方法、UML、设计模式、设计原则">
+    <meta property="og:url" content="https://kaws-y.github.io/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/03-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">
+    <meta property="og:type" content="article">
+
+    <link rel="manifest" href="/pwa/manifest.json">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="kaws-y‘s Wonderland" href="/feed.xml">
+
+    <!-- Apply the saved theme before first paint -->
+    <script>
+    (function () {
+        var t = 'light';
+        try { t = localStorage.getItem('kg:theme') || 'light'; } catch (e) {}
+        var d = document.documentElement;
+        d.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+        d.classList.add('kg-js');
+        // If the runtime never boots, drop JS-only states so content stays visible.
+        setTimeout(function () { if (!(window.KG && window.KG.ready)) d.classList.remove('kg-js'); }, 4000);
+    })();
+    </script>
+
+    <link rel="stylesheet" href="/assets/kg/css/tokens.css?v=202611201059">
+    <link rel="stylesheet" href="/assets/kg/css/base.css?v=202611201059">
+    <link rel="stylesheet" href="/assets/kg/css/components.css?v=202611201059">
+    <link rel="stylesheet" href="/assets/kg/css/pages.css?v=202611201059">
+    <link rel="stylesheet" href="/assets/kg/css/prose.css?v=202611201059">
+</head>
+
+<body class="kg-body kg-layout-doc">
+    <a class="kg-skip" href="#kg-main">跳到正文</a>
+    <div class="kg-ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <header class="kg-nav" data-kg-nav>
+    <div class="kg-nav__bar kg-glass">
+        <a class="kg-brand" href="/" aria-label="kaws-y‘s Wonderland 首页">
+            <span class="kg-brand__mark" aria-hidden="true"><img class="kg-brand__logo" src="/img/logo-mark.png" alt="" width="186" height="96" decoding="async"></span>
+            <span class="kg-brand__text">Wonderland<small>Knowledge Garden</small></span>
+        </a>
+
+        <nav class="kg-nav__links" aria-label="主导航" data-kg-menu>
+            <a href="/handbook/">技术手册</a>
+            <a href="/ruankao/" aria-current="page">软考架构</a>
+            <a href="/agi/">AGI</a>
+            <a href="/life/">代码人生</a>
+            <a href="/reading/">精品阅读</a>
+            <span class="kg-nav__sep" aria-hidden="true"></span>
+            <a href="/library/">文库</a>
+            <a href="/map/">知识地图</a>
+            <a class="kg-nav__more" href="/1-resources/">资料索引</a>
+            <a class="kg-nav__more" href="/2-tags/">标签</a>
+            <a class="kg-nav__more" href="/3-about/">关于</a>
+        </nav>
+
+        <div class="kg-nav__tools">
+            <button class="kg-search-trigger" type="button" data-kg-search-open aria-label="搜索（快捷键 Ctrl K 或 /）">
+                <svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+<span>搜索</span><kbd>Ctrl K</kbd>
+            </button>
+            <a class="kg-iconbtn" href="/shelf/" aria-label="我的空间：收藏与最近阅读"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 4h11a.5.5 0 0 1 .5.5V20l-6-4-6 4V4.5a.5.5 0 0 1 .5-.5Z"/></svg>
+<span class="kg-badge" data-kg-fav-count hidden></span></a>
+            <button class="kg-iconbtn" type="button" data-kg-theme-toggle aria-label="切换深色 / 浅色主题" aria-pressed="false">
+                <svg class="kg-icon kg-only-light" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5Z"/></svg>
+<svg class="kg-icon kg-only-dark" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+
+            </button>
+            <button class="kg-iconbtn kg-nav__toggle" type="button" data-kg-menu-toggle aria-label="展开导航" aria-expanded="false">
+                <svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+
+            </button>
+        </div>
+    </div>
+</header>
+
+    <main id="kg-main" class="kg-main">
+        <div class="kg-progressbar" data-kg-progressbar aria-hidden="true"><i></i></div>
+
+<div class="kg-reader kg-container kg-container--wide" data-kg-reader data-url="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/03-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" data-title="第 3 章 系统分析与设计" data-module="软考架构" data-src="docs/架构师知识库/03-系统分析与设计.md" style="--hue:252">
+
+    <aside class="kg-reader__side kg-reader__side--nav" data-kg-drawer="nav" aria-label="系列导航">
+        <div class="kg-reader__sticky">
+            <div class="kg-drawer__head">
+                <strong>系列导航</strong>
+                <button class="kg-iconbtn" type="button" data-kg-drawer-close aria-label="关闭"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg>
+</button>
+            </div>
+            <a class="kg-sidehead" href="/ruankao/">
+                <span class="kg-sidehead__glyph"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg>
+</span>
+                <span><strong>软考架构</strong><small>System Architect</small></span>
+            </a>
+            <nav class="kg-series">
+                <details open>
+                    <summary>14 章知识库<span class="kg-num">14</span></summary>
+                    <ol>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/01-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/01-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">第 1 章 软件工程</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/02-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/02-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/">第 2 章 需求工程</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/03-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/03-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" aria-current="page">第 3 章 系统分析与设计</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/04-%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/04-%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">第 4 章 系统架构设计</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/05-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/05-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">第 5 章 数据库系统</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/06-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/06-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">第 6 章 操作系统</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/07-%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/07-%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/">第 7 章 法律法规</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/08-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/08-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">第 8 章 计算机网络</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/09-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/09-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">第 9 章 计算机组成原理</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/10-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/10-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/">第 10 章 信息安全</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/11-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/11-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">第 11 章 软件测试</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">第 12 章 项目管理</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/13-%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E7%BB%B4%E6%8A%A4/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/13-%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E7%BB%B4%E6%8A%A4/">第 13 章 系统运行与维护</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/14-%E7%B3%BB%E7%BB%9F%E5%8F%AF%E9%9D%A0%E6%80%A7/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/14-%E7%B3%BB%E7%BB%9F%E5%8F%AF%E9%9D%A0%E6%80%A7/">第 14 章 系统可靠性</a></li>
+                    </ol>
+                </details>
+                <details>
+                    <summary>7 个案例专题<span class="kg-num">7</span></summary>
+                    <ol>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/01-%E4%BA%91%E5%8E%9F%E7%94%9F%E4%B8%8E%E5%AE%B9%E5%99%A8/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/01-%E4%BA%91%E5%8E%9F%E7%94%9F%E4%B8%8E%E5%AE%B9%E5%99%A8/">01 云原生架构与容器技术</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/02-SOA%E4%B8%8E%E5%BE%AE%E6%9C%8D%E5%8A%A1/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/02-SOA%E4%B8%8E%E5%BE%AE%E6%9C%8D%E5%8A%A1/">02 面向服务架构 SOA 与微服务</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/03-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%9E%B6%E6%9E%84/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/03-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%9E%B6%E6%9E%84/">03 大数据架构（Lambda/Kappa）</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/04-%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/04-%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1/">04 领域驱动设计 DDD</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/05-%E7%BC%93%E5%AD%98%E6%90%9C%E7%B4%A2%E4%B8%8E%E6%96%87%E6%A1%A3%E5%BA%93/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/05-%E7%BC%93%E5%AD%98%E6%90%9C%E7%B4%A2%E4%B8%8E%E6%96%87%E6%A1%A3%E5%BA%93/">05 缓存、搜索与文档数据库</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/06-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/06-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8/">06 大模型应用（RAG / MCP / Agent）</a></li>
+                        <li><a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/07-%E9%94%81%E4%B8%8E%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" data-kg-doc="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/07-%E9%94%81%E4%B8%8E%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">07 锁机制、消息队列与秒杀</a></li>
+                    </ol>
+                </details>
+                <details>
+                    <summary>精讲笔记<span class="kg-num">14</span></summary>
+                    <ol>
+                        <li><a href="/2026/07/20/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" data-kg-doc="/2026/07/20/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">系统架构设计</a></li>
+                        <li><a href="/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" data-kg-doc="/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">软件工程</a></li>
+                        <li><a href="/2026/07/20/%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/" data-kg-doc="/2026/07/20/%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/">需求工程</a></li>
+                        <li><a href="/2026/07/20/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" data-kg-doc="/2026/07/20/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">系统分析与设计</a></li>
+                        <li><a href="/2026/07/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/" data-kg-doc="/2026/07/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/">数据库设计</a></li>
+                        <li><a href="/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%8F%AF%E9%9D%A0%E6%80%A7/" data-kg-doc="/2026/07/20/%E8%BD%AF%E4%BB%B6%E5%8F%AF%E9%9D%A0%E6%80%A7/">软件可靠性</a></li>
+                        <li><a href="/2026/07/20/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" data-kg-doc="/2026/07/20/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a></li>
+                        <li><a href="/2026/07/20/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" data-kg-doc="/2026/07/20/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">项目管理</a></li>
+                        <li><a href="/2026/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" data-kg-doc="/2026/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/">计算机系统</a></li>
+                        <li><a href="/2026/07/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" data-kg-doc="/2026/07/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li>
+                        <li><a href="/2026/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" data-kg-doc="/2026/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li>
+                        <li><a href="/2026/07/20/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" data-kg-doc="/2026/07/20/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/">信息安全技术</a></li>
+                        <li><a href="/2026/07/20/%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/" data-kg-doc="/2026/07/20/%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/">法律法规</a></li>
+                        <li><a href="/2026/07/20/%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E7%BB%B4%E6%8A%A4/" data-kg-doc="/2026/07/20/%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E7%BB%B4%E6%8A%A4/">系统运行与维护</a></li>
+                    </ol>
+                </details>
+            </nav>
+            <div class="kg-series__extra">
+                <a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/">章节索引与复习顺序</a>
+                <a href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%A1%88%E4%BE%8B%E4%B8%93%E9%A2%98/">案例专题索引</a>
+            </div>
+        </div>
+    </aside>
+
+    <article class="kg-reader__main">
+        <nav class="kg-crumbs" aria-label="面包屑">
+            <a href="/">首页</a><a href="/ruankao/">软考架构</a><a href="/ruankao/#chapters">14 章知识库</a>
+            <span aria-current="page">第 3 章 系统分析与设计</span>
+        </nav>
+
+        <header class="kg-reader__head">
+            <div class="kg-reader__meta"><span class="kg-pill">14 章知识库 · 03</span><span class="kg-pill kg-pill--soft">备考优先级 高</span>
+                <span>约 12 分钟</span>
+            </div>
+            <div class="kg-reader__actions">
+                <button class="kg-btn kg-btn--ghost kg-btn--sm" type="button" data-kg-fav="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/03-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" data-title="第 3 章 系统分析与设计" data-module="软考架构" aria-pressed="false"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 4h11a.5.5 0 0 1 .5.5V20l-6-4-6 4V4.5a.5.5 0 0 1 .5-.5Z"/></svg>
+<span data-kg-fav-label>收藏</span></button><a class="kg-btn kg-btn--ghost kg-btn--sm" href="/2026/07/20/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.500 3.500H7A1.500 1.500 0 0 0 5.500 5v14A1.500 1.500 0 0 0 7 20.500h10a1.500 1.500 0 0 0 1.500-1.500V8.500l-5-5Z"/><path d="M13.500 3.500v5h5"/></svg>
+精讲笔记</a>
+                <button class="kg-btn kg-btn--ghost kg-btn--sm kg-reader__resume" type="button" data-kg-resume hidden><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+<span>继续上次阅读</span></button>
+            </div>
+        </header>
+
+        <div class="kg-prose kg-prose--doc" data-kg-prose>
+            <h1 id="第-3-章-系统分析与设计">第 3 章 系统分析与设计</h1>
+
+<blockquote>
+  <p>考点定位：综合知识选择题高频（UML 图识别、设计模式意图、内聚耦合）；案例分析「建模与设计」常客；论文素材丰富。
+优先级：高。芝士架构公开课程大纲中「系统设计」为公共课重点，含界面设计、流程设计、结构化设计、面向对象设计。</p>
+</blockquote>
+
+<h2 id="1-知识地图">1. 知识地图</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>子模块</th>
+      <th>核心考点</th>
+      <th>考查形式</th>
+      <th>优先级</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>结构化分析与设计</td>
+      <td>DFD、数据字典、模块独立性（内聚/耦合）、结构化设计</td>
+      <td>选择题</td>
+      <td>★★★★</td>
+    </tr>
+    <tr>
+      <td>UML 建模</td>
+      <td>14 种图的分类与识别（用例/类/顺序/状态/活动/构件/部署等）</td>
+      <td>选择题高频</td>
+      <td>★★★★★</td>
+    </tr>
+    <tr>
+      <td>面向对象设计原则</td>
+      <td>SOLID、高内聚低耦合、开闭原则</td>
+      <td>案例/选择</td>
+      <td>★★★★</td>
+    </tr>
+    <tr>
+      <td>设计模式</td>
+      <td>GoF 23 种，按创建/结构/行为分类与意图辨析</td>
+      <td>选择题高频</td>
+      <td>★★★★</td>
+    </tr>
+    <tr>
+      <td>界面与流程设计</td>
+      <td>界面设计原则、流程建模</td>
+      <td>选择题</td>
+      <td>★★</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="2-核心知识">2. 核心知识</h2>
+
+<h3 id="21-结构化设计模块独立性">2.1 结构化设计：模块独立性</h3>
+
+<ul>
+  <li><strong>内聚</strong>（模块内部联系强度，越强越好）：偶然内聚 &lt; 逻辑内聚 &lt; 时间内聚 &lt; 过程内聚 &lt; 通信内聚 &lt; 顺序内聚 &lt; <strong>功能内聚</strong>（最佳）。</li>
+  <li><strong>耦合</strong>（模块间依赖程度，越弱越好）：非直接耦合 &lt; 数据耦合 &lt; 标记耦合 &lt; 控制耦合 &lt; 外部耦合 &lt; 公共耦合 &lt; <strong>内容耦合</strong>（最差）。</li>
+  <li>设计目标：<strong>高内聚、低耦合</strong>。记忆：内聚「偶然逻辑时间过程，通信顺序功能」；耦合「非数标控外公内」。</li>
+</ul>
+
+<h3 id="22-uml-图分类必考识别">2.2 UML 图分类（必考识别）</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>类别</th>
+      <th>图</th>
+      <th>主要用途</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>静态/结构图</td>
+      <td>类图、对象图、构件图、部署图、包图、组合结构图</td>
+      <td>描述系统的静态组成与关系</td>
+    </tr>
+    <tr>
+      <td>动态/行为图</td>
+      <td>用例图、活动图、状态机图</td>
+      <td>描述系统行为与流程</td>
+    </tr>
+    <tr>
+      <td>交互图（行为图子集）</td>
+      <td>顺序图（时序图）、通信图（协作图）、定时图、交互概览图</td>
+      <td>描述对象间消息交互</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>关键辨析</strong>：</p>
+<ul>
+  <li><strong>用例图</strong>：描述系统功能与外部参与者（Actor）的交互，用于需求捕获。关系：include（包含，必执行）、extend（扩展，条件执行）、泛化。</li>
+  <li><strong>类图</strong>：类、属性、方法与关系（关联、聚合、组合、依赖、泛化）。组合强于聚合（整体消亡则部分消亡）。</li>
+  <li><strong>顺序图</strong>：强调消息的时间顺序（纵向生命线、横向消息）。</li>
+  <li><strong>通信图</strong>：强调对象间的结构组织关系（与顺序图语义等价、可互换）。</li>
+  <li><strong>活动图</strong>：类似流程图，强调业务流程与并发（泳道）。</li>
+  <li><strong>状态机图</strong>：描述一个对象在其生命周期内的状态变化（事件驱动）。</li>
+  <li><strong>构件图</strong>：代码模块/组件的物理组织与依赖；<strong>部署图</strong>：软硬件节点拓扑与构件部署位置。</li>
+</ul>
+
+<h3 id="23-面向对象设计原则solid">2.3 面向对象设计原则（SOLID）</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>原则</th>
+      <th>含义</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SRP 单一职责</td>
+      <td>一个类只负责一项职责</td>
+    </tr>
+    <tr>
+      <td>OCP 开闭原则</td>
+      <td>对扩展开放、对修改关闭（抽象化是关键手段）</td>
+    </tr>
+    <tr>
+      <td>LSP 里氏替换</td>
+      <td>子类可替换父类使用而不破坏正确性</td>
+    </tr>
+    <tr>
+      <td>ISP 接口隔离</td>
+      <td>依赖多个专用接口优于一个庞大接口</td>
+    </tr>
+    <tr>
+      <td>DIP 依赖倒置</td>
+      <td>高层模块不依赖低层模块，二者都依赖抽象</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>另有：<strong>迪米特法则（最少知识原则）</strong>、<strong>组合优于继承</strong>。</p>
+
+<h3 id="24-gof-设计模式按意图记忆">2.4 GoF 设计模式（按意图记忆）</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>类型</th>
+      <th>模式</th>
+      <th>意图关键词</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>创建型（5）</td>
+      <td>工厂方法、抽象工厂、单例、建造者、原型</td>
+      <td>如何创建对象</td>
+    </tr>
+    <tr>
+      <td>结构型（7）</td>
+      <td>适配器、桥接、组合、装饰、外观、享元、代理</td>
+      <td>如何组合类/对象形成更大结构</td>
+    </tr>
+    <tr>
+      <td>行为型（11）</td>
+      <td>责任链、命令、解释器、迭代器、中介者、备忘录、观察者、状态、策略、模板方法、访问者</td>
+      <td>对象间职责分配与算法封装</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>高频辨析：</p>
+<ul>
+  <li><strong>工厂方法 vs 抽象工厂</strong>：前者一个产品等级结构，后者多个产品族。</li>
+  <li><strong>适配器 vs 桥接</strong>：适配器解决「已有接口不兼容」；桥接是「抽象与实现分离，各自独立变化」。</li>
+  <li><strong>装饰 vs 代理</strong>：装饰增强功能；代理控制访问。</li>
+  <li><strong>策略 vs 模板方法</strong>：策略用组合委托可变算法；模板方法用继承在父类定义算法骨架、子类覆写步骤。</li>
+  <li><strong>观察者</strong>：一对多依赖，主题状态变化时自动通知所有观察者。</li>
+</ul>
+
+<h3 id="25-界面与流程设计原则">2.5 界面与流程设计原则</h3>
+
+<ul>
+  <li>界面：一致性、可用性、反馈及时、容错（撤销/确认）、减少用户记忆负担。</li>
+  <li>流程：以业务任务为中心，识别关键路径与异常分支，避免过度复杂的审批链。</li>
+</ul>
+
+<h2 id="3-易混淆概念对比">3. 易混淆概念对比</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>对比项</th>
+      <th>关键区别</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>顺序图 vs 通信图</td>
+      <td>顺序图重时间顺序，通信图重对象连接结构；可相互转换</td>
+    </tr>
+    <tr>
+      <td>状态图 vs 活动图</td>
+      <td>状态图描述「一个对象的状态变迁」；活动图描述「一项活动的流程与并发」</td>
+    </tr>
+    <tr>
+      <td>聚合 vs 组合</td>
+      <td>聚合是弱拥有（部分可独立存在）；组合是强拥有（同生共死）</td>
+    </tr>
+    <tr>
+      <td>include vs extend</td>
+      <td>include 是必选复用；extend 是条件触发的可选扩展</td>
+    </tr>
+    <tr>
+      <td>内聚 vs 耦合</td>
+      <td>内聚看模块内部「聚得紧不紧」；耦合看模块之间「缠得紧不紧」</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="4-考试重点">4. 考试重点</h2>
+
+<ol>
+  <li>给出一段图描述（如「纵向生命线展示对象间消息先后」）判断是哪种 UML 图。</li>
+  <li>给出场景选择设计模式：动态切换算法 → 策略；事件通知多对象 → 观察者；接口不兼容 → 适配器。</li>
+  <li>内聚/耦合强弱排序题（选择题常给出四个选项按强弱排列）。</li>
+  <li>类的关联、聚合、组合关系识别与多重度标注。</li>
+</ol>
+
+<h2 id="5-典型例题原创模拟题">5. 典型例题（原创模拟题）</h2>
+
+<p><strong>例题 1</strong>：系统中订单状态在「待支付 → 已支付 → 已发货 → 已完成」之间随事件变化，最适合描述这一模型的 UML 图是（　）。
+A. 活动图　B. 状态机图　C. 顺序图　D. 用例图</p>
+
+<p><strong>答案</strong>：B。<strong>解析</strong>：描述单个对象生命周期内由事件驱动的状态变化是状态机图的典型用途。活动图描述流程与并发；顺序图描述对象消息时序；用例图描述功能。</p>
+
+<p><strong>例题 2</strong>：某支付系统需要对接多家第三方支付渠道，各渠道接口签名与字段不同，希望用统一接口调用。最恰当的设计模式是（　）。
+A. 策略模式　B. 观察者模式　C. 适配器模式　D. 装饰器模式</p>
+
+<p><strong>答案</strong>：C。<strong>解析</strong>：把不同接口转换为统一接口属于适配器模式。策略虽也封装差异，但前提是各策略遵循同一接口；本题重点是「接口不兼容的转换」。</p>
+
+<h2 id="6-记忆技巧">6. 记忆技巧</h2>
+
+<ul>
+  <li>UML 图口诀：<strong>类对象构部包静态，用例活动状态行；顺序通信定时交互图</strong>。</li>
+  <li>内聚强度（低→高）：<strong>偶逻时过通顺功</strong>。</li>
+  <li>耦合强度（低→高）：<strong>非数标控外公内</strong>。</li>
+  <li>创建型五模式口诀：<strong>工抽单建原</strong>（工厂方法、抽象工厂、单例、建造者、原型）。</li>
+</ul>
+
+<h2 id="7-随堂测试">7. 随堂测试</h2>
+
+<ol>
+  <li>部署图和构件图分别描述什么？</li>
+  <li>「对扩展开放、对修改关闭」是哪个原则？</li>
+  <li>组合与聚合在对象生命周期上有何区别？</li>
+</ol>
+
+<details>
+<summary>参考答案</summary>
+
+1. 构件图描述软件构件及其依赖关系；部署图描述运行节点（软硬件）及构件在各节点上的部署。
+2. 开闭原则（OCP）。
+3. 组合中整体负责部分的生命周期（整体销毁则部分销毁）；聚合中部分可独立于整体存在。
+</details>
+
+<h2 id="9-芝士架构资料补充">9. 芝士架构资料补充</h2>
+
+<blockquote>
+  <p>来源：《公共知识红宝书》第 3 章、《案例冲刺宝典》第 2 章。系统设计在红宝书中为超级重点★★★★★。</p>
+</blockquote>
+
+<h3 id="91-处理流程设计工具">9.1 处理流程设计工具（★★★☆☆）</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>工具</th>
+      <th>特点</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>程序流程图</td>
+      <td>直观描述控制流，但可能随意转移、不利于结构化</td>
+    </tr>
+    <tr>
+      <td>N-S 图（盒图）</td>
+      <td>完全结构化，无箭头、不允许随意转移</td>
+    </tr>
+    <tr>
+      <td>PAD 图</td>
+      <td>面向结构化程序设计，树形二维结构，可读性好</td>
+    </tr>
+    <tr>
+      <td>IPO 图</td>
+      <td>输入-处理-输出，描述模块层次与数据关系</td>
+    </tr>
+    <tr>
+      <td>判定表 / 判定树</td>
+      <td>描述多条件复杂组合的决策逻辑</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="92-面向对象设计要点">9.2 面向对象设计要点（★★★★★）</h3>
+<ul>
+  <li><strong>类识别原则</strong>：从名词/业务对象入手，识别属性与职责；高内聚低耦合；避免万能类；领域对象与边界对象、控制对象分工（MVC 的 Model-View-Controller 对应）。</li>
+  <li><strong>SOLID 落地图景</strong>：
+    <ul>
+      <li>SRP：一个类只有一个变化原因。</li>
+      <li>OCP：通过抽象与多态扩展，不改原有代码。</li>
+      <li>LSP：子类必须能替换父类（如正方形继承矩形可能违约）。</li>
+      <li>ISP：拆分臃肿接口为多个专用接口。</li>
+      <li>DIP：高层与低层都依赖抽象，抽象不依赖细节。</li>
+    </ul>
+  </li>
+  <li>另：迪米特法则（最少知识）、组合优于继承。</li>
+</ul>
+
+<h3 id="93-设计模式-23-种分类速记">9.3 设计模式 23 种分类速记（★★★☆☆）</h3>
+<ul>
+  <li>创建型（5）：Abstract Factory、Builder、Factory Method、Prototype、Singleton。</li>
+  <li>结构型（7）：Adapter、Bridge、Composite、Decorator、Facade、Flyweight、Proxy。</li>
+  <li>行为型（11）：Chain of Responsibility、Command、Interpreter、Iterator、Mediator、Memento、Observer、State、Strategy、Template Method、Visitor。</li>
+</ul>
+
+<h3 id="94-常见图对比要点">9.4 常见图对比要点（★★★★★）</h3>
+<ul>
+  <li>用例图：系统对外提供的功能与服务（谁用系统做什么）。</li>
+  <li>类图：类的静态结构及关系，不描述时间顺序。</li>
+  <li>顺序图：强调消息<strong>时间顺序</strong>（生命线纵向）。</li>
+  <li>通信图/协作图：强调对象间<strong>组织结构关系</strong>，与顺序图语义等价可互换。</li>
+  <li>活动图：类似流程图，强调业务流程、并发与泳道。</li>
+  <li>状态图：单个对象在事件驱动下的状态迁移。</li>
+</ul>
+
+<blockquote>
+  <p>案例冲刺宝典将”常见图对比”列为重点★★★★★，常以选词填空形式考查各图的识别与用途。</p>
+</blockquote>
+
+        </div>
+
+        <footer class="kg-reader__foot">
+            <nav class="kg-pager" aria-label="上一篇 / 下一篇">
+                <a class="kg-pager__item kg-glass kg-float" href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/02-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/" rel="prev"><small>上一篇</small><strong>第 2 章 需求工程</strong></a>
+                <a class="kg-pager__item kg-pager__item--next kg-glass kg-float" href="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/04-%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="next"><small>下一篇</small><strong>第 4 章 系统架构设计</strong></a>
+            </nav>
+        </footer>
+    </article>
+
+    <aside class="kg-reader__side kg-reader__side--toc" data-kg-drawer="toc" aria-label="本页目录">
+        <div class="kg-reader__sticky">
+            <div class="kg-drawer__head">
+                <strong>本页目录</strong>
+                <button class="kg-iconbtn" type="button" data-kg-drawer-close aria-label="关闭"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg>
+</button>
+            </div>
+            <div class="kg-readstat">
+                <svg class="kg-ring" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true"><circle cx="18" cy="18" r="15" /><circle cx="18" cy="18" r="15" data-kg-ring /></svg>
+                <span><strong class="kg-num" data-kg-percent>0%</strong><small>阅读进度</small></span>
+            </div>
+            <p class="kg-toc__label">On this page</p>
+            <nav class="kg-toc" data-kg-toc aria-label="目录"></nav>
+        </div>
+    </aside>
+</div>
+
+<div class="kg-dock kg-glass kg-glass--strong" data-kg-dock>
+    <button type="button" data-kg-drawer-open="nav"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r=".6"/><circle cx="4.5" cy="12" r=".6"/><circle cx="4.5" cy="18" r=".6"/></svg>
+<span>系列</span></button>
+    <button type="button" data-kg-drawer-open="toc"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.500 4 7.500 20M16.500 4l-2 16M4.500 9h16M3.500 15h16"/></svg>
+<span>目录</span></button>
+    <button type="button" data-kg-fav="/docs/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9F%A5%E8%AF%86%E5%BA%93/03-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" data-title="第 3 章 系统分析与设计" data-module="软考架构" aria-pressed="false"><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 4h11a.5.5 0 0 1 .5.5V20l-6-4-6 4V4.5a.5.5 0 0 1 .5-.5Z"/></svg>
+<span data-kg-fav-label>收藏</span></button>
+    <span class="kg-dock__pct kg-num" data-kg-percent>0%</span>
+</div>
+<div class="kg-drawer-scrim" data-kg-drawer-close hidden></div>
+
+<script defer src="/assets/kg/js/reader.js?v=202611201059"></script>
+
+    </main>
+
+    <footer class="kg-footer">
+    <div class="kg-container kg-footer__grid">
+        <div class="kg-footer__brand">
+            <a class="kg-brand" href="/">
+                <span class="kg-brand__mark" aria-hidden="true"><img class="kg-brand__logo" src="/img/logo-mark.png" alt="" width="186" height="96" decoding="async"></span>
+                <span class="kg-brand__text">Wonderland<small>Knowledge Garden</small></span>
+            </a>
+            <p>未来已经来临，只是尚未流行</p>
+            <p class="kg-footer__quote">Goals determine what you're going to be!</p>
+        </div>
+        <nav aria-label="知识模块">
+            <h2>知识模块</h2>
+            <ul>
+                <li><a href="/handbook/">技术手册</a></li>
+                <li><a href="/ruankao/">软考架构</a></li>
+                <li><a href="/agi/">AGI</a></li>
+                <li><a href="/life/">代码人生</a></li>
+                <li><a href="/reading/">精品阅读</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="探索">
+            <h2>探索</h2>
+            <ul>
+                <li><a href="/library/">文库</a></li>
+                <li><a href="/map/">知识地图</a></li>
+                <li><a href="/2-tags/">标签</a></li>
+                <li><a href="/1-resources/">资料索引</a></li>
+                <li><a href="/shelf/">我的空间</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="关于">
+            <h2>关于</h2>
+            <ul>
+                <li><a href="/3-about/">关于本站</a></li>
+                <li><a href="https://github.com/kaws-y/kaws-yhub.io" rel="noopener" target="_blank">GitHub 仓库</a></li>
+                <li><a href="/feed.xml">RSS 订阅</a></li>
+                <li><a href="mailto:kaws-y@gmail.com">kaws-y@gmail.com</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="友情链接">
+            <h2>More Sites</h2>
+            <ul>
+                <li><a href="https://www.8btc.com/" rel="noopener" target="_blank">巴比特</a></li>
+                <li><a href="https://ethfans.org/" rel="noopener" target="_blank">EthFans</a></li>
+                <li><a href="https://zhuanlan.zhihu.com" rel="noopener" target="_blank">知乎</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="kg-container kg-footer__base">
+        <span>&copy; 2026 kaws-y‘s Wonderland</span>
+        <span>Built with Jekyll · Hosted on GitHub Pages</span>
+    </div>
+</footer>
+    <div class="kg-search" data-kg-search hidden>
+    <div class="kg-search__scrim" data-kg-search-close></div>
+    <div class="kg-search__panel kg-glass kg-glass--strong" role="dialog" aria-modal="true" aria-label="全站搜索">
+        <div class="kg-search__field">
+            <svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+
+            <input type="search" data-kg-search-input placeholder="搜索标题、标签或正文…" autocomplete="off" spellcheck="false" aria-label="搜索关键词" aria-controls="kg-search-results">
+            <button class="kg-kbd-btn" type="button" data-kg-search-close aria-label="关闭搜索">Esc</button>
+        </div>
+        <div class="kg-search__filters" role="group" aria-label="按模块筛选">
+            <button class="kg-chip" type="button" data-kg-search-module="" aria-pressed="true">全部</button>
+            <button class="kg-chip" type="button" data-kg-search-module="handbook" aria-pressed="false" style="--hue:218">技术手册</button>
+            <button class="kg-chip" type="button" data-kg-search-module="ruankao" aria-pressed="false" style="--hue:252">软考架构</button>
+            <button class="kg-chip" type="button" data-kg-search-module="agi" aria-pressed="false" style="--hue:190">AGI</button>
+            <button class="kg-chip" type="button" data-kg-search-module="life" aria-pressed="false" style="--hue:28">代码人生</button>
+        </div>
+        <div class="kg-search__status" data-kg-search-status aria-live="polite"></div>
+        <ul class="kg-search__results" id="kg-search-results" data-kg-search-results role="listbox" aria-label="搜索结果"></ul>
+        <div class="kg-search__foot">
+            <span><kbd>↑</kbd><kbd>↓</kbd> 选择</span><span><kbd>Enter</kbd> 打开</span><span><kbd>Esc</kbd> 关闭</span>
+            <a href="/library/">在文库中筛选 →</a>
+        </div>
+    </div>
+</div>
+
+    <button class="kg-totop kg-glass" type="button" data-kg-totop aria-label="回到顶部" hidden><svg class="kg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V6M6 11.500l6-6 6 6"/></svg>
+</button>
+
+    <script>
+    window.KG = {
+        base: "",
+        index: "/search.json?v=202611201059",
+        modules: [{"id":"handbook","title":"技术手册","hue":218,"url":"/handbook/"},{"id":"ruankao","title":"软考架构","hue":252,"url":"/ruankao/"},{"id":"agi","title":"AGI","hue":190,"url":"/agi/"},{"id":"life","title":"代码人生","hue":28,"url":"/life/"},{"id":"reading","title":"精品阅读","hue":152,"url":"/reading/"}]
+    };
+    </script>
+    <script defer src="/assets/kg/js/kg.js?v=202611201059"></script>
+
+    
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js').catch(function () {});
+        });
+    }
+    </script>
+    
+
+    
+    
+</body>
+
+</html>

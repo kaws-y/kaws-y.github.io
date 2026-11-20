@@ -121,8 +121,10 @@
   gap: clamp(24px, 3.2vw, 56px); align-items: start; padding-top: clamp(20px, 3vw, 40px);
 }
 .kg-reader__main { min-width: 0; width: 100%; max-width: 780px; margin-inline: auto; }
+/* The aside itself is the sticky box: it must not stretch, and no ancestor may clip overflow. */
+.kg-reader__side { position: sticky; top: var(--kg-offset); align-self: start; min-width: 0; }
 .kg-reader__sticky {
-  position: sticky; top: var(--kg-offset); max-height: calc(100vh - var(--kg-offset) - 24px);
+  max-height: calc(100vh - var(--kg-offset) - 24px);
   overflow-y: auto; overscroll-behavior: contain; padding: 2px 6px 16px 2px;
   scrollbar-width: thin; scrollbar-color: var(--kg-border) transparent;
 }
@@ -208,7 +210,7 @@
 @media (max-width: 960px) {
   .kg-reader { grid-template-columns: minmax(0, 1fr); padding-bottom: 72px; }
   .kg-reader__side {
-    display: block; position: fixed; z-index: var(--kg-z-drawer); left: 10px; right: 10px; bottom: 10px;
+    display: block; position: fixed; z-index: var(--kg-z-drawer); left: 10px; right: 10px; top: auto; bottom: 10px;
     max-height: min(72vh, 620px); padding: 6px 16px 16px; overflow: hidden;
     border-radius: var(--kg-r-lg); border: 1px solid var(--kg-glass-border); background: var(--kg-glass-bg-strong);
     -webkit-backdrop-filter: blur(24px) saturate(160%); backdrop-filter: blur(24px) saturate(160%);
@@ -217,7 +219,7 @@
     transition: transform var(--kg-t) var(--kg-ease-out), visibility 0s linear var(--kg-t);
   }
   .kg-reader__side.is-open { transform: none; visibility: visible; transition-delay: 0s; }
-  .kg-reader__sticky { position: static; max-height: min(72vh, 620px); padding-bottom: 24px; }
+  .kg-reader__sticky { max-height: min(72vh, 620px); padding-bottom: 24px; }
   .kg-drawer__head { display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 2; padding: 6px 0; margin-bottom: 6px; background: inherit; }
   .kg-drawer-scrim { display: block; position: fixed; inset: 0; z-index: calc(var(--kg-z-drawer) - 1); background: rgba(20, 28, 40, 0.28); }
   .kg-dock {
