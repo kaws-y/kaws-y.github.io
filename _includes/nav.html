@@ -24,9 +24,6 @@
                 {% include kg/icon.html name="search" %}<span>搜索</span><kbd>Ctrl K</kbd>
             </button>
             <a class="kg-iconbtn" href="{{ '/shelf/' | relative_url }}" aria-label="我的空间：收藏与最近阅读"{% if kg_active == 'shelf' %} aria-current="page"{% endif %}>{% include kg/icon.html name="bookmark" %}<span class="kg-badge" data-kg-fav-count hidden></span></a>
-            <button class="kg-iconbtn" type="button" data-kg-theme-toggle aria-label="切换深色 / 浅色主题" aria-pressed="false">
-                {% include kg/icon.html name="moon" class="kg-only-light" %}{% include kg/icon.html name="sun" class="kg-only-dark" %}
-            </button>
             <button class="kg-iconbtn kg-nav__toggle" type="button" data-kg-menu-toggle aria-label="展开导航" aria-expanded="false">
                 {% include kg/icon.html name="menu" %}
             </button>

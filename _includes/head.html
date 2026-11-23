@@ -11,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="{{ kg_desc | escape }}">
     <meta name="keywords" content="{% if page.tags and page.tags.size > 0 %}{{ page.tags | join: ',' | escape }},{% endif %}{{ site.keyword }}">
-    <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#F2F5F9" data-kg-theme-color>
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0D1219" data-kg-theme-color>
 
     <title>{% if page.title %}{{ page.title | strip_html }} - {{ site.SEOTitle }}{% else %}{{ site.title }} · {{ site.SEOTitle }}{% endif %}</title>
 
@@ -32,13 +32,11 @@
     <link rel="apple-touch-icon" href="{{ '/img/apple-touch-icon.png' | relative_url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
 
-    <!-- Apply the saved theme before first paint -->
+    <!-- Dark-only: force the dark theme before first paint -->
     <script>
     (function () {
-        var t = 'light';
-        try { t = localStorage.getItem('kg:theme') || 'light'; } catch (e) {}
         var d = document.documentElement;
-        d.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+        d.setAttribute('data-theme', 'dark');
         d.classList.add('kg-js');
         // If the runtime never boots, drop JS-only states so content stays visible.
         setTimeout(function () { if (!(window.KG && window.KG.ready)) d.classList.remove('kg-js'); }, 4000);

@@ -63,27 +63,18 @@
 
   KG.$ = $; KG.$$ = $$; KG.esc = esc; KG.key = key; KG.store = store; KG.toast = toast; KG.emit = emit;
 
-  /* ------------------------------------------------------------------ theme */
-  function applyTheme(t, persist) {
-    t = t === 'dark' ? 'dark' : 'light';
-    root.setAttribute('data-theme', t);
-    if (persist) { try { localStorage.setItem('kg:theme', t); } catch (e) {} }
-    $$('[data-kg-theme-toggle]').forEach(function (b) { b.setAttribute('aria-pressed', String(t === 'dark')); });
+  /* ----------------------------------------------- theme (dark-only, fixed) */
+  function applyTheme() {
+    root.setAttribute('data-theme', 'dark');
     var meta = $('[data-kg-theme-color]');
-    if (meta) meta.setAttribute('content', t === 'dark' ? '#0D1219' : '#F2F5F9');
-    emit('kg:theme', { theme: t });
+    if (meta) meta.setAttribute('content', '#0D1219');
+    emit('kg:theme', { theme: 'dark' });
   }
-  KG.theme = function () { return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'; };
+  KG.theme = function () { return 'dark'; };
 
   function initTheme() {
-    applyTheme(KG.theme(), false);
-    doc.addEventListener('click', function (e) {
-      var b = e.target.closest('[data-kg-theme-toggle]');
-      if (!b) return;
-      applyTheme(KG.theme() === 'dark' ? 'light' : 'dark', true);
-    });
+    applyTheme();
     window.addEventListener('storage', function (e) {
-      if (e.key === 'kg:theme' && e.newValue) applyTheme(e.newValue, false);
       if (e.key === 'kg:favs' || e.key === 'kg:recent' || e.key === 'kg:progress') refreshLocal();
     });
   }

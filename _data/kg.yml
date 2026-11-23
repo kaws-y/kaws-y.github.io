@@ -101,7 +101,7 @@ modules:
 # 首页精选：size 取 lg / md / sm；post 为文章 slug，path 为 docs 页面源路径
 featured:
   - size: lg
-    post: 系统架构设计
+    path: docs/架构师知识库/04-系统架构设计.md
     blurb: 架构风格、质量属性与 ATAM 评估、ABSD 与 DSSA——案例与论文的共同主线，也是整个备考体系的地基。
   - size: md
     post: Java虚拟机
